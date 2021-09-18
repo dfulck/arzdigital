@@ -1,5 +1,5 @@
 <!-- end::page loader -->
-
+@include('client.layout.notification')
 <!-- begin::sidebar user profile -->
 <div class="sidebar" id="userProfile">
     <div class="text-center p-4">

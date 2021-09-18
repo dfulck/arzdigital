@@ -1,139 +1,459 @@
-@extends('Panel.layout.master')
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-@section('master')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arz Digital</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/media/image/favicon.png">
 
-<body>
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#5867dd">
+
+    <!-- Plugin styles -->
+    <link rel="stylesheet" href="/vendors/bundle.css" type="text/css">
+
+    <!-- Form wizard -->
+    <link rel="stylesheet" href="/vendors/form-wizard/jquery.steps.css" type="text/css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
+</head>
+
+<body class="dark">
 
 
 @include('Panel.layout.sidebar')
 
 @include('Panel.layout.navigation')
 
+<!-- begin::header -->
+<div class="header">
+
+    <!-- begin::header logo -->
+    <div class="header-logo">
+        <a href="index.html">
+            <img class="large-logo" src="/assets/media/image/logo.png" alt="image">
+            <img class="small-logo" src="/assets/media/image/logo-sm.png" alt="image">
+            <img class="dark-logo" src="/assets/media/image/logo-dark.png" alt="image">
+        </a>
+    </div>
+    <!-- end::header logo -->
+
+    <!-- begin::header body -->
+    <div class="header-body">
+
+        <div class="header-body-left">
+
+            <h3 class="page-title">فرم ویرایش</h3>
+
+            <!-- begin::breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">ویرایش</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">پروفایل</li>
+                </ol>
+            </nav>
+            <!-- end::breadcrumb -->
+
+        </div>
+
+        <div class="header-body-right">
+            <!-- begin::navbar main body -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="جستجو">
+                            <div class="input-group-append">
+                                <button class="btn btn-light" type="button">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-toggle="dropdown">
+                        <i class="ti-plus"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
+                        <div class="p-3">
+                            <h6 class="font-size-13 m-b-15">دسترسی سریع</h6>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-danger-bright bg-hover pt-3 pb-3 border-radius-1 text-danger text-center mb-3">
+                                            <i class="fa fa-sitemap mb-2 font-size-20"></i>
+                                            دسته‌بندی ها
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-info-bright bg-hover pt-3 pb-3 border-radius-1 text-info text-center mb-3">
+                                            <i class="ti-game mb-2 font-size-20"></i>
+                                            محصولات
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-warning-bright bg-hover pt-3 pb-3 border-radius-1 text-warning text-center">
+                                            <i class="ti-bar-chart-alt mb-2 font-size-20"></i>
+                                            گزارشات
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-secondary-bright bg-hover pt-3 pb-3 border-radius-1 text-secondary text-center">
+                                            <i class="fa fa-share mb-2 font-size-20"></i>
+                                            سایر
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link nav-link-notify" data-toggle="dropdown">
+                        <i class="ti-comment"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
+                        <div class="p-4 text-center" data-backround-image="/assets/media/image/image1.png">
+                            <h6 class="m-b-0">پیام ها</h6>
+                            <small class="font-size-13 opacity-7 d-inline-block m-t-5">1 پیام خوانده نشده</small>
+                        </div>
+                        <div>
+                            <ul class="list-group list-group-flush">
+                                <li>
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-success rounded-circle">آ</span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
+                                                استیو راجرز
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                            </h6>
+                                            <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
+                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 bg-secondary-bright hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-primary rounded-circle">ج</span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
+                                                جان اسنو
+                                                <i title="علامت خوانده شده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-circle-o font-size-13"></i>
+                                            </h6>
+                                            <span class="text-muted m-r-10 small">10:23 ب.ظ</span>
+                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-danger rounded-circle">ک</span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
+                                                استیو جابز
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                            </h6>
+                                            <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
+                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-info rounded-circle">ن‌پ</span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
+                                                ناتالی پورتمن
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                            </h6>
+                                            <span class="text-muted m-r-10 small">20:13 ب.ظ</span>
+                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-3 text-right">
+                            <ul class="list-inline small">
+                                <li class="list-inline-item">
+                                    <a href="#">علامت خوانده شده به همه</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-toggle="dropdown">
+                        <i class="ti-bell"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
+                        <div class="p-4 text-center" data-backround-image="/assets/media/image/image1.png">
+                            <h6 class="m-b-0">اعلان ها</h6>
+                            <small class="font-size-13 opacity-7">2 اعلان خوانده نشده</small>
+                        </div>
+                        <div class="p-3">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div>
+                                        <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
+												<span class="avatar-title bg-info-bright text-info rounded-circle">
+													<i class="fa fa-file-text-o font-size-20"></i>
+												</span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-5">
+                                            <a href="#">استیو جابز</a> یک ضمیمه جدید به تیکت افزود
+                                            <a href="#">گزارش باگ نرم افزار</a>
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="fa fa-clock-o m-r-5"></i> 8 ساعت پیش
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div>
+                                        <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
+												<span
+                                                    class="avatar-title bg-warning-bright text-warning rounded-circle">
+													<i class="fa fa-money font-size-20"></i>
+												</span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-5">
+                                            <a href="#">کاترین</a> یک تیکت جدید ثبت کرد
+                                            <a href="#">نحوه پرداخت</a>
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="fa fa-clock-o m-r-5"></i> دیروز
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div>
+                                        <figure class="avatar avatar-sm m-r-15 bring-forward">
+												<span
+                                                    class="avatar-title bg-success-bright text-success rounded-circle">
+													<i class="fa fa-dollar font-size-20"></i>
+												</span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-5">
+                                            <a href="#">کاترین</a> تنظیمات دسته تیکت را تغییر داد
+                                            <a href="#">پرداخت و صورتحساب</a>
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="fa fa-clock-o m-r-5"></i> 1 روز پیش
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3 text-right">
+                            <ul class="list-inline small">
+                                <li class="list-inline-item">
+                                    <a href="#">علامت خوانده شده به همه</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link bg-none" data-sidebar-open="#userProfile">
+                        <div>
+                            <figure class="avatar avatar-state-success avatar-sm">
+                                <img src="/assets/media/image/avatar.jpg" class="rounded-circle" alt="image">
+                            </figure>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- end::navbar main body -->
+
+            <div class="d-flex align-items-center">
+                <!-- begin::navbar navigation toggler -->
+                <div class="d-xl-none d-lg-none d-sm-block navigation-toggler">
+                    <a href="#">
+                        <i class="ti-menu"></i>
+                    </a>
+                </div>
+                <!-- end::navbar navigation toggler -->
+
+                <!-- begin::navbar toggler -->
+                <div class="d-xl-none d-lg-none d-sm-block navbar-toggler">
+                    <a href="#">
+                        <i class="ti-arrow-down"></i>
+                    </a>
+                </div>
+                <!-- end::navbar toggler -->
+            </div>
+        </div>
+
+    </div>
+    <!-- end::header body -->
+
+</div>
+<!-- end::header -->
+
 <!-- begin::main content -->
 <main class="main-content">
 
-    <div class="row">
-        <div class="col-md-6">
-
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Select2</h6>
-                    <div class="form-group">
-                        <select class="js-example-basic-single">
-                            <option>انتخاب</option>
-                            <option value="France">ایران</option>
-                            <option value="Brazil">برزیل</option>
-                            <option value="Yemen">ایتالیا</option>
-                            <option value="United States">آلمان</option>
-                            <option value="China">چین</option>
-                            <option value="Argentina">آرژانتین</option>
-                            <option value="Bulgaria">اسپانیا</option>
-                        </select>
-                    </div>
-                    <p>چند انتخاب</p>
-                    <div class="form-group">
-                        <select class="js-example-basic-single" multiple>
-                            <option>انتخاب</option>
-                            <option value="France">ایران</option>
-                            <option selected value="Brazil">برزیل</option>
-                            <option selected value="Yemen">ایتالیا</option>
-                            <option selected value="United States">آلمان</option>
-                            <option value="China">چین</option>
-                            <option value="Argentina">آرژانتین</option>
-                            <option value="Bulgaria">اسپانیا</option>
-                        </select>
-                    </div>
-                    <p>چند انتخاب و دسته بندی شده</p>
-                    <select class="js-example-basic-single" multiple>
-                        <option>انتخاب</option>
-                        <optgroup label="شهرها">
-                            <option value="Wonosari">تبریز</option>
-                            <option value="Antipolo">تهران</option>
-                            <option value="Lesuhe">اصفهان</option>
-                            <option selected value="Sunzhuang">شیراز</option>
-                            <option value="Hongchuan">همدان</option>
-                        </optgroup>
-                        <optgroup label="کشورها">
-                            <option value="France">ایران</option>
-                            <option selected value="Brazil">برزیل</option>
-                            <option selected value="Yemen">ایتالیا</option>
-                            <option selected value="United States">آلمان</option>
-                            <option value="China">چین</option>
-                            <option value="Argentina">آرژانتین</option>
-                            <option value="Bulgaria">اسپانیا</option>
-                        </optgroup>
-                    </select>
+    <div class="card">
+        <div class="card-body">
+                <h6 class="card-title">نکمیل پروفایل</h6>
+                <div id="wizard2">
+                    <h3>اطلاعات شخصی</h3>
+                    <section>
+                        <h4>اطلاعات شخصی</h4>
+                        <form id="form1" action="{{route('users.update',$users)}}" method="post" >
+                            @csrf
+                            @method('PATCH')
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->name}}" name="name" class="form-control"
+                                       placeholder="نام">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- name -->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->lastname}}" class="form-control" name="lastname"
+                                       placeholder="نام خانوادگی">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- lastname-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->username}}" class="form-control" name="username"
+                                       placeholder="نام کاربری">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- username-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->email}}" class="form-control" name="email"
+                                       placeholder="ایمیل">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- email-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->number}}" class="form-control" name="number"
+                                       placeholder="شماره">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- number-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" class="form-control" name="password" placeholder="رمز عبور">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- password-->
+                            <div class="form-group wd-xs-300">
+                                <input type="submit" class="form-control" value="ویرایش">
+                            </div><!-- submit-->
+                        </form>
+                    </section>
+                    <h3>اطلاعات سکونت</h3>
+                    <section>
+                        <h4>اطلاعات سکونتی</h4>
+                        <form id="form2" action="{{route('users.update',$users)}}" method="post">
+                            @csrf
+                            @method('PATCH')
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->job}}" class="form-control" name="job"
+                                       placeholder="شغل">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- job-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->city}}" class="form-control" name="city"
+                                       placeholder="شهر">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- city-->
+                            <div class="form-group wd-xs-300">
+                                <input type="text" value="{{$users->address}}" class="form-control" name="address"
+                                       placeholder="آدرس">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- address-->
+                            <div class="form-group wd-xs-300">
+                                <input type="number" value="{{$users->age}}" class="form-control" name="age"
+                                       placeholder="سن">
+                                <div class="valid-feedback">
+                                    صحیح است!
+                                </div>
+                            </div><!-- age-->
+                            <div class="form-group wd-xs-300">
+                                <input type="submit" class="form-control" value="ویرایش">
+                            </div><!-- submit-->
+                        </form>
+                    </section>
+                    <h3>تصویر پروفایل</h3>
+                    <section>
+                        <form id="form3" action="{{route('users.update',$users)}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PATCH')
+                        <div class="form-group wd-xs-300">
+                            <label for="image">تصویر </label>
+                            <img src="{{str_replace('public','/storage',$users->image)}}" alt="Not Found">
+                            <input type="file" class="form-control" id="image" name="image" placeholder="عکس پروفایل">
+                            <div class="valid-feedback">
+                                صحیح است!
+                            </div>
+                        </div><!-- image-->
+                        <div class="form-group wd-xs-300">
+                            <input type="submit" class="form-control" value="ویرایش">
+                        </div><!-- submit-->
+                        </form>
+                    </section>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">انتخاب‌گر بازه</h6>
-                    <p>تنظیم مقدار حداقل، حداکثر و شروع</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_1">
-                    </div>
-                    <p>تنظیم نوع به double، مشخص کردن بازه، نمایش توری، افزودن پسوند «تومان»</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_2">
-                    </div>
-                    <p>اضافه کردن قدم</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_3">
-                    </div>
-                    <p>اجبار به مقادیر اعشاری، با استفاده از قدم اعشاری 0.1</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_4">
-                    </div>
-                    <p>آرایه مقادیر همه چیز میتواند باشد، حتی متن</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_5">
-                    </div>
-                    <div class="card-title mt-4">دموی پیشرفته</div>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
-                    <div class="form-group">
-                        <input type="text" id="demo_6">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6">
-
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">ورودی برچسب</h6>
-                    <input type="text" class="form-control tagsinput" placeholder="برچسب ها" value="HTML5, CSS3, JavaScript, Laravel">
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">ماسک ورودی</h6>
-                    <div class="form-group">
-                        <label>تلفن</label>
-                        <input type="text" data-input-mask="phone" class="form-control text-left" placeholder="(555) 555-5555" dir="ltr">
-                    </div>
-                    <div class="form-group">
-                        <label>تاریخ</label>
-                        <input type="text" data-input-mask="date" class="form-control text-left" placeholder="1398/12/05" dir="ltr">
-                    </div>
-                    <div class="form-group">
-                        <label>زمان</label>
-                        <input type="text" data-input-mask="time" class="form-control text-left" placeholder="12:25:45" dir="ltr">
-                    </div>
-                    <div class="form-group">
-                        <label>پول</label>
-                        <input type="text" data-input-mask="money" class="form-control text-left" placeholder="54,28" dir="ltr">
-                    </div>
-                    <div class="form-group">
-                        <label>آدرس IP</label>
-                        <input type="text" data-input-mask="ip_address" class="form-control text-left" placeholder="192.168.544.444" dir="ltr">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -141,26 +461,13 @@
 <!-- end::main content -->
 
 <!-- Plugin scripts -->
-<script src="vendors/bundle.js"></script>
+<script src="/vendors/bundle.js"></script>
 
-<!-- Select2 -->
-<script src="vendors/select2/js/select2.min.js"></script>
-<script src="assets/js/examples/select2.js"></script>
-
-<!-- Range slider -->
-<script src="vendors/range-slider/js/ion.rangeSlider.min.js"></script>
-<script src="assets/js/examples/range-slider.js"></script>
-
-<!-- Input mask -->
-<script src="vendors/input-mask/jquery.mask.js"></script>
-<script src="assets/js/examples/input-mask.js"></script>
-
-<!-- Tagsinput -->
-<script src="vendors/tagsinput/bootstrap-tagsinput.js"></script>
-<script src="assets/js/examples/tagsinput.js"></script>
+<!-- Form wizard -->
+<script src="/vendors/form-wizard/jquery.steps.min.js"></script>
+<script src="/assets/js/examples/form-wizard.js"></script>
 
 <!-- App scripts -->
-<script src="assets/js/app.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
-
-@endsection
+</html>

@@ -19,6 +19,6 @@ Route::get('/', function () {
 })->name('home');
 //user login
 Route::resource('users',UserController::class);
-Route::post('/Users/login',[UserController::class,'login'])->name('Users.login');
-Route::post('/Users/logout',[UserController::class,'logout'])->name('Users.logout');
+Route::post('/Users/login',[UserController::class,'login'])->name('users.login');
+Route::get('/Users/logout',[UserController::class,'logout'])->name('users.logout');
 //End User Login

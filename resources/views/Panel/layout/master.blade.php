@@ -15,18 +15,9 @@
 
     <!-- Plugin styles -->
     <link rel="stylesheet" href="/vendors/bundle.css" type="text/css">
-    
-    <!-- Select2 -->
-    <link rel="stylesheet" href="vendors/select2/css/select2.min.css" type="text/css">
-
-    <!-- Range slider -->
-    <link rel="stylesheet" href="vendors/range-slider/css/ion.rangeSlider.min.css" type="text/css">
-
-    <!-- Tagsinput -->
-    <link rel="stylesheet" href="vendors/tagsinput/bootstrap-tagsinput.css" type="text/css">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
 </head>
 
 
@@ -34,5 +25,5 @@
 
 
 
-@include('client.layout.notification')
+
 </html>

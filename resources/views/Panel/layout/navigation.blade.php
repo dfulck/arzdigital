@@ -30,14 +30,9 @@
             </li>
         </ul>
         <ul>
-            <li data-toggle="tooltip" title="ویرایش پروفایل">
-                <a href="#" class="go-to-page">
+            <li data-toggle="tooltip" title="پروفایل">
+                <a href="{{route('users.show',$user)}}" class="go-to-page">
                     <i class="icon ti-settings"></i>
-                </a>
-            </li>
-            <li data-toggle="tooltip" title="خروج">
-                <a href="login.html" class="go-to-page">
-                    <i class="icon ti-power-off"></i>
                 </a>
             </li>
         </ul>
@@ -47,6 +42,11 @@
             <li class="navigation-divider">داشبورد</li>
             <li>
                 <a href="index.html">فروش و مدیریت مشتری</a>
+            </li>
+            <li title="خروج">
+                <a href="{{route('users.logout')}}">
+                    <i class="icon ti-power-off"></i>
+                </a>
             </li>
             <li>
                 <a href="dashboard-two.html">پشتیبانی <span class="badge badge-warning">2</span></a>
@@ -152,7 +152,8 @@
                         </figure>
                     </div>
                     <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">تونی استارک</h6>
+                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">تونی
+                            استارک</h6>
                     </div>
                 </a>
             </li>
@@ -164,7 +165,8 @@
                         </figure>
                     </div>
                     <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">استیو راجرز</h6>
+                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">استیو
+                            راجرز</h6>
                     </div>
                 </a>
             </li>
@@ -314,3 +316,5 @@
     </div>
 </div>
 <!-- end::navigation -->
+
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -30,7 +31,7 @@ class UserController extends Controller
         }
         auth()->login($user);
         session()->flash('success',"Login {$user->username} Successfully");
-        return redirect(route('home'));
+        return redirect(route('users.show',$user));
     }
 
     /**
@@ -106,7 +107,33 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $image=$user->image;
+        if ($request->hasFile('image')){
+            Storage::delete($user->image);
+            $image = $request->file('image')->storeAs('public/UserImage', $request->file('image')->getClientOriginalName());
+        }
+
+        $user->update([
+            'email' => $request->get('email',$user->email),
+            'number' => $request->get('number',$user->number),
+            'name' => $request->get('name',$user->name),
+            'lastname' => $request->get('lastname',$user->lastname),
+            'username' => $request->get('username',$user->username),
+            'address' => $request->get('address',$user->address),
+            'age' => $request->get('age',$user->age),
+            'job' => $request->get('job',$user->job),
+            'city' => $request->get('city',$user->city),
+            'image' => $image,
+        ]);
+        if ($request->get('password')){
+            $user->update([
+                'password' =>bcrypt($request->get('password')),
+            ]);
+        }
+
+        session()->flash('info','update successfully');
+        return redirect()->back();
+
     }
 
     /**
