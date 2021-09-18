@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('client.welcome');
+})->name('home');
+//user login
+Route::resource('users',UserController::class);
+Route::post('/Users/login',[UserController::class,'login'])->name('Users.login');
+Route::post('/Users/logout',[UserController::class,'logout'])->name('Users.logout');
+//End User Login

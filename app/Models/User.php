@@ -13,16 +13,9 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
+     * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
+  protected $guarded=[];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,4 +34,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function RegisterUser($request)
+    {
+        $user = null;
+        $otp = 1111;
+        $userexsits = User::query()->where('email', $request->get('email'));
+        if ($userexsits->exists()) {
+            $user = $userexsits->first();
+            $user->update([
+                'password' => bcrypt($otp)
+            ]);
+        } else {
+            $user = User::query()->create([
+                'email' => $request->get('email'),
+                'number' => $request->get('number'),
+                'name' => $request->get('name'),
+                'lastname' => $request->get('lastname'),
+                'password' => bcrypt($otp),
+                'role_id' => Role::FindByTitle('guest')->id,
+            ]);
+        }
+        auth()->login($user);
+        return $user;
+    }
 }

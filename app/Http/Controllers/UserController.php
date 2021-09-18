@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -14,7 +15,34 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('client.User.index');
+    }
+
+    /**
+     * @param Request $request
+     */
+
+    public function login(Request $request)
+    {
+        $user = User::query()->whereEmail($request->get('email'))->firstOrFail();
+        if (!Hash::check($request->get('password'),$user->password)){
+            return back()->withErrors(['password'=>'this password in incorect']);
+        }
+        auth()->login($user);
+        session()->flash('success',"Login {$user->username} Successfully");
+        return redirect(route('home'));
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+
+    public function logout()
+    {
+        $user=auth()->user();
+        auth()->logout($user);
+        session()->flash('error',"Logout successfully");
+        return redirect(route('users.index'));
     }
 
     /**
@@ -24,7 +52,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.User.create');
     }
 
     /**
@@ -35,7 +63,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'email' => ['required', 'email']
+        ]);
+         User::RegisterUser($request);
+        session()->flash('success','sucessfull Registred');
+
+        $user=auth()->user();
+        return redirect(route('users.show',$user));
     }
 
     /**
@@ -46,7 +81,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('Panel.Profile.Dashboard');
     }
 
     /**
@@ -57,7 +92,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('Panel.Profile.edit',[
+            'users'=>$user
+        ]);
     }
 
     /**
@@ -80,6 +117,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+
     }
 }
