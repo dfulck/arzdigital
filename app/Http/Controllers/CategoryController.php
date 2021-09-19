@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('Panel.Category.index',[
+            'categories'=>Category::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Panel.Category.create');
     }
 
     /**
@@ -35,7 +38,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::query()->create([
+           'title'=>$request->get('title')
+        ]);
+
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -46,7 +53,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('Panel.Category.show',[
+           'category'=>$category,
+            'subcategories'=>Subcategory::all()
+        ]);
     }
 
     /**
@@ -57,7 +67,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('Panel.Category.edit',[
+            'category'=>$category
+        ]);
     }
 
     /**
@@ -69,9 +81,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
-    }
+        $category->update([
+            'title'=>$request->get('title')
+        ]);
 
+        return redirect(route('categories.index'));
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +95,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->subcategories()->detach(Subcategory::all());
+        $category->delete();
+        return redirect()->back();
     }
 }

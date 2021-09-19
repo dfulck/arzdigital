@@ -437,13 +437,13 @@
                     </section>
                     <h3>تصویر پروفایل</h3>
                     <section>
-                        <form id="form3" action="{{route('users.update',$users)}}" method="post" enctype="multipart/form-data">
+                        <form id="form3"  action="{{route('users.update',$users)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                         <div class="form-group wd-xs-300">
                             <label for="image">تصویر </label>
                             <img src="{{str_replace('public','/storage',$users->image)}}" alt="Not Found">
-                            <input type="file" class="form-control" id="image" name="image" placeholder="عکس پروفایل">
+                            <input type="file" class="form-control form-control-file" id="image" name="image" placeholder="عکس پروفایل">
                             <div class="valid-feedback">
                                 صحیح است!
                             </div>

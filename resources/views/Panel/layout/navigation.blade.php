@@ -39,17 +39,19 @@
     </div>
     <div class="navigation-menu-body">
         <ul id="navigationDashboards">
-            <li class="navigation-divider">داشبورد</li>
-            <li>
-                <a href="index.html">فروش و مدیریت مشتری</a>
+            <li class="navigation-divider"><a href="{{route('users.show',$user)}}">داشبورد</a>
             </li>
+
             <li title="خروج">
                 <a href="{{route('users.logout')}}">
                     <i class="icon ti-power-off"></i>
                 </a>
             </li>
             <li>
-                <a href="dashboard-two.html">پشتیبانی <span class="badge badge-warning">2</span></a>
+                <a href="{{route('categories.index')}}">لیست دسته بندی</a>
+            </li>
+            <li>
+                <a href="{{route('categories.create')}}">ایجاد دسته بندی </a>
             </li>
             <li>
                 <a href="dashboard-three.html">آمار وب سایت </a>
