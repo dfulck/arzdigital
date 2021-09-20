@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -14,7 +16,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return view('Panel.Role.index',[
+            'roles'=>Role::all()
+        ]);
     }
 
     /**
@@ -24,7 +28,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Panel.Role.create',[
+            'permissions'=>Permission::all()
+        ]);
     }
 
     /**
@@ -35,7 +41,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role= Role::query()->create([
+            'title'=>$request->get('title')
+        ]);
+        $role->permissions()->attach($request->get('permission'));
+        return redirect(route('roles.index'));
     }
 
     /**
@@ -57,7 +67,10 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view('Panel.Role.edit',[
+            'role'=>$role,
+            'permissions'=>Permission::all()
+        ]);
     }
 
     /**
@@ -69,7 +82,12 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $role->update([
+            'title'=>$request->get('title',$role->title)
+        ]);
+        $role->permissions()->detach(Permission::all());
+        $role->permissions()->sync($request->get('permissions'));
+        return redirect(route('roles.index'));
     }
 
     /**
@@ -80,6 +98,8 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->permissions()->detach(Permission::all());
+        $role->delete();
+        return redirect()->back();
     }
 }

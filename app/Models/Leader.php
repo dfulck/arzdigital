@@ -18,8 +18,9 @@ class Leader extends Model
 
     }
 
-    public function HasNumberContent()
+    public function HasNumberContent(): int
     {
-
+        return Content::query()->where('leader_id',$this->id)->count();
    }
+
 }

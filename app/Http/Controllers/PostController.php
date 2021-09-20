@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Content;
-use App\Models\Leader;
+use App\Models\Post;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ContentController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-        return view('Panel.Content.index',[
-            'contents'=>Content::all()
-        ]);
+
     }
 
     /**
@@ -26,11 +24,11 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Leader $leader)
+    public function create(Subcategory $subcategory)
     {
-        return view('Panel.Content.create',[
-            'leader'=>$leader,
-            'contents'=>Content::query()->where('leader_id',$leader->id)->get()
+        return view('Panel.Post.create',[
+            'subcategory'=>$subcategory,
+            'posts'=>Post::query()->where('subcategory_id',$subcategory->id)->get()
         ]);
     }
 
@@ -40,13 +38,15 @@ class ContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Leader $leader,Request $request)
+    public function store(Request $request,Subcategory $subcategory)
     {
-        Content::query()->create([
+        Post::query()->create([
+            'image'=>$request->file('image')->storeAs('public/PostImage', $request->file('image')->getClientOriginalName()),
+            'TimeRead'=>$request->get('TimeRead'),
+            'creator'=>auth()->user()->username,
             'header'=>$request->get('header'),
             'body'=>$request->get('body'),
-            'image'=>$request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName()),
-            'leader_id'=>$leader->id
+            'subcategory_id'=>$subcategory->id
         ]);
 
         return redirect()->back();
@@ -55,10 +55,10 @@ class ContentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Content  $content
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Content $content)
+    public function show(Post $post)
     {
         //
     }
@@ -66,13 +66,13 @@ class ContentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Content  $content
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Content $content)
+    public function edit(Post $post)
     {
-        return view('Panel.Content.edit',[
-            'content'=>$content
+        return view('Panel.Post.edit',[
+            'post'=>$post
         ]);
     }
 
@@ -80,35 +80,36 @@ class ContentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Content  $content
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Content $content)
+    public function update(Request $request, Post $post)
     {
-        $image=$content->image;
+        $image=$post->image;
         if ($request->hasFile('image')){
-            Storage::delete($content->image);
+            Storage::delete($post->image);
             $image=$request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName());
         }
-        $content->update([
+        $post->update([
+            'TimeRead'=>$request->get('TimeRead'),
             'header'=>$request->get('header'),
             'body'=>$request->get('body'),
             'image'=>$image,
         ]);
 
-        return redirect()->back();
+        return redirect(route('subcategories.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Content  $content
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Content $content)
+    public function destroy(Post $post)
     {
-        Storage::delete($content->image);
-        $content->delete();
+        Storage::delete($post->image);
+        $post->delete();
         return redirect()->back();
     }
 }

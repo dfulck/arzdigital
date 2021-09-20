@@ -31,7 +31,7 @@ class UserController extends Controller
         }
         auth()->login($user);
         session()->flash('success',"Login {$user->username} Successfully");
-        return redirect(route('users.show',$user));
+        return redirect(route('users.dashboard',$user));
     }
 
     /**
@@ -82,7 +82,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('Panel.Profile.Dashboard');
+        return view('Panel.Dashboard');
     }
 
     /**

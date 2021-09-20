@@ -53,10 +53,7 @@ class LeaderController extends Controller
      */
     public function show(Leader $leader)
     {
-        return view('Panel.Leader.show',[
-            'leader'=>$leader,
-            'contents'=>Content::query()->where('leader_id',$leader->id)->get()
-        ]);
+
     }
 
     /**
@@ -96,7 +93,8 @@ class LeaderController extends Controller
      */
     public function destroy(Leader $leader)
     {
-        if ($leader->contents()->exists()){
+
+        if ($leader->HasNumberContent()){
             return session()->flash('error','this category have contets');
         }
 

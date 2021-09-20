@@ -6,6 +6,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LeaderController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ use App\Http\Controllers\LeaderController;
 Route::get('/', function () {
     return view('client.welcome');
 })->name('home');
+Route::get('/dashboard',[UserController::class,'show'])->name('users.dashboard');
 //user login
 Route::resource('users',UserController::class);
 Route::post('/Users/login',[UserController::class,'login'])->name('users.login');
@@ -29,13 +32,23 @@ Route::post('/Users/logout',[UserController::class,'logout'])->name('users.logou
 //Category and subcategory
 Route::post('/subcategories/create/{category}',[SubcategoryController::class,'store'])->name('subcategories.store');
 Route::patch('/subcategories/{category}/update',[SubcategoryController::class,'update'])->name('subcategories.update');
-Route::delete('/subcategories/{subcategory}/delete/{category}',[SubcategoryController::class,'destroy'])->name('subcategories.destroy');
+Route::get('/subcategories/index',[SubcategoryController::class,'index'])->name('subcategories.index');
+Route::delete('/subcategories/{subcategory}/delete',[SubcategoryController::class,'destroy'])->name('subcategories.destroy');
 Route::resource('categories',CategoryController::class);
 //end Category
 // content
 Route::resource('contents',ContentController::class);
 Route::post('/contents/leaders/{leader}',[ContentController::class,'store'])->name('content.leader');
+Route::get('/content/leaders/{leader}',[ContentController::class,'create'])->name('content.create');
 // end contents
 // Leader
 Route::resource('leaders',LeaderController::class);
-//end Leader
+//End Leader
+//Role for User
+Route::resource('roles',RoleController::class);
+//End Role
+//Post
+Route::get('/subcategories/{subcategory}/post',[PostController::class,'create'])->name('subcategories.post.create');
+Route::post('/subcategories/{subcategory}/store',[PostController::class,'store'])->name('posts.subcategory');
+Route::resource('posts',PostController::class);
+//End Post

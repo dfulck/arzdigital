@@ -11,7 +11,7 @@ class Role extends Model
 
     protected $guarded=[];
 
-    public function Permissions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function permissions()
     {
         return $this->belongsToMany(Permission::class);
     }
@@ -25,6 +25,17 @@ class Role extends Model
     {
         return self::query()->whereTitle($title)->firstOrFail();
 
+    }
+
+    public function HasPermission($permission): bool
+    {
+        $parameter =Permission::query()->where('title',$permission)->firstOrFail();
+
+        return $this->Permissions()->where('id',$parameter->id)->exists();
+    }
+    public function CountPermission()
+    {
+       return $this->permissions()->where('Role_id',$this->id)->count();
     }
 
 }

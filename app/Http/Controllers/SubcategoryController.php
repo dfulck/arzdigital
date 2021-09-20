@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index()
+    {
+        return view('Panel.Subcategory.index',[
+            'subcategories'=>Subcategory::all()
+        ]);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,9 +56,9 @@ class SubcategoryController extends Controller
     /**
      * @param Subcategory $subcategory
      */
-    public function destroy(Subcategory $subcategory,Category $category)
+    public function destroy(Subcategory $subcategory)
     {
-        $category->subcategories()->detach($subcategory);
+        $subcategory->categories()->detach(Category::all());
        $subcategory->delete();
        return redirect()->back();
     }

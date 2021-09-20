@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         Role::query()->create([
             'title'=>'guest'
         ]);
+
         $role_id->Permissions()->attach(Permission::all());
 
         User::query()->insert([

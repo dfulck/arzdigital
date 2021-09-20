@@ -12,8 +12,18 @@ class Subcategory extends Model
     protected $guarded=[];
 
 
-    public function categories()
+    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function posts(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Post::class);
+    }
+
+    public function HasNumberPost(): int
+    {
+        return Post::query()->where('subcategory_id',$this->id)->count();
     }
 }
