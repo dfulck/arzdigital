@@ -44,13 +44,12 @@
 
         <div class="header-body-left">
 
-            <h3 class="page-title">فرم ایجاد دسته بندی</h3>
-
+            <h3 class="page-title">فرم ویرایش سرگروه مطالب</h3>
             <!-- begin::breadcrumb -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">داشبورد</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">فرم ایجاد</li>
+                    <li class="breadcrumb-item active" aria-current="page">فرم ویرایش</li>
                 </ol>
             </nav>
             <!-- end::breadcrumb -->
@@ -82,7 +81,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <a href="#">
-                                        <div class="d-flex flex-column font-size-13 bg-danger-bright bg-hover pt-3 pb-3 border-radius-1 text-danger text-center mb-3">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-danger-bright bg-hover pt-3 pb-3 border-radius-1 text-danger text-center mb-3">
                                             <i class="fa fa-sitemap mb-2 font-size-20"></i>
                                             دسته‌بندی ها
                                         </div>
@@ -90,7 +90,8 @@
                                 </div>
                                 <div class="col-6">
                                     <a href="#">
-                                        <div class="d-flex flex-column font-size-13 bg-info-bright bg-hover pt-3 pb-3 border-radius-1 text-info text-center mb-3">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-info-bright bg-hover pt-3 pb-3 border-radius-1 text-info text-center mb-3">
                                             <i class="ti-game mb-2 font-size-20"></i>
                                             محصولات
                                         </div>
@@ -98,7 +99,8 @@
                                 </div>
                                 <div class="col-6">
                                     <a href="#">
-                                        <div class="d-flex flex-column font-size-13 bg-warning-bright bg-hover pt-3 pb-3 border-radius-1 text-warning text-center">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-warning-bright bg-hover pt-3 pb-3 border-radius-1 text-warning text-center">
                                             <i class="ti-bar-chart-alt mb-2 font-size-20"></i>
                                             گزارشات
                                         </div>
@@ -106,7 +108,8 @@
                                 </div>
                                 <div class="col-6">
                                     <a href="#">
-                                        <div class="d-flex flex-column font-size-13 bg-secondary-bright bg-hover pt-3 pb-3 border-radius-1 text-secondary text-center">
+                                        <div
+                                            class="d-flex flex-column font-size-13 bg-secondary-bright bg-hover pt-3 pb-3 border-radius-1 text-secondary text-center">
                                             <i class="fa fa-share mb-2 font-size-20"></i>
                                             سایر
                                         </div>
@@ -128,7 +131,8 @@
                         <div>
                             <ul class="list-group list-group-flush">
                                 <li>
-                                    <a href="#" class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
                                         <div>
                                             <figure class="avatar avatar-sm m-r-15">
                                                 <span class="avatar-title bg-success rounded-circle">آ</span>
@@ -137,7 +141,8 @@
                                         <div class="flex-grow-1">
                                             <h6 class="mb-1 d-flex justify-content-between primary-font">
                                                 استیو راجرز
-                                                <i title="علامت خوانده نشده" data-toggle="tooltip" class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
                                             </h6>
                                             <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
                                             <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
@@ -145,7 +150,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="p-3 list-group-item d-flex align-items-center link-1 bg-secondary-bright hide-show-toggler">
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 bg-secondary-bright hide-show-toggler">
                                         <div>
                                             <figure class="avatar avatar-sm m-r-15">
                                                 <span class="avatar-title bg-primary rounded-circle">ج</span>
@@ -154,7 +160,8 @@
                                         <div class="flex-grow-1">
                                             <h6 class="mb-1 d-flex justify-content-between primary-font">
                                                 جان اسنو
-                                                <i title="علامت خوانده شده" data-toggle="tooltip" class="hide-show-toggler-item fa fa-circle-o font-size-13"></i>
+                                                <i title="علامت خوانده شده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-circle-o font-size-13"></i>
                                             </h6>
                                             <span class="text-muted m-r-10 small">10:23 ب.ظ</span>
                                             <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
@@ -162,7 +169,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
                                         <div>
                                             <figure class="avatar avatar-sm m-r-15">
                                                 <span class="avatar-title bg-danger rounded-circle">ک</span>
@@ -171,7 +179,8 @@
                                         <div class="flex-grow-1">
                                             <h6 class="mb-1 d-flex justify-content-between primary-font">
                                                 استیو جابز
-                                                <i title="علامت خوانده نشده" data-toggle="tooltip" class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
                                             </h6>
                                             <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
                                             <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
@@ -179,7 +188,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                    <a href="#"
+                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
                                         <div>
                                             <figure class="avatar avatar-sm m-r-15">
                                                 <span class="avatar-title bg-info rounded-circle">ن‌پ</span>
@@ -188,7 +198,8 @@
                                         <div class="flex-grow-1">
                                             <h6 class="mb-1 d-flex justify-content-between primary-font">
                                                 ناتالی پورتمن
-                                                <i title="علامت خوانده نشده" data-toggle="tooltip" class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
                                             </h6>
                                             <span class="text-muted m-r-10 small">20:13 ب.ظ</span>
                                             <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
@@ -238,7 +249,8 @@
                                 <div class="timeline-item">
                                     <div>
                                         <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
-												<span class="avatar-title bg-warning-bright text-warning rounded-circle">
+												<span
+                                                    class="avatar-title bg-warning-bright text-warning rounded-circle">
 													<i class="fa fa-money font-size-20"></i>
 												</span>
                                         </figure>
@@ -256,7 +268,8 @@
                                 <div class="timeline-item">
                                     <div>
                                         <figure class="avatar avatar-sm m-r-15 bring-forward">
-												<span class="avatar-title bg-success-bright text-success rounded-circle">
+												<span
+                                                    class="avatar-title bg-success-bright text-success rounded-circle">
 													<i class="fa fa-dollar font-size-20"></i>
 												</span>
                                         </figure>
@@ -326,13 +339,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h6 class="card-title">اضافه کردن دسته بندی</h6>
-                    <form action="{{route('categories.store')}}" method="post">
+                    <h6 class="card-title">ویرایش کردن سرگروه مطالب</h6>
+                    <form action="{{route('leaders.update',$leader)}}" method="post">
                         @csrf
+                        @method('PATCH')
                         <div class="form-group">
-                            <label for="exampleInputEmail1">نام دسته بندی</label>
-                            <input name="title" type="text" class="form-control text-left" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="دسته بندی" dir="ltr">
-                            <small id="emailHelp" class="form-text text-muted">این دسته بندی در منوی اصلی قرار میگیرد و میتواند زیر دسته داشته باشد
+                            <label for="exampleInputEmail1">نام </label>
+                            <input value="{{$leader->title}}" name="title" type="text" class="form-control text-left" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="سرگروه مطالب" dir="ltr">
+                            <small id="emailHelp" class="form-text text-muted">مطالب نیازمند سرگروه و دسته بندی هستند در
+                                این جا دسته بندی مطالب رو ایجاد و مشخص میکنید
                             </small>
                         </div>
                         <button type="submit" class="btn btn-primary">ارسال</button>

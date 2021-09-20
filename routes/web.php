@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LeaderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,10 @@ Route::patch('/subcategories/{category}/update',[SubcategoryController::class,'u
 Route::delete('/subcategories/{subcategory}/delete/{category}',[SubcategoryController::class,'destroy'])->name('subcategories.destroy');
 Route::resource('categories',CategoryController::class);
 //end Category
+// content
+Route::resource('contents',ContentController::class);
+Route::post('/contents/leaders/{leader}',[ContentController::class,'store'])->name('content.leader');
+// end contents
+// Leader
+Route::resource('leaders',LeaderController::class);
+//end Leader

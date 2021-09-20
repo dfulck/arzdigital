@@ -17,7 +17,7 @@ class CreateContentsTable extends Migration
             $table->id();
             $table->foreignId('leader_id')->constrained();
             $table->string('header');
-            $table->string('body');
+            $table->text('body');
             $table->string('image');
             $table->timestamps();
         });

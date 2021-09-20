@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use App\Models\Leader;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class LeaderController extends Controller
      */
     public function index()
     {
-        //
+        return view('Panel.Leader.index',[
+            'leaders'=>Leader::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class LeaderController extends Controller
      */
     public function create()
     {
-        //
+        return view('Panel.Leader.create');
     }
 
     /**
@@ -35,7 +38,11 @@ class LeaderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Leader::query()->create([
+            'title'=>$request->get('title')
+        ]);
+
+        return redirect(route('leaders.index'));
     }
 
     /**
@@ -46,7 +53,10 @@ class LeaderController extends Controller
      */
     public function show(Leader $leader)
     {
-        //
+        return view('Panel.Leader.show',[
+            'leader'=>$leader,
+            'contents'=>Content::query()->where('leader_id',$leader->id)->get()
+        ]);
     }
 
     /**
@@ -57,7 +67,9 @@ class LeaderController extends Controller
      */
     public function edit(Leader $leader)
     {
-        //
+        return view('Panel.Leader.edit',[
+            'leader'=>$leader
+        ]);
     }
 
     /**
@@ -69,7 +81,11 @@ class LeaderController extends Controller
      */
     public function update(Request $request, Leader $leader)
     {
-        //
+        $leader->update([
+            'title'=>$request->get('title')
+        ]);
+
+        return redirect(route('leaders.index'));
     }
 
     /**
@@ -80,6 +96,12 @@ class LeaderController extends Controller
      */
     public function destroy(Leader $leader)
     {
-        //
+        if ($leader->contents()->exists()){
+            return session()->flash('error','this category have contets');
+        }
+
+        $leader->delete();
+
+        return redirect()->back();
     }
 }

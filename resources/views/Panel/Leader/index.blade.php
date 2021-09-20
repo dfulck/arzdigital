@@ -16,6 +16,9 @@
     <!-- Plugin styles -->
     <link rel="stylesheet" href="/vendors/bundle.css" type="text/css">
 
+    <!-- DataTable -->
+    <link rel="stylesheet" href="/vendors/dataTable/responsive.bootstrap.min.css" type="text/css">
+
     <!-- App styles -->
     <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
 </head>
@@ -25,7 +28,6 @@
 @include('Panel.layout.sidebar')
 
 @include('Panel.layout.navigation')
-
 <!-- begin::header -->
 <div class="header">
 
@@ -44,13 +46,13 @@
 
         <div class="header-body-left">
 
-            <h3 class="page-title">فرم ایجاد دسته بندی</h3>
+            <h3 class="page-title">لیست مطالب</h3>
 
             <!-- begin::breadcrumb -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">داشبورد</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">فرم ایجاد</li>
+                    <li class="breadcrumb-item active" aria-current="page">جدول مطالب</li>
                 </ol>
             </nav>
             <!-- end::breadcrumb -->
@@ -286,14 +288,13 @@
                     <a href="#" class="nav-link bg-none" data-sidebar-open="#userProfile">
                         <div>
                             <figure class="avatar avatar-state-success avatar-sm">
-                                <img src="/assets/media/image/avatar.jpg" class="rounded-circle" alt="image">
+                                <img src="assets/media/image/avatar.jpg" class="rounded-circle" alt="image">
                             </figure>
                         </div>
                     </a>
                 </li>
             </ul>
             <!-- end::navbar main body -->
-
             <div class="d-flex align-items-center">
                 <!-- begin::navbar navigation toggler -->
                 <div class="d-xl-none d-lg-none d-sm-block navigation-toggler">
@@ -322,23 +323,48 @@
 <!-- begin::main content -->
 <main class="main-content">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">اضافه کردن دسته بندی</h6>
-                    <form action="{{route('categories.store')}}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">نام دسته بندی</label>
-                            <input name="title" type="text" class="form-control text-left" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="دسته بندی" dir="ltr">
-                            <small id="emailHelp" class="form-text text-muted">این دسته بندی در منوی اصلی قرار میگیرد و میتواند زیر دسته داشته باشد
-                            </small>
-                        </div>
-                        <button type="submit" class="btn btn-primary">ارسال</button>
-                    </form>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-body">
+            <table id="example1" class="table table-striped table-bordered" width="100%">
+                <thead>
+                <tr>
+                    <th>نام سرگروه مطالب</th>
+                    <th>تعداد مطالب</th>
+                    <th>زمان ایجاد</th>
+                    <th>اضافه کردن مطلب</th>
+                    <th>ویرایش</th>
+                    <th>حذف</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($leaders as $leader)
+                    <tr>
+                        <td>{{$leader->title}}</td>
+                        <td>-
+                        </td>
+                        <td>{{$leader->created_at}}</td>
+                        <td><a class="text-white" href="{{route('leaders.show',$leader)}}">ADD</a></td>
+                        <td><a class="text-white" href="{{route('leaders.edit',$leader)}}">Edit</a></td>
+                        <td>
+                            <form action="{{route('leaders.destroy',$leader)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form></td>
+                    </tr>
+                @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>نام سرگروه مطالب</th>
+                    <th>تعداد مطالب</th>
+                    <th>زمان ایجاد</th>
+                    <th>اضافه کردن مطلب</th>
+                    <th>ویرایش</th>
+                    <th>حذف</th>
+                </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 
@@ -348,8 +374,14 @@
 <!-- Plugin scripts -->
 <script src="vendors/bundle.js"></script>
 
+<!-- DataTable -->
+<script src="/vendors/dataTable/jquery.dataTables.min.js"></script>
+<script src="/vendors/dataTable/dataTables.bootstrap4.min.js"></script>
+<script src="/vendors/dataTable/dataTables.responsive.min.js"></script>
+<script src="/assets/js/examples/datatable.js"></script>
+
 <!-- App scripts -->
-<script src="assets/js/app.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
 
 </html>

@@ -38,11 +38,11 @@
         </ul>
     </div>
     <div class="navigation-menu-body">
-        <ul id="navigationDashboards">
+        <ul id="navigationDashboards" class="navigation-active">
             <li class="navigation-divider"><a href="{{route('users.show',$user)}}">داشبورد</a>
             </li>
 
-            <li title="خروج">
+            <li class="active" title="خروج">
                 <a href="{{route('users.logout')}}">
                     <i class="icon ti-power-off"></i>
                 </a>
@@ -54,9 +54,11 @@
                 <a href="{{route('categories.create')}}">ایجاد دسته بندی </a>
             </li>
             <li>
-                <a href="dashboard-three.html">آمار وب سایت </a>
+                <a href="{{route('leaders.index')}}">لیست سرگروه مطالب</a>
             </li>
-            <li class="navigation-divider">سایر</li>
+            <li class="navigation-divider">
+                <a href="{{route('leaders.create')}}">ایجاد سرگروه مطالب</a>
+            </li>
             <li>
                 <a href="widgets.html">ویجت های بیشتر</a>
             </li>
@@ -275,9 +277,9 @@
                 <a href="icons.html">آیکن‌ها</a>
             </li>
         </ul>
-        <ul id="navigationPages" class="navigation-active">
+        <ul id="navigationPages">
             <li class="navigation-divider">صفحات</li>
-            <li><a class="active" href="profile.html">پروفایل </a></li>
+            <li><a  href="profile.html">پروفایل </a></li>
             <li><a href="timeline.html">خط زمانی </a></li>
             <li><a href="invoice.html">صورتحساب </a></li>
             <li><a href="pricing-table.html">جداول قیمت ها </a></li>

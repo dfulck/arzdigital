@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Leader;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -14,7 +15,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +25,7 @@ class ContentController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +34,16 @@ class ContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Leader $leader,Request $request)
     {
-        //
+        Content::query()->create([
+            'header'=>$request->get('header'),
+            'body'=>$request->get('body'),
+            'image'=>$request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName()),
+            'leader_id'=>$leader->id
+        ]);
+
+        return redirect()->back();
     }
 
     /**
