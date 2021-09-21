@@ -8,6 +8,10 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\AnalysisController;
+use App\Http\Controllers\PartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +56,15 @@ Route::get('/subcategories/{subcategory}/post',[PostController::class,'create'])
 Route::post('/subcategories/{subcategory}/store',[PostController::class,'store'])->name('posts.subcategory');
 Route::resource('posts',PostController::class);
 //End Post
+//Question Answer
+Route::resource('questions',QuestionController::class);
+//End Question Answer
+// Tags
+Route::resource('tags',TagController::class);
+//End Tags
+//Analysis
+Route::resource('analyses',AnalysisController::class);
+//End Analysis
+//parts
+Route::resource('parts',PartController::class);
+//End Parts

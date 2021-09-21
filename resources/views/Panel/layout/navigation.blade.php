@@ -69,6 +69,32 @@
                 </ul>
             </li>
             <li>
+                <a href="#">مطالب آنالیز ها</a>
+                <ul>
+                    <li><a href="{{route('parts.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">برچسب ها</a>
+                <ul>
+                    <li><a href="{{route('tags.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('tags.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">آنالیز ها</a>
+                <ul>
+                    <li><a href="{{route('analyses.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('analyses.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">لیست کامنت پست ها</a>
+                <ul>
+                    <li><a href="{{route('questions.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"> پست برای دسته بندی ها</a>
                 <ul>
                     <li><a href="{{route('subcategories.index')}}">لیست دسته بندی های برای ایجاد پست مربوطه</a></li>

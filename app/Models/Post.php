@@ -14,4 +14,9 @@ class Post extends Model
     {
         return $this->belongsToMany(Subcategory::class);
     }
+
+    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Subcategory;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +29,8 @@ class PostController extends Controller
     {
         return view('Panel.Post.create',[
             'subcategory'=>$subcategory,
-            'posts'=>Post::query()->where('subcategory_id',$subcategory->id)->get()
+            'posts'=>Post::query()->where('subcategory_id',$subcategory->id)->get(),
+            'tags'=>Tag::all()
         ]);
     }
 
@@ -40,7 +42,7 @@ class PostController extends Controller
      */
     public function store(Request $request,Subcategory $subcategory)
     {
-        Post::query()->create([
+       $post= Post::query()->create([
             'image'=>$request->file('image')->storeAs('public/PostImage', $request->file('image')->getClientOriginalName()),
             'TimeRead'=>$request->get('TimeRead'),
             'creator'=>auth()->user()->username,
@@ -48,6 +50,8 @@ class PostController extends Controller
             'body'=>$request->get('body'),
             'subcategory_id'=>$subcategory->id
         ]);
+
+       $post->tags()->attach($request->get('tag'));
 
         return redirect()->back();
     }
@@ -96,6 +100,8 @@ class PostController extends Controller
             'body'=>$request->get('body'),
             'image'=>$image,
         ]);
+
+        $post->tags()->sync($request->get('tag'));
 
         return redirect(route('subcategories.index'));
     }

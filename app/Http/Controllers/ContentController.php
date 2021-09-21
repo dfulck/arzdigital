@@ -46,9 +46,8 @@ class ContentController extends Controller
             'header'=>$request->get('header'),
             'body'=>$request->get('body'),
             'image'=>$request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName()),
-            'leader_id'=>$leader->id
+            'leader_id'=>$leader->id,
         ]);
-
         return redirect()->back();
     }
 

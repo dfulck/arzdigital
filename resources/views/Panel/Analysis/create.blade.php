@@ -43,8 +43,8 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-body">
-                        <h6 class="card-title">اضافه کردن مطلب</h6>
-                        <form action="{{route('posts.subcategory',$subcategory)}}" enctype="multipart/form-data" method="post">
+                        <h6 class="card-title">اضافه کردن مطلب آنالیز</h6>
+                        <form action="{{route('analyses.store')}}" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">هدر مطلب</label>
@@ -52,12 +52,17 @@
                                        id="exampleFormControlInput1" placeholder="header text" dir="ltr">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">زمان مطالعه</label>
-                                <input type="text" name="TimeRead" class="form-control text-left"
+                                <label for="exampleFormControlInput1">نام فارسی</label>
+                                <input type="text" name="Fa_title" class="form-control text-left"
                                        id="exampleFormControlInput1" placeholder="header text" dir="ltr">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">post مطلب </label>
+                                <label for="exampleFormControlInput1">نام انگلیسی</label>
+                                <input type="text" name="En_title" class="form-control text-left"
+                                       id="exampleFormControlInput1" placeholder="header text" dir="ltr">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">متن اصلی </label>
                                 <div class="card">
                                     <div class="card-body">
                                         <h6 class="card-title">ویرایشگر کلاسیک</h6>
@@ -66,52 +71,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="TagInput">برچسب مورد نطر را وارد نمایید </label>
-                                <select class="form-control" name="tag" id="TagInput">
-                                    @foreach($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">لوگو مطلب</label>
+                                <input type="file" name="LogoImage" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success" value="send">
                             </div>
                         </form>
                     </div>
-                    <br>
-                    <br>
-                    @foreach($posts as $post)
-                        <div class="card-group">
-                            <div class="card">
-                                <img height="400px" src="/{{str_replace('public','storage',$post->image)}}" class="card-img-top"
-                                     alt="image">
-                                <div class="card-body">
-                                    <h6 class="card-title">{{$post->header}}</h6>
-                                    <p class="card-text">{!! $post->body !!}</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">{{$post->created_at}}</small>
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">{{$post->creator}}</small>
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">{{$post->TimeRead}}</small>
-                                    </p>
-                                </div>
-                                <a href="{{route('posts.edit',$post)}}" class="btn btn-success form-control">edit</a>
-                                <form class="mt-3" action="{{route('posts.destroy',$post)}}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input class="btn btn-danger form-control" type="submit" value="delete">
-                                </form>
-                            </div>
-                        </div>
-                        <hr>
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -121,6 +92,11 @@
 
 <script src="/vendors/bundle.js"></script>
 <!-- CKEditor -->
+<!-- DataTable -->
+<script src="/vendors/dataTable/jquery.dataTables.min.js"></script>
+<script src="/vendors/dataTable/dataTables.bootstrap4.min.js"></script>
+<script src="/vendors/dataTable/dataTables.responsive.min.js"></script>
+<script src="/assets/js/examples/datatable.js"></script>
 <script src="/vendors/ckeditor/ckeditor.js"></script>
 <script src="/assets/js/examples/ckeditor.js"></script>
 
