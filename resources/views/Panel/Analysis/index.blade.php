@@ -40,6 +40,7 @@
                                 <th scope="col">هدر مطلب</th>
                                 <th scope="col">اسم آنالیز</th>
                                 <th scope="col">تصویر لوگو</th>
+                                <th scope="col">اضافه کردن راهنمای بخش </th>
                                 <th class="text-right" scope="col">تنظیمات</th>
                             </tr>
                             </thead>
@@ -52,9 +53,12 @@
                                     <td>
                                         <img src="/{{str_replace('public','storage',$analysis->LogoImage)}}"
                                              style="border-radius: 50%"
-                                             width="100px"
+                                             width="200px"
                                              alt="image not found">
                                     </td>
+                                    <th scope="row">
+                                        <a class="btn btn-gradient-success" href="{{route('analyses.edit',$analysis)}}">مطالب
+                                        </a></th>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a href="#" class="btn btn-light btn-floating btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

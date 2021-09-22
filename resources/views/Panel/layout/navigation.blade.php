@@ -69,16 +69,16 @@
                 </ul>
             </li>
             <li>
-                <a href="#">مطالب آنالیز ها</a>
-                <ul>
-                    <li><a href="{{route('parts.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
                 <a href="#">برچسب ها</a>
                 <ul>
                     <li><a href="{{route('tags.create')}}">ایجاد</a></li>
                     <li><a href="{{route('tags.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">ارسال ایمیل به کاربران</a>
+                <ul>
+                    <li><a href="{{route('')}}">لیست</a></li>
                 </ul>
             </li>
             <li>

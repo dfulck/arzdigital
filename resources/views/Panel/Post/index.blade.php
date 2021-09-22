@@ -39,32 +39,32 @@
             <table id="example1" class="table table-striped table-bordered" width="100%">
                 <thead>
                 <tr>
-                    <th>نام سرگروه پست</th>
-                    <th>تعداد مطالب</th>
+                    <th>نام header post</th>
+                    <th>creator</th>
+                    <th>number</th>
                     <th>زمان ایجاد</th>
-                    <th>لیست پست ها برای اضافه کردن پارت ها </th>
-                    <th>اضافه کردن پست(ویرایش و حذف)</th>
+                    <th>Add part</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($subcategories as $subcategory)
+                @foreach($posts as $post)
                     <tr>
-                        <td>{{$subcategory->title}}</td>
-                        <td>{{$subcategory->HasNumberPost()}}</td>
-                        <td>{{$subcategory->created_at}}</td>
-                        <td class="text-center"><a class="btn btn-gradient-light" href="{{route('Posts.index',$subcategory)}}">List</a></td>
-                        <td class="text-center"><a class="text-white" href="{{route('subcategories.post.create',$subcategory)}}">ADD/Edit/Delete</a>
+                        <td>{{$post->header}}</td>
+                        <td>{{$post->creator}}</td>
+                        <td>{{$post->CountPart()}}</td>
+                        <td>{{$post->created_at}}</td>
+                        <td class="text-center"><a class="text-white" href="{{route('posts.edit',$post)}}">ADD</a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th>نام سرگروه پست</th>
-                    <th>تعداد مطالب</th>
+                    <th>نام header post</th>
+                    <th>creator</th>
+                    <th>number</th>
                     <th>زمان ایجاد</th>
-                    <th>لیست پست ها برای اضافه کردن پارت ها </th>
-                    <th>اضافه کردن پست(ویرایش و حذف)</th>
+                    <th>Add part</th>
                 </tr>
                 </tfoot>
             </table>

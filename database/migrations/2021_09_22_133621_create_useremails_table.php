@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePartsTable extends Migration
+class CreateUseremailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreatePartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('parts', function (Blueprint $table) {
+        Schema::create('useremails', function (Blueprint $table) {
             $table->id();
-            $table->string('part_image')->nullable();
-            $table->string('part_header')->nullable();
-            $table->text('part_body')->nullable();
-            $table->unsignedBigInteger('partable_id');
-            $table->string('partable_type');
+            $table->string('email');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreatePartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parts');
+        Schema::dropIfExists('useremails');
     }
 }

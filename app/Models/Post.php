@@ -19,4 +19,13 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+    public function parts(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    {
+        return $this->morphMany(Part::class,'partable');
+    }
+
+    public function CountPart()
+    {
+       return $this->parts()->where('partable_id', $this->id)->count();
+    }
 }

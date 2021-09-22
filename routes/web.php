@@ -12,6 +12,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\AnalysisController;
 use App\Http\Controllers\PartController;
+use App\Http\Controllers\UseremailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,7 @@ Route::resource('roles',RoleController::class);
 //Post
 Route::get('/subcategories/{subcategory}/post',[PostController::class,'create'])->name('subcategories.post.create');
 Route::post('/subcategories/{subcategory}/store',[PostController::class,'store'])->name('posts.subcategory');
+Route::get('/subcategories/{subcategory}/list/post',[PostController::class,'index'])->name('Posts.index');
 Route::resource('posts',PostController::class);
 //End Post
 //Question Answer
@@ -65,6 +67,7 @@ Route::resource('tags',TagController::class);
 //Analysis
 Route::resource('analyses',AnalysisController::class);
 //End Analysis
-//parts
-Route::resource('parts',PartController::class);
-//End Parts
+//Start Useremails
+Route::resource('Useremails',UseremailController::class);
+//End Useremails
+

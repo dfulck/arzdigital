@@ -43,40 +43,52 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-body">
-                        <h6 class="card-title">ویرایش کردن post</h6>
-                        <form action="{{route('posts.update',$post)}}" enctype="multipart/form-data"
-                              method="post">
+                        <h6 class="card-title">ویرایش کردن مطلب آنالیز</h6>
+                        <form action="{{route('analyses.update',$analysis)}}" enctype="multipart/form-data" method="post">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">هدر مطلب</label>
-                                <input value="{{$post->header}}" type="text" name="header"
-                                       class="form-control text-left"
+                                <input value="{{$analysis->header}}" type="text" name="header" class="form-control text-left"
                                        id="exampleFormControlInput1" placeholder="header text" dir="ltr">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">زمان مطالعه</label>
-                                <input value="{{$post->TimeRead}}" type="text" name="TimeRead" class="form-control text-left"
+                                <label for="exampleFormControlInput1">نام فارسی</label>
+                                <input value="{{$analysis->Fa_title}}" type="text" name="Fa_title" class="form-control text-left"
                                        id="exampleFormControlInput1" placeholder="header text" dir="ltr">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">مطلب </label>
+                                <label for="exampleFormControlInput1">نام انگلیسی</label>
+                                <input value="{{$analysis->En_title}}"  type="text" name="En_title" class="form-control text-left"
+                                       id="exampleFormControlInput1" placeholder="header text" dir="ltr">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">متن اصلی </label>
                                 <div class="card">
                                     <div class="card-body">
-                                        <textarea name="body" id="editor-demo1">{!! $post->body !!}</textarea>
+                                        <h6 class="card-title">ویرایشگر کلاسیک</h6>
+                                        <textarea name="body" id="editor-demo1">{{$analysis->body}}</textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img width="100%" height="400px" src="/{{str_replace('public','storage',$post->image)}}" alt="image not found">
+                                <img src="/{{str_replace('public','storage',$analysis->image)}}" width="400px" alt="image not found">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-success" value="edit">
+                                <img
+                                    width="200px" style="border-radius: 50%"
+                                    src="/{{str_replace('public','storage',$analysis->LogoImage)}}" alt="image mot found">
+                                <label for="exampleFormControlFile1">لوگو مطلب</label>
+                                <input type="file" name="LogoImage" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success btn-block" value="Edit">
                             </div>
                         </form>
-                        <form action="{{route('posts.update',$post)}}" enctype="multipart/form-data" method="post">
+                        <br><br><hr><hr><br><br>
+                        <form action="{{route('analyses.update',$analysis)}}" enctype="multipart/form-data" method="post">
                             @csrf
                             @method('PATCH')
                             <h1>اضافه کردن مطالب آنالیز </h1>
@@ -95,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">تصویر مطلب</label>
+                             <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="part_image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
@@ -121,30 +133,17 @@
     </div>
 </main>
 
-<!-- Plugin scripts -->
-<script src="/vendors/bundle.js"></script>
 
+<script src="/vendors/bundle.js"></script>
 <!-- CKEditor -->
+<!-- DataTable -->
+<script src="/vendors/dataTable/jquery.dataTables.min.js"></script>
+<script src="/vendors/dataTable/dataTables.bootstrap4.min.js"></script>
+<script src="/vendors/dataTable/dataTables.responsive.min.js"></script>
+<script src="/assets/js/examples/datatable.js"></script>
 <script src="/vendors/ckeditor/ckeditor.js"></script>
 <script src="/assets/js/examples/ckeditor.js"></script>
 
-<!-- Select2 -->
-<script src="/vendors/select2/js/select2.min.js"></script>
-<script src="/assets/js/examples/select2.js"></script>
-
-<!-- Range slider -->
-<script src="/vendors/range-slider/js/ion.rangeSlider.min.js"></script>
-<script src="/assets/js/examples/range-slider.js"></script>
-
-<!-- Input mask -->
-<script src="/vendors/input-mask/jquery.mask.js"></script>
-<script src="/assets/js/examples/input-mask.js"></script>
-
-<!-- Tagsinput -->
-<script src="/vendors/tagsinput/bootstrap-tagsinput.js"></script>
-<script src="/assets/js/examples/tagsinput.js"></script>
-
-<!-- App scripts -->
 <script src="/assets/js/app.js"></script>
 
 </body>
