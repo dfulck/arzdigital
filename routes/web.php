@@ -13,6 +13,11 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\AnalysisController;
 use App\Http\Controllers\PartController;
 use App\Http\Controllers\UseremailController;
+use App\Http\Controllers\MassageController;
+use App\Http\Controllers\VideocatController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\SubfooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +73,19 @@ Route::resource('tags',TagController::class);
 Route::resource('analyses',AnalysisController::class);
 //End Analysis
 //Start Useremails
-Route::resource('Useremails',UseremailController::class);
+Route::resource('massages',MassageController::class);
 //End Useremails
+// Video
+Route::resource('videocats.videos',VideoController::class);
+//End Video
+// Videocat
+Route::resource('videocats',VideocatController::class);
+//End Videocat
+//Footer
+Route::resource('footers',FooterController::class);
+//End Footer
+//start Subfooter
+Route::resource('subfooters',SubfooterController::class);
+//subfooter
+
 

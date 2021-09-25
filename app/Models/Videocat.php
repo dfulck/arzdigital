@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Videocat extends Model
+{
+    use HasFactory;
+
+    protected $guarded=[];
+
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class);
+    }
+
+    public function NumVideo()
+    {
+        return Video::query()->where('videocat_id',$this->id)->count();
+    }
+}

@@ -78,7 +78,22 @@
             <li>
                 <a href="#">ارسال ایمیل به کاربران</a>
                 <ul>
-                    <li><a href="{{route('')}}">لیست</a></li>
+                    <li><a href="{{route('massages.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('massages.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">فوتر سایت </a>
+                <ul>
+                    <li><a href="{{route('footers.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('footers.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">گالری ویدیو ها</a>
+                <ul>
+                    <li><a href="{{route('videocats.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('videocats.index')}}">لیست</a></li>
                 </ul>
             </li>
             <li>
