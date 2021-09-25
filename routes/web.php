@@ -44,6 +44,7 @@ Route::post('/subcategories/create/{category}',[SubcategoryController::class,'st
 Route::patch('/subcategories/{category}/update',[SubcategoryController::class,'update'])->name('subcategories.update');
 Route::get('/subcategories/index',[SubcategoryController::class,'index'])->name('subcategories.index');
 Route::delete('/subcategories/{subcategory}/delete',[SubcategoryController::class,'destroy'])->name('subcategories.destroy');
+Route::get('/subcategories/{subcategory}/show',[SubcategoryController::class,'show'])->name('subcategories.show');
 Route::resource('categories',CategoryController::class);
 //end Category
 // content

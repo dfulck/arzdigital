@@ -19,6 +19,14 @@ class SubcategoryController extends Controller
         ]);
     }
 
+    /**
+     * @param Subcategory $subcategory
+     */
+    public function show(Subcategory $subcategory)
+    {
+        dd($subcategory);
+    }
+
 
     /**
      * Store a newly created resource in storage.

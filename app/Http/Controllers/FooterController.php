@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
+use App\Models\Subfooter;
 use Illuminate\Http\Request;
 
 class FooterController extends Controller
@@ -14,7 +15,9 @@ class FooterController extends Controller
      */
     public function index()
     {
-        //
+       return view('Panel.Footer.index',[
+           'footers'=>Footer::all()
+       ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class FooterController extends Controller
      */
     public function create()
     {
-        //
+        return view('Panel.Footer.create',[
+            'subfooters'=>Subfooter::all()
+        ]);
     }
 
     /**
@@ -35,7 +40,11 @@ class FooterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $footer=Footer::query()->create([
+            'title'=>$request->get('title')
+        ]);
+        $footer->subfooters()->attach($request->get('link'));
+        return redirect(route('footers.index'));
     }
 
     /**
@@ -46,7 +55,7 @@ class FooterController extends Controller
      */
     public function show(Footer $footer)
     {
-        //
+
     }
 
     /**

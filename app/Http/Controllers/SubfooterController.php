@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Analysis;
+use App\Models\Leader;
+use App\Models\Subcategory;
 use App\Models\Subfooter;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,9 @@ class SubfooterController extends Controller
      */
     public function index()
     {
-        //
+        return view('Panel.Subfooter.index',[
+            'subfooters'=>Subfooter::all()
+        ]);
     }
 
     /**
@@ -24,7 +29,11 @@ class SubfooterController extends Controller
      */
     public function create()
     {
-        //
+        return view('Panel.Subfooter.create',[
+            'subcategories'=>Subcategory::all(),
+            'analyses'=>Analysis::all(),
+            'leaders'=>Leader::all()
+        ]);
     }
 
     /**
@@ -35,7 +44,11 @@ class SubfooterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Subfooter::query()->create([
+            'title'=>$request->get('title'),
+            'link'=>$request->get('link'),
+        ]);
+        return redirect(route('subfooters.index'));
     }
 
     /**

@@ -90,6 +90,13 @@
                 </ul>
             </li>
             <li>
+                <a href="#">sub footer</a>
+                <ul>
+                    <li><a href="{{route('subfooters.create')}}">ایجاد</a></li>
+                    <li><a href="{{route('subfooters.index')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#">گالری ویدیو ها</a>
                 <ul>
                     <li><a href="{{route('videocats.create')}}">ایجاد</a></li>

@@ -10,4 +10,9 @@ class Footer extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function subfooters()
+    {
+        return $this->belongsToMany(Subfooter::class);
+    }
 }
