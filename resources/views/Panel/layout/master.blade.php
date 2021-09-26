@@ -8,16 +8,16 @@
     <title>Arz Digital</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/media/image/favicon.png">
+    <link rel="shortcut icon" href="{{url('')}}/assets/media/image/favicon.png">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#5867dd">
 
     <!-- Plugin styles -->
-    <link rel="stylesheet" href="/vendors/bundle.css" type="text/css">
+    <link rel="stylesheet" href="{{url('')}}/vendors/bundle.css" type="text/css">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
+    <link rel="stylesheet" href="{{url('')}}/assets/css/app.css" type="text/css">
 </head>
 
 

@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+@extends('Panel.layout.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>قالب Nextable - قالب مدیریتی نکستیبل</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/media/image/favicon.png">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#5867dd">
-
-    <!-- Plugin styles -->
-    <link rel="stylesheet" href="/vendors/bundle.css" type="text/css">
-
-    <!-- Select2 -->
-    <link rel="stylesheet" href="/vendors/select2/css/select2.min.css" type="text/css">
-
-    <!-- Range slider -->
-    <link rel="stylesheet" href="/vendors/range-slider/css/ion.rangeSlider.min.css" type="text/css">
-
-    <!-- Tagsinput -->
-    <link rel="stylesheet" href="/vendors/tagsinput/bootstrap-tagsinput.css" type="text/css">
-
-    <!-- App styles -->
-    <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
-</head>
+@section('master')
 
 <body class="dark">
 
@@ -100,16 +73,7 @@
 </main>
 
 
-<script src="/vendors/bundle.js"></script>
-<!-- CKEditor -->
-<!-- DataTable -->
-<script src="/vendors/dataTable/jquery.dataTables.min.js"></script>
-<script src="/vendors/dataTable/dataTables.bootstrap4.min.js"></script>
-<script src="/vendors/dataTable/dataTables.responsive.min.js"></script>
-<script src="/assets/js/examples/datatable.js"></script>
-<script src="/vendors/ckeditor/ckeditor.js"></script>
-<script src="/assets/js/examples/ckeditor.js"></script>
-
-<script src="/assets/js/app.js"></script>
+@include('Panel.layout.script')
 
 </body>
+@endsection

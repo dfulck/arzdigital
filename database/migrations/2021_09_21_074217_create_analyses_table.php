@@ -14,7 +14,7 @@ class CreateAnalysesTable extends Migration
     public function up()
     {
         Schema::create('analyses', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('En_title');
             $table->string('Fa_title');
             $table->string('header');

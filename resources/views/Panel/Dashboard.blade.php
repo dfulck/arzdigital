@@ -157,12 +157,7 @@
 
     </main>
     <!-- end::main content -->
-
-    <!-- Plugin scripts -->
-    <script src="/vendors/bundle.js"></script>
-
-    <!-- App scripts -->
-    <script src="/assets/js/app.js"></script>
+  @include('Panel.layout.script')
     </body>
 
 @endsection

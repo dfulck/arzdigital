@@ -97,6 +97,12 @@
                 </ul>
             </li>
             <li>
+                <a href="#">online price</a>
+                <ul>
+                    <li><a href="{{route('Online.Price')}}">لیست</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#">گالری ویدیو ها</a>
                 <ul>
                     <li><a href="{{route('videocats.create')}}">ایجاد</a></li>
@@ -341,9 +347,9 @@
     <!-- begin::header logo -->
     <div class="header-logo">
         <a href="index.html">
-            <img class="large-logo" src="/assets/media/image/logo.png" alt="image">
-            <img class="small-logo" src="/assets/media/image/logo-sm.png" alt="image">
-            <img class="dark-logo" src="/assets/media/image/logo-dark.png" alt="image">
+            <img class="large-logo" src="{{url('/assets/media/image/logo.png')}}" alt="image">
+            <img class="small-logo" src="{{url('/assets/media/image/logo-sm.png')}}" alt="image">
+            <img class="dark-logo" src="{{url('/assets/media/image/logo-dark.png')}}" alt="image">
         </a>
     </div>
     <!-- end::header logo -->
@@ -594,7 +600,7 @@
                     <a href="#" class="nav-link bg-none" data-sidebar-open="#userProfile">
                         <div>
                             <figure class="avatar avatar-state-success avatar-sm">
-                                <img src="/{{str_replace('public','storage',auth()->user()->image)}}" class="rounded-circle" alt="image">
+                                <img src="{{url('/storage/app/'.auth()->user()->image)}}" class="rounded-circle" alt="image">
                             </figure>
                         </div>
                     </a>

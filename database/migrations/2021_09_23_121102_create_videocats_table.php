@@ -14,7 +14,7 @@ class CreateVideocatsTable extends Migration
     public function up()
     {
         Schema::create('videocats', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title');
             $table->timestamps();
         });

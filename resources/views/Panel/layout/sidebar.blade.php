@@ -4,7 +4,7 @@
 <div class="sidebar" id="userProfile">
     <div class="text-center p-4">
         <figure class="avatar avatar-state-success avatar-lg mb-4">
-            <img src="/{{str_replace('public','storage',auth()->user()->image)}}" class="rounded-circle" alt="image">
+            <img src="{{url('/storage/app/'.auth()->user()->image)}}" class="rounded-circle" alt="image">
         </figure>
         <h4 class="text-primary m-b-10">{{$user->name}}</h4>
         <p class="text-muted d-flex align-items-center justify-content-center line-height-0 mb-0">

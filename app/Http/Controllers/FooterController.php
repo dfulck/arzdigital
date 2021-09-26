@@ -66,7 +66,10 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
-        //
+        return view('Panel.Footer.edit',[
+            'footer'=>$footer,
+            'subfooters'=>Subfooter::all()
+        ]);
     }
 
     /**

@@ -14,7 +14,7 @@ class CreateMassagesTable extends Migration
     public function up()
     {
         Schema::create('massages', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->text('title');
             $table->timestamps();
         });

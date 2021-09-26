@@ -15,4 +15,11 @@ class Footer extends Model
     {
         return $this->belongsToMany(Subfooter::class);
     }
+
+    public function TitleSubfooter()
+    {
+        return $this->subfooters()->get();
+    }
+
+
 }

@@ -14,7 +14,7 @@ class CreatePartsTable extends Migration
     public function up()
     {
         Schema::create('parts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('part_image')->nullable();
             $table->string('part_header')->nullable();
             $table->text('part_body')->nullable();

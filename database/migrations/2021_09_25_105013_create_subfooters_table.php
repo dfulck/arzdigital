@@ -14,7 +14,7 @@ class CreateSubfootersTable extends Migration
     public function up()
     {
         Schema::create('subfooters', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title')->nullable();
             $table->string('link')->nullable();
             $table->timestamps();

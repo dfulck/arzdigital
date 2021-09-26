@@ -18,6 +18,7 @@ use App\Http\Controllers\VideocatController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SubfooterController;
+use App\Http\Controllers\OnlineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,5 +89,8 @@ Route::resource('footers',FooterController::class);
 //start Subfooter
 Route::resource('subfooters',SubfooterController::class);
 //subfooter
+//Start Online Price
+Route::get('/Online/price',[OnlineController::class,'index'])->name('Online.Price');
+//End Online Price
 
 

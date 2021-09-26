@@ -16,4 +16,8 @@ class Subfooter extends Model
     {
         return $this->belongsToMany(Footer::class);
     }
+    public function HasSubFooter(): bool
+    {
+        return $this->footers()->where('subfooter_id',$this->id)->exists();
+    }
 }

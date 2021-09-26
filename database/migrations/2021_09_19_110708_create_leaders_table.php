@@ -14,7 +14,7 @@ class CreateLeadersTable extends Migration
     public function up()
     {
         Schema::create('leaders', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title');
             $table->timestamps();
         });
