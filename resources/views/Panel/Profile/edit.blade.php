@@ -132,7 +132,6 @@
     </div>
 
 </main>
-<!-- end::main content -->
 @include('Panel.layout.script')
 </body>
 @endsection

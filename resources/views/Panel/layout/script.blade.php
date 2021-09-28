@@ -1,13 +1,19 @@
 
 
 <script src="{{url('')}}/vendors/bundle.js"></script>
-<!-- CKEditor -->
-<!-- DataTable -->
 
+<!-- Form wizard -->
+<script src="{{url('')}}/vendors/form-wizard/jquery.steps.min.js"></script>
+<script src="{{url('')}}/assets/js/examples/form-wizard.js"></script>
+
+<!-- CKEditor -->
 <script src="{{url('')}}/vendors/ckeditor/ckeditor.js"></script>
 <script src="{{url('')}}/assets/js/examples/ckeditor.js"></script>
 
+<!-- DataTable -->
 <script src="{{url('')}}/assets/js/app.js"></script>
+
+
 
 <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
 <!-- Plugin scripts -->
