@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('number');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('CollectionLink')->nullable();
+            $table->foreignId('User_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

@@ -31,11 +31,5 @@
     <!-- App styles -->
     <link rel="stylesheet" href="{{url('')}}/assets/css/app.css" type="text/css">
 </head>
-
-
 @yield('master')
-
-
-
-
 </html>

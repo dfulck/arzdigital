@@ -44,14 +44,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img src="/{{str_replace('public','storage',$analysis->image)}}" width="400px" alt="image not found">
+                                <img src="{{url('/storage/app/'.$analysis->image)}}" width="400px" alt="image not found">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
                                 <img
                                     width="200px" style="border-radius: 50%"
-                                    src="/{{str_replace('public','storage',$analysis->LogoImage)}}" alt="image mot found">
+                                    src="{{url('/storage/app/'.$analysis->LogoImage)}}" alt="image mot found">
                                 <label for="exampleFormControlFile1">لوگو مطلب</label>
                                 <input type="file" name="LogoImage" class="form-control-file" id="exampleFormControlFile1">
                             </div>
@@ -88,7 +88,7 @@
                         </form>
                         @foreach($parts as $part)
                             <div class="card col-md-6">
-                                <img src="/{{str_replace('public','storage',$part->part_image)}}" class="card-img-top" alt="image">
+                                <img src="{{url('/storage/app/'.$part->part_image)}}" class="card-img-top" alt="image">
                                 <div class="card-body">
                                     <h6 class="card-title">{{$part->part_header}}</h6>
                                     <p class="card-text">{{$part->part_body}}</p>

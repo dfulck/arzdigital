@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img width="100%" height="400px" src="/{{str_replace('public','storage',$post->image)}}" alt="image not found">
+                                <img width="100%" height="400px" src="{{url('/storage/app/'.$post->image)}}" alt="image not found">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
@@ -77,7 +77,7 @@
                         </form>
                         @foreach($parts as $part)
                             <div class="card col-md-6">
-                                <img src="/{{str_replace('public','storage',$part->part_image)}}" class="card-img-top" alt="image">
+                                <img src="{{url('/storage/app/'.$part->part_image)}}" class="card-img-top" alt="image">
                                 <div class="card-body">
                                     <h6 class="card-title">{{$part->part_header}}</h6>
                                     <p class="card-text">{{$part->part_body}}</p>

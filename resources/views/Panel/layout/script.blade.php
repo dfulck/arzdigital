@@ -10,6 +10,8 @@
 <script src="{{url('')}}/vendors/ckeditor/ckeditor.js"></script>
 <script src="{{url('')}}/assets/js/examples/ckeditor.js"></script>
 
+<!-- Sweet alert -->
+<script src="{{url('')}}/assets/js/examples/sweet-alert.js"></script>
 <!-- DataTable -->
 <script src="{{url('')}}/assets/js/app.js"></script>
 

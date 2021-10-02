@@ -404,7 +404,7 @@ $User=auth()->user()
     <input type="submit" value="logout">
 </form>
 @else
-<a href="{{route('users.create')}}">Registry</a>
+<a href="{{route('users.register')}}">Registry</a>
     @endauth
 </body>
 @include('client.layout.notification')

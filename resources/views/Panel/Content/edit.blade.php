@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img width="100%" height="400px" src="/{{str_replace('public','storage',$content->image)}}" alt="image not found">
+                                <img width="100%" height="400px" src="{{url('/storage/app/'.$content->image)}}" alt="image not found">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>

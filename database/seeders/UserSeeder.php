@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
         $role_id->Permissions()->attach(Permission::all());
 
         User::query()->insert([
+            'CollectionLink'=>"http://127.0.0.1:8000/users/create?id=cloberfan@gmail.com",
             'Role_id'=>$role_id->id,
             'name'=>'Erfan',
             'lastname'=>'Asgharzade',

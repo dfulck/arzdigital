@@ -60,7 +60,7 @@
                     @foreach($posts as $post)
                         <div class="card-group">
                             <div class="card">
-                                <img height="400px" src="/{{str_replace('public','storage',$post->image)}}" class="card-img-top"
+                                <img height="400px" src="{{url('/storage/app/'.$post->image)}}" class="card-img-top"
                                      alt="image">
                                 <div class="card-body">
                                     <h6 class="card-title">{{$post->header}}</h6>

@@ -50,10 +50,10 @@
                                            width="640"
                                            preload="auto"
                                            height="600px"
-                                           poster="/{{str_replace('public','storage',$video->image)}}"
+                                           poster="{{url('/storage/app/'.$video->image)}}"
                                            data-setup="{}"
                                     >
-                                        <source src="/{{str_replace('public','storage',$video->video)}}"
+                                        <source src="{{url('/storage/app/'.$video->video)}}"
                                                 type="video/mp4"/>
                                     </video>
                                     <form class="m-2" enctype="multipart/form-data" action="{{route('videocats.videos.update',[$videocat,$video])}}" method="post">

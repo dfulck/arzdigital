@@ -4,7 +4,7 @@
 <body>
 
 
-
+<button type="button" class="btn btn-primary sweet-ajax">Search film</button>
 
 
 

@@ -8,23 +8,23 @@
                     <span class="badge badge-warning">2</span>
                 </a>
             </li>
-            <li data-toggle="tooltip" title="برنامه ها">
-                <a href="#navigationApps" title="برنامه ها">
+            <li data-toggle="tooltip" title="مدیریت منو ها">
+                <a href="#navigationApps" title="دسته بندی ها">
                     <i class="icon ti-package"></i>
                 </a>
             </li>
-            <li data-toggle="tooltip" title="پلاگین ها">
+            <li data-toggle="tooltip" title="مدیریت طاهر سایت">
                 <a href="#navigationPlugins">
                     <i class="icon ti-brush-alt"></i>
                 </a>
             </li>
-            <li data-toggle="tooltip" title="عناصر">
+            <li data-toggle="tooltip" title="مدیریت مطالب">
                 <a href="#navigationElements">
                     <i class="icon ti-layers"></i>
                 </a>
             </li>
-            <li  data-toggle="tooltip" title="صفحات">
-                <a href="#navigationPages" title="صفحات کاربری">
+            <li  data-toggle="tooltip" title="پروفایل کاربری">
+                <a href="#navigationPages" title="پروفایل کاربری">
                     <i class="icon ti-user"></i>
                 </a>
             </li>
@@ -39,40 +39,117 @@
     </div>
     <div class="navigation-menu-body">
         <ul id="navigationDashboards" class="navigation-active">
-            <li class="navigation-divider"><a href="{{route('users.show',$user)}}">داشبورد</a>
-            </li>
+            <li class="navigation-divider">داشبورد</li>
+            <li class="navigation-divider"><a href="{{route('users.show',$user)}}">پروفایل کاربری</a></li>
             <li class="active" title="خروج">
-                <a href="{{route('users.logout')}}"><span class="mx-2">logout</span>
+                <a href="{{route('users.logout')}}"><span class="mx-2">خروج</span>
                     <i class="icon ti-power-off"></i>
                 </a>
             </li>
             <li>
-                <a href="{{route('categories.index')}}">لیست دسته بندی</a>
-            </li>
-            <li>
-                <a href="{{route('categories.create')}}">ایجاد دسته بندی </a>
-            </li>
-            <li>
-                <a href="{{route('leaders.index')}}">لیست سرگروه مطالب</a>
-            </li>
-            <li>
-                <a href="{{route('leaders.create')}}">ایجاد سرگروه مطالب</a>
-            </li>
-            <li>
-                <a href="{{route('contents.index')}}">لیست تمامی مطالب </a>
-            </li>
-            <li>
-                <a href="#">دسترسی ها</a>
+                <a href="#">لیست سرگرمی ها</a>
                 <ul>
-                    <li><a href="{{route('roles.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('roles.index')}}">لیست</a></li>
+                   <li><a href="{{route('game')}}">فیلم شانسی</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">برچسب ها</a>
+                <a href="#">کتاب مقررات صادرات و واردات</a>
                 <ul>
-                    <li><a href="{{route('tags.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('tags.index')}}">لیست</a></li>
+                    <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
+                    <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
+                    <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
+                    <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
+                    <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
+                    <li><a href="{{route('jasondecode')}}">jason</a></li>
+                    <li><a href="{{route('paygahetelaresani')}}">paygah etelaresani</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">لیست شهر های عضو اتحادیه</a>
+                <ul>
+                    <li><a href="{{route('etsos.create')}}">اضافه کردن شهر</a></li>
+                    <li><a href="{{route('etsos.index')}}">برای مدیریت لیست کلیک کنید</a></li>
+                    <li><a href="{{route('list.esto')}}">لیست کل</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="navigationApps">
+            <li class="navigation-divider">دسته بندی ها</li>
+            <li>
+                <a href="#">مدیریت منوی سایت</a>
+                <ul>
+                    <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
+                    <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">برچسب های سایت </a>
+                <ul>
+                    <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
+                    <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">تحلیل ارز ها</a>
+                <ul>
+                    <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
+                    <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="navigationPlugins">
+            <li class="navigation-divider"> مدیریت طاهر سایت</li>
+            <li>
+                <a href="#">ایحاد لینک برای فوتر</a>
+                <ul>
+                    <li><a href="{{route('subfooters.create')}}">اضافه کردن لینک</a></li>
+                    <li><a href="{{route('subfooters.index')}}">مدیریت لینک ها</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">مدیرت فوتر سایت</a>
+                <ul>
+                    <li><a href="{{route('footers.create')}}">اضافه کردن منوی پایین سایت</a></li>
+                    <li><a href="{{route('footers.index')}}">مدیریت لیست (ویرایش و اضافه کردن)</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="navigationElements">
+            <li class="navigation-divider">مدیریت مطالب</li>
+            <li>
+                <a href="#">مطالب و اخبار سایت</a>
+                <ul>
+                    <li><a href="{{route('leaders.create')}}">اضافه کردن دسته برای مطالب </a></li>
+                    <li><a href="{{route('leaders.index')}}">مدیریت و اضافه کردن خبر جدید</a></li>
+                    <li><a href="{{route('contents.index')}}">لبست تمامی مطالب و خبر ها</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">ایجاد پست </a>
+                <ul>
+                    <li><a href="{{route('subcategories.index')}}">اضافه کردن پست برای دسته بندی های فرزند</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">گالری ویدیو ها</a>
+                <ul>
+                    <li><a href="{{route('videocats.create')}}">ایجاد دسته بندی برای ویدیو ها </a></li>
+                    <li><a href="{{route('videocats.index')}}">مدیریت دسته بندی های مرنبط (اضافه کردن و...)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">مطرات کاربران</a>
+                <ul>
+                    <li><a href="{{route('questions.index')}}">لیست نطرات</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="navigationPages">
+            <li>
+                <a href="#">دسترسی ها</a>
+                <ul>
+                    <li><a href="{{route('roles.create')}}">ایجاد دسترسی برای کاربران</a></li>
+                    <li><a href="{{route('roles.index')}}">لیست دسترسی ها </a></li>
                 </ul>
             </li>
             <li>
@@ -80,260 +157,6 @@
                 <ul>
                     <li><a href="{{route('massages.create')}}">ایجاد</a></li>
                     <li><a href="{{route('massages.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">فوتر سایت </a>
-                <ul>
-                    <li><a href="{{route('footers.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('footers.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">sub footer</a>
-                <ul>
-                    <li><a href="{{route('subfooters.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('subfooters.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">online price</a>
-                <ul>
-                    <li><a href="{{route('Online.Price')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">گالری ویدیو ها</a>
-                <ul>
-                    <li><a href="{{route('videocats.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('videocats.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">آنالیز ها</a>
-                <ul>
-                    <li><a href="{{route('analyses.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('analyses.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">لیست کامنت پست ها</a>
-                <ul>
-                    <li><a href="{{route('questions.index')}}">لیست</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"> پست برای دسته بندی ها</a>
-                <ul>
-                    <li><a href="{{route('subcategories.index')}}">لیست دسته بندی های برای ایجاد پست مربوطه</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul id="navigationApps">
-            <li class="navigation-divider">اپ ها</li>
-            <li>
-                <a href="chat.html">گفتگو</a>
-            </li>
-            <li>
-                <a href="inbox.html">ایمیل</a>
-            </li>
-            <li>
-                <a href="calendar.html">تقویم</a>
-            </li>
-            <li>
-                <a href="gallery.html">گالری</a>
-            </li>
-            <li class="navigation-divider">دوستان</li>
-            <li>
-                <a href="#" class="d-flex">
-                    <div>
-                        <figure class="avatar avatar-state-success avatar-xs mr-3">
-                            <span class="avatar-title bg-warning rounded-circle">ت</span>
-                        </figure>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">مری جین</h6>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-flex">
-                    <div>
-                        <figure class="avatar avatar-state-warning avatar-xs mr-3">
-                            <img src="/{{str_replace('public','storage',auth()->user()->image)}}" class="rounded-circle" alt="image">
-                        </figure>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">جانی دپ</h6>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-flex">
-                    <div>
-                        <figure class="avatar avatar-state-danger avatar-xs mr-3">
-                            <span class="avatar-title bg-info rounded-circle">آ</span>
-                        </figure>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">تونی
-                            استارک</h6>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-flex">
-                    <div>
-                        <figure class="avatar avatar-state-info avatar-xs mr-3">
-                            <span class="avatar-title bg-danger rounded-circle">ک</span>
-                        </figure>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h6 class="m-b-0 d-flex font-weight-normal justify-content-between primary-font">استیو
-                            راجرز</h6>
-                    </div>
-                </a>
-            </li>
-        </ul>
-        <ul id="navigationPlugins">
-            <li class="navigation-divider">پلاگین ها</li>
-            <li><a href="sweet-alert.html">هشدار Sweet </a></li>
-            <li><a href="lightbox.html">لایت باکس </a></li>
-            <li><a href="toast.html">توست </a></li>
-            <li><a href="tour.html">تور </a></li>
-            <li><a href="slick-slide.html">اسلاید Slick </a></li>
-            <li><a href="nestable.html">لیست تو در تو </a></li>
-            <li>
-                <a href="#">نمودار ها</a>
-                <ul>
-                    <li><a href="chart-apex.html">Apex</a></li>
-                    <li><a href="chartjs.html">Chartjs</a></li>
-                    <li><a href="chart-justgage.html">Justgage</a></li>
-                    <li><a href="chart-morris.html">Morris</a></li>
-                    <li><a href="chart-peity.html">Peity</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">نقشه ها</a>
-                <ul>
-                    <li><a href="google-map.html">نقشه گوگل</a></li>
-                    <li><a href="vector-map.html">نقشه وکتور</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul id="navigationElements">
-            <li class="navigation-divider">عناصر</li>
-            <li>
-                <a href="#">پایه</a>
-                <ul>
-                    <li><a href="alerts.html">اعلان‌ها </a></li>
-                    <li><a href="badge.html">نشان </a></li>
-                    <li><a href="buttons.html">دکمه ها </a></li>
-                    <li><a href="pagination.html">صفحه‌بندی </a></li>
-                    <li><a href="dropdown.html">منوی کشویی </a></li>
-                    <li><a href="accordion.html">باز و بسته شونده </a></li>
-                    <li><a href="carousel.html">اسلایدر </a></li>
-                    <li><a href="typography.html">تایپوگرافی </a></li>
-                    <li><a href="list-group.html">گروه لیست </a></li>
-                    <li><a href="media-object.html">رسانه </a></li>
-                    <li><a href="images.html">تصاویر </a></li>
-                    <li><a href="progress.html">پیشرفت </a></li>
-                    <li><a href="modal.html">مودال </a></li>
-                    <li><a href="spinners.html">چرخنده ها </a></li>
-                    <li><a href="navs.html">ناوبری ها </a></li>
-                    <li><a href="tab.html">تب </a></li>
-                    <li><a href="tooltip.html">راهنما (تولتیپ) </a></li>
-                    <li><a href="popovers.html">پاپ اور </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">فرم ها</a>
-                <ul>
-                    <li><a href="basic-form.html">فرم پایه </a></li>
-                    <li><a href="custom-form.html">فرم سفارشی </a></li>
-                    <li><a href="advanced-form.html">فرم پیشرفته </a></li>
-                    <li><a href="datepicker.html">انتخاب گر تاریخ </a></li>
-                    <li><a href="timepicker.html">انتخاب گر زمان </a></li>
-                    <li><a href="colorpicker.html">انتخاب گر رنگ </a></li>
-                    <li><a href="form-validation.html">اعتبارسنجی فرم </a></li>
-                    <li><a href="form-wizard.html">فرم مرحله ای </a></li>
-                    <li><a href="file-upload.html">آپلود فایل </a></li>
-                    <li><a href="#">ویرایشگر CK</a>
-                        <ul>
-                            <li><a href="ckeditor-article.html">ویرایشگر مقاله </a></li>
-                            <li><a href="ckeditor-inline.html">ویرایشگر درون خطی </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="tables.html">جدول‌ها</a>
-                <ul>
-                    <li>
-                        <a href="tables.html">جدول‌های پایه </a>
-                    </li>
-                    <li>
-                        <a href="data-table.html">جدول اطلاعات </a>
-                    </li>
-                    <li>
-                        <a href="responsive-table.html">جدول واکنشگرا </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">کارت ها </a>
-                <ul>
-                    <li><a href="basic-cards.html">کارت های پایه </a></li>
-                    <li><a href="image-cards.html">کارت های تصویری </a></li>
-                    <li><a href="card-scroll.html">کارت های اسکرول دار </a></li>
-                    <li><a href="other-cards.html">سایر </a></li>
-                </ul>
-            </li>
-            <li><a href="colors.html">رنگ ها </a></li>
-            <li>
-                <a href="avatar.html">آواتار ها</a>
-            </li>
-            <li>
-                <a href="icons.html">آیکن‌ها</a>
-            </li>
-        </ul>
-        <ul id="navigationPages">
-            <li class="navigation-divider">صفحات</li>
-            <li><a  href="profile.html">پروفایل </a></li>
-            <li><a href="timeline.html">خط زمانی </a></li>
-            <li><a href="invoice.html">صورتحساب </a></li>
-            <li><a href="pricing-table.html">جداول قیمت ها </a></li>
-            <li><a href="search-result.html">نتایج جستجو </a></li>
-            <li><a href="login.html">ورود </a></li>
-            <li><a href="register.html">ثبت نام </a></li>
-            <li><a href="recover-password.html">بازیابی رمز عبور </a></li>
-            <li><a href="lock-screen.html">قفل صفحه </a></li>
-            <li>
-                <a href="#">قالب های ایمیل</a>
-                <ul>
-                    <li><a href="email-template-basic.html">پایه</a></li>
-                    <li><a href="email-template-alert.html">هشدار</a></li>
-                    <li><a href="email-template-billing.html">صورتحساب</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">صفحات خطا </a>
-                <ul>
-                    <li><a href="404.html">404 </a></li>
-                    <li><a href="404-2.html">404 نسخه 2</a></li>
-                    <li><a href="503.html">503 </a></li>
-                    <li><a href="mean-at-work.html">تعمیرات </a></li>
-                </ul>
-            </li>
-            <li><a href="blank-page.html">صفحه شروع</a></li>
-            <li>
-                <a href="#">سطح منو</a>
-                <ul>
-                    <li><a href="#">سطح منو </a>
-                        <ul>
-                            <li><a href="#">سطح منو </a></li>
-                        </ul>
-                    </li>
                 </ul>
             </li>
         </ul>

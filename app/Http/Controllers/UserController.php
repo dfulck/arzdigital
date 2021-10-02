@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -26,12 +27,12 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $user = User::query()->whereEmail($request->get('email'))->firstOrFail();
-        if (!Hash::check($request->get('password'),$user->password)){
-            return back()->withErrors(['password'=>'this password in incorect']);
+        if (!Hash::check($request->get('password'), $user->password)) {
+            return back()->withErrors(['password' => 'this password in incorect']);
         }
         auth()->login($user);
-        session()->flash('success',"Login {$user->username} Successfully");
-        return redirect(route('users.dashboard',$user));
+        session()->flash('success', "Login {$user->username} Successfully");
+        return redirect(route('users.dashboard', $user));
     }
 
     /**
@@ -40,9 +41,9 @@ class UserController extends Controller
 
     public function logout()
     {
-        $user=auth()->user();
+        $user = auth()->user();
         auth()->logout($user);
-        session()->flash('error',"Logout successfully");
+        session()->flash('error', "Logout successfully");
         return redirect(route('users.index'));
     }
 
@@ -53,13 +54,16 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('client.User.create');
+        $GETEMAIL = $_GET['id'];
+        return view('client.User.create', [
+            'collection' => $GETEMAIL
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,17 +71,17 @@ class UserController extends Controller
         $this->validate($request, [
             'email' => ['required', 'email']
         ]);
-         User::RegisterUser($request);
-        session()->flash('success','sucessfull Registred');
+        User::RegisterUser($request);
+        session()->flash('success', 'sucessfull Registred');
 
-        $user=auth()->user();
-        return redirect(route('users.show',$user));
+        $user = auth()->user();
+        return redirect(route('users.show', $user));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -88,50 +92,50 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
     {
-        return view('Panel.Profile.edit',[
-            'users'=>$user
+        return view('Panel.Profile.edit', [
+            'users' => $user
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
     {
-        $image=$user->image;
-        if ($request->hasFile('image')){
+        $image = $user->image;
+        if ($request->hasFile('image')) {
             Storage::delete($user->image);
             $image = $request->file('image')->storeAs('public/UserImage', $request->file('image')->getClientOriginalName());
         }
 
         $user->update([
-            'email' => $request->get('email',$user->email),
-            'number' => $request->get('number',$user->number),
-            'name' => $request->get('name',$user->name),
-            'lastname' => $request->get('lastname',$user->lastname),
-            'username' => $request->get('username',$user->username),
-            'address' => $request->get('address',$user->address),
-            'age' => $request->get('age',$user->age),
-            'job' => $request->get('job',$user->job),
-            'city' => $request->get('city',$user->city),
+            'email' => $request->get('email', $user->email),
+            'number' => $request->get('number', $user->number),
+            'name' => $request->get('name', $user->name),
+            'lastname' => $request->get('lastname', $user->lastname),
+            'username' => $request->get('username', $user->username),
+            'address' => $request->get('address', $user->address),
+            'age' => $request->get('age', $user->age),
+            'job' => $request->get('job', $user->job),
+            'city' => $request->get('city', $user->city),
             'image' => $image,
         ]);
-        if ($request->get('password')){
+        if ($request->get('password')) {
             $user->update([
-                'password' =>bcrypt($request->get('password')),
+                'password' => bcrypt($request->get('password')),
             ]);
         }
 
-        session()->flash('info','update successfully');
+        session()->flash('info', 'update successfully');
         return redirect()->back();
 
     }
@@ -139,10 +143,22 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
+    {
+
+    }
+
+
+    public function CollectionLink()
+    {
+
+    }
+
+
+    public function Collection(Request $request)
     {
 
     }

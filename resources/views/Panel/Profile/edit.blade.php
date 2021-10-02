@@ -116,7 +116,7 @@
                             @method('PATCH')
                         <div class="form-group wd-xs-300">
                             <label for="image">تصویر </label>
-                            <img src="{{str_replace('public','/storage',$users->image)}}" alt="Not Found">
+                            <img src="{{url('/storage/app/'.$users->image)}}" alt="Not Found">
                             <input type="file" class="form-control form-control-file" id="image" name="image" placeholder="عکس پروفایل">
                             <div class="valid-feedback">
                                 صحیح است!

@@ -52,7 +52,7 @@ $(document).ready(function () {
 			}
 		});
 	});
-	
+
     $('.sweet-prompt').on('click', function() {
         swal("یک چیزی اینجا تایپ کنید:", {
 			content: "input",
@@ -64,10 +64,10 @@ $(document).ready(function () {
 			});
 		});
 	});
-	
+
     $('.sweet-ajax').on('click', function () {
         swal({
-			text: 'یک فیلم جستجو کنید. مانند "La La Land".',
+			text: 'یک حرف انگلیسی وارد کتید. مانند "La La Land".',
 			content: "input",
 			button: {
 				text: "جستجو!",
@@ -99,7 +99,7 @@ $(document).ready(function () {
 		})
 		.catch(function(err) {
 			if (err) {
-				swal("وای نه!", "درخواست AJAX شکست خورد!", "error", {
+				swal("وای نه!", "لطفا از حروف انگلیسی استفاده کنید !", "error", {
 					button: "باشه"
 				});
 			}

@@ -19,7 +19,11 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SubfooterController;
 use App\Http\Controllers\OnlineController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EtsoController;
+use App\Http\Controllers\SubetsoController;
+use App\Http\Controllers\BooksvController;
+use App\Http\Controllers\AmarsaderatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +35,13 @@ use App\Http\Controllers\OnlineController;
 |
 */
 
-Route::get('/', function () {
-    return view('client.welcome');
-})->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/dashboard',[UserController::class,'show'])->name('users.dashboard');
 //user login
+Route::get('/users/create?id=',[UserController::class,'create'])->name('users.register');
 Route::resource('users',UserController::class);
 Route::post('/Users/login',[UserController::class,'login'])->name('users.login');
-Route::post('/Users/logout',[UserController::class,'logout'])->name('users.logout');
+Route::get('/Users/logout',[UserController::class,'logout'])->name('users.logout');
 //End User Login
 //Category and subcategory
 Route::post('/subcategories/create/{category}',[SubcategoryController::class,'store'])->name('subcategories.store');
@@ -92,5 +95,25 @@ Route::resource('subfooters',SubfooterController::class);
 //Start Online Price
 Route::get('/Online/price',[OnlineController::class,'index'])->name('Online.Price');
 //End Online Price
-
+// Game Menu
+Route::get('/for-fun',[HomeController::class,'Game'])->name('game');
+//End Gamge Menu
+//Etsos
+Route::resource('etsos',EtsoController::class);
+//End Etsos
+//subEtsos
+Route::get('/list/all/etso',[SubetsoController::class,'index'])->name('list.esto');
+Route::resource('etsos.subetsos',SubetsoController::class);
+//Endsubetsos
+//Start booksvs
+Route::resource('booksvs',BooksvController::class);
+//End booksvs
+//gavanin
+Route::get('/Books/Gavanin_1399',[HomeController::class,'data'])->name('gaaninbooks');
+Route::resource('amarsaderat',AmarsaderatController::class);
+//End Gavanin
+//Start Jason
+Route::get('/jason/encode',[HomeController::class,'jason'])->name('jasondecode');
+Route::get('/jason/paygah',[HomeController::class,'paygahetelaresani'])->name('paygahetelaresani');
+//End Jason
 

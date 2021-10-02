@@ -30,6 +30,12 @@
             <div class="form-group">
                 <input type="text" name="number" class="form-control text-left" placeholder="شماره تلفن" dir="ltr" required>
             </div>
+            @if($collection)
+            <div hidden class="form-group">
+                <label for="collection">دعوت کننده شما به این سایت</label>
+                <input id="collection" type="text" class="form-control text-left" name="collection" value="{{$collection}}">
+            </div>
+            @endif
             <input type="submit" class="btn btn-primary btn-block" value="ثبت نام">
         </form>
         <hr>
