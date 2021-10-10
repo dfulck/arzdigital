@@ -10,6 +10,14 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{url('')}}/assets/media/image/favicon.png">
 
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+
+    <link href="{{url('')}}/assets/demo.css" rel="stylesheet" />
+    <link href="{{url('')}}/assets/svgMap.css" rel="stylesheet" />
+    <link href="{{url('')}}/assets/svgMap.min.css" rel="stylesheet" />
+    <script src="{{url('')}}/assets/svgMap.js"></script>
+    <script src="{{url('')}}/assets/svgMap.min.js"></script>
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#5867dd">
 

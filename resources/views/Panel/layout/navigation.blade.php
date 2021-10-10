@@ -42,9 +42,11 @@
             <li class="navigation-divider">داشبورد</li>
             <li class="navigation-divider"><a href="{{route('users.show',$user)}}">پروفایل کاربری</a></li>
             <li class="active" title="خروج">
-                <a href="{{route('users.logout')}}"><span class="mx-2">خروج</span>
+                <form action="{{route('users.logout')}}" method="post">
+                    @csrf
+                    <input type="submit" class="mx-2 btn btn-danger" value="خروج">
                     <i class="icon ti-power-off"></i>
-                </a>
+                </form>
             </li>
             <li>
                 <a href="#">لیست سرگرمی ها</a>
@@ -60,8 +62,14 @@
                     <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
                     <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
                     <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
-                    <li><a href="{{route('jasondecode')}}">jason</a></li>
-                    <li><a href="{{route('paygahetelaresani')}}">paygah etelaresani</a></li>
+                    <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
+                    <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
+                    <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
+                    <li><a href="{{route('cataloges')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
+                    <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
+                    <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
+                    <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a></li>
+                    <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
                 </ul>
             </li>
             <li>

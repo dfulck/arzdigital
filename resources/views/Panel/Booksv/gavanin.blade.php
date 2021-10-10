@@ -10,43 +10,30 @@
 
     <!-- begin::main content -->
     <main class="main-content">
-
         <div class="card">
             <div class="card-body">
-                <table id="example1" class="table table-striped table-bordered" width="100%">
-                    <thead>
-                    <tr>
-                        <th>ردیف</th>
-                        <th>کد HS هشت رقمی </th>
-                        <th>شرح کد تعرفه</th>
-                        <th>حقوق ورودی</th>
-                        <th>وضعیت</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($gavanins as $gavanin)
-                        <tr>
-                            <td>{{$gavanin->id}}</td>
-                            <td>{{$gavanin->code}}</td>
-                            <td>{{$gavanin->body}}</td>
-                            <td>{{$gavanin->title}}</td>
-                            <td>{{$gavanin->vaziat}}</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>ردیف</th>
-                        <th>کد HS هشت رقمی </th>
-                        <th>شرح کد تعرفه</th>
-                        <th>حقوق ورودی</th>
-                        <th>وضعیت</th>
-                    </tr>
-                    </tfoot>
-                </table>
+                <form action="{{route('search.gavanin')}}" method="post">
+                    @csrf
+                    <label for="search">جستجو در کتاب قوانین صادرات و واردات سال 1399 </label>
+                    <input class="search form-control" id="search" type="search" name="search">
+                </form>
             </div>
         </div>
-
+        @if($response)
+        <div class="body">
+            <h1>
+                اخرین قوانین و مقررات مربوط به
+                <form action="{{route('search.datagavanin',$search)}}" method="post">
+                    @csrf
+                    <input type="submit" value="{{$search}}" class="btn btn-danger">
+                </form></h1>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                {!! $response !!}
+            </div>
+        </div>
+        @endif
     </main>
     <!-- end::main content -->
     @include('Panel.layout.script')

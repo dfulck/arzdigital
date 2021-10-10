@@ -1,5 +1,5 @@
 <?php
-$jason = file_get_contents('C:\laravel\arzdigital\arzdigital\resources\views\Panel\Booksv\paygah_etelati_sherkathaye_modiriat_saderat.json');
+$jason = file_get_contents('C:\laravel\arzdigital\arzdigital\resources\views\Panel\Booksv\bazarhayemontakhab.json');
 
 $jason_decode = json_decode($jason)->data;
 
@@ -29,16 +29,12 @@ $jason_decode = json_decode($jason)->data;
                         <th>ردیف</th>
                         <th>ردیف</th>
                         <th>ردیف</th>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @for($i=0;$i<=21;$i++)
+                    @for($i=0;$i<=100;$i++)
                         <tr>
-                            @for($q=0;$q<=7;$q++)
+                            @for($q=0;$q<=3;$q++)
                                 <td>{{$jason_decode[$i][$q]}}</td>
                             @endfor
                         </tr>
@@ -46,10 +42,6 @@ $jason_decode = json_decode($jason)->data;
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
-                        <th>ردیف</th>
                         <th>ردیف</th>
                         <th>ردیف</th>
                         <th>ردیف</th>

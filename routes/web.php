@@ -24,6 +24,7 @@ use App\Http\Controllers\EtsoController;
 use App\Http\Controllers\SubetsoController;
 use App\Http\Controllers\BooksvController;
 use App\Http\Controllers\AmarsaderatController;
+use App\Http\Controllers\KalaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +42,7 @@ Route::get('/dashboard',[UserController::class,'show'])->name('users.dashboard')
 Route::get('/users/create?id=',[UserController::class,'create'])->name('users.register');
 Route::resource('users',UserController::class);
 Route::post('/Users/login',[UserController::class,'login'])->name('users.login');
-Route::get('/Users/logout',[UserController::class,'logout'])->name('users.logout');
+Route::post('/Users/logout',[UserController::class,'logout'])->name('users.logout');
 //End User Login
 //Category and subcategory
 Route::post('/subcategories/create/{category}',[SubcategoryController::class,'store'])->name('subcategories.store');
@@ -110,10 +111,26 @@ Route::resource('booksvs',BooksvController::class);
 //End booksvs
 //gavanin
 Route::get('/Books/Gavanin_1399',[HomeController::class,'data'])->name('gaaninbooks');
+Route::post('/Books/search',[HomeController::class,'search'])->name('search.gavanin');
+Route::post('/Books/search/{search}',[HomeController::class,'searchdata'])->name('search.datagavanin');
 Route::resource('amarsaderat',AmarsaderatController::class);
 //End Gavanin
 //Start Jason
-Route::get('/jason/encode',[HomeController::class,'jason'])->name('jasondecode');
-Route::get('/jason/paygah',[HomeController::class,'paygahetelaresani'])->name('paygahetelaresani');
+Route::get('/data/etehadie',[HomeController::class,'etehadie'])->name('etehadie');
+Route::get('/data/paygahetelaresani',[HomeController::class,'paygahetelaresani'])->name('paygahetelaresani');
+Route::get('/data/otaghayebazargani',[HomeController::class,'otaghayebazargani'])->name('otaghayebazargani');
+Route::get('/data/bazarhayemontakhab',[HomeController::class,'bazarhayemontakhab'])->name('bazarhayemontakhab');
 //End Jason
+//Start World Data
+Route::get('/data/world/',[HomeController::class,'Erth'])->name('Erth.data');
+//Route::get('/kala/khadamat/',[HomeController::class,'kala'])->name('kala.khadamat');
+//Route::post('/data/kala/khadamat/',[HomeController::class,'khadamat'])->name('data.khadamat');
+Route::get('/data/world/{code}',[HomeController::class,'world'])->name('world.data');
+//End Data
+//Price Callector
+Route::get('/price/callector',[HomeController::class,'PriceCallector'])->name('price.callector');
+//End Price Callector
+// start Kala
+Route::resource('kalas',KalaController::class);
+//End Kala
 

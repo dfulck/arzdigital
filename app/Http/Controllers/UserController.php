@@ -32,7 +32,7 @@ class UserController extends Controller
         }
         auth()->login($user);
         session()->flash('success', "Login {$user->username} Successfully");
-        return redirect(route('users.dashboard', $user));
+        return redirect(route('users.dashboard'));
     }
 
     /**
@@ -79,12 +79,9 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\User $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(User $user)
+    public function show()
     {
         return view('Panel.Dashboard');
     }
@@ -147,18 +144,6 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
-    {
-
-    }
-
-
-    public function CollectionLink()
-    {
-
-    }
-
-
-    public function Collection(Request $request)
     {
 
     }
