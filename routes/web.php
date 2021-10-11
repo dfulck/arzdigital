@@ -25,6 +25,10 @@ use App\Http\Controllers\SubetsoController;
 use App\Http\Controllers\BooksvController;
 use App\Http\Controllers\AmarsaderatController;
 use App\Http\Controllers\KalaController;
+use App\Http\Controllers\CatalogueController;
+use App\Http\Middleware\GuestMiddleware;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\WriterMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,7 +47,25 @@ Route::get('/users/create?id=',[UserController::class,'create'])->name('users.re
 Route::resource('users',UserController::class);
 Route::post('/Users/login',[UserController::class,'login'])->name('users.login');
 Route::post('/Users/logout',[UserController::class,'logout'])->name('users.logout');
-//End User Login
+//Admin
+Route::middleware(AdminMiddleware::class)->group(function (){
+    //user login
+    Route::patch('/users/{user}/updateThis', [UserController::class, 'UpdateThis'])->name('users.updateThis');
+    Route::get('/users/list/all', [UserController::class, 'ListAll'])->name('users.ListAll');
+    //End User Login
+});
+//End Admin
+//Guest
+Route::middleware(GuestMiddleware::class)->group(function (){
+
+});
+//End guest
+//Writer
+Route::middleware(WriterMiddleware::class)->group(function (){
+
+});
+//End Writer
+
 //Category and subcategory
 Route::post('/subcategories/create/{category}',[SubcategoryController::class,'store'])->name('subcategories.store');
 Route::patch('/subcategories/{category}/update',[SubcategoryController::class,'update'])->name('subcategories.update');
@@ -123,8 +145,8 @@ Route::get('/data/bazarhayemontakhab',[HomeController::class,'bazarhayemontakhab
 //End Jason
 //Start World Data
 Route::get('/data/world/',[HomeController::class,'Erth'])->name('Erth.data');
-//Route::get('/kala/khadamat/',[HomeController::class,'kala'])->name('kala.khadamat');
-//Route::post('/data/kala/khadamat/',[HomeController::class,'khadamat'])->name('data.khadamat');
+Route::get('/kala/khadamat/',[HomeController::class,'kala'])->name('kala.khadamat');
+Route::post('/data/kala/khadamat/',[HomeController::class,'khadamat'])->name('data.khadamat');
 Route::get('/data/world/{code}',[HomeController::class,'world'])->name('world.data');
 //End Data
 //Price Callector
@@ -133,4 +155,8 @@ Route::get('/price/callector',[HomeController::class,'PriceCallector'])->name('p
 // start Kala
 Route::resource('kalas',KalaController::class);
 //End Kala
+//start Catalogue
+Route::resource('catalogues',CatalogueController::class);
+Route::get('/catalogues/{catalogue}/edite',[CatalogueController::class,'edite'])->name('catalogues.edite');
+//End Catalogue
 

@@ -27,28 +27,6 @@
                         <p class="mb-0 opacity-8">طراح وب</p>
                     </div>
                 </div>
-                <div>
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item my-2">
-                            <a href="#" class="text-success d-inline-block">
-                                <h2 class="font-weight-bold mb-2 primary-font line-height-36">418</h2>
-                                <span>مطلب</span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item my-2">
-                            <a href="#" class="text-warning d-inline-block ml-3">
-                                <h2 class="font-weight-bold mb-2 primary-font line-height-36">1,596</h2>
-                                <span>دنبال کننده</span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item my-2">
-                            <a href="#" class="text-info d-inline-block ml-3">
-                                <h2 class="font-weight-bold mb-2 primary-font line-height-36">7,896</h2>
-                                <span>لایک</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
 
@@ -106,23 +84,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h6 class="card-title">تکمیل پروفایل</h6>
-                        <div class="d-flex align-items-center">
-                            <a href="{{route('users.edit',$user)}}">
-                                <div class="icon-block icon-block-floating icon-block-outline-success m-r-20">
-                                    <i class="fa fa-pencil"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
                         <h6 class="card-title d-flex justify-content-between align-items-center">
-                            اطلاعات
-                            <a href="#" class="link-1 font-size-13 primary-font">
-                                <i class="ti-pencil m-r-5 align-middle"></i> ویرایش
-                            </a>
+                            اطلاعات کاربری
                         </h6>
                         <div class="row mb-2">
                             <div class="col-6 text-muted">نام:</div>
@@ -155,21 +118,6 @@
                         <div class="row mb-2">
                             <div class="col-6 text-muted">ایمیل:</div>
                             <div class="col-6">{{$user->email}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="card-title">مهارت ها</h6>
-                        <div class="m-b-20">
-                            <div class="font-size-13">نرم افزار</div>
-                            <div class="d-flex align-items-center">
-                                <div class="progress flex-grow-1" style="height: 7px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 42%;"
-                                         aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span class="small m-l-10">42%</span>
-                            </div>
                         </div>
                     </div>
                 </div>

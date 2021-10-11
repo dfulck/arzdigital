@@ -53,7 +53,6 @@ class KalaController extends Controller
             'number'=>$request->get('number'),
             'body'=>$request->get('body'),
             'image'=>$request->file('image')->storeAs('public/Kalaimage', $request->file('image')->getClientOriginalName()),
-            'status'=>0
         ]);
         return redirect()->back();
     }
@@ -92,6 +91,7 @@ class KalaController extends Controller
     public function update(Request $request, Kala $kala)
     {
         if ($request->hasFile('image')){
+            Storage::delete($kala->image);
             $image=$request->file('image')->storeAs('public/Kalaimage', $request->file('image')->getClientOriginalName());
         }
      $image=$kala->image;
@@ -111,7 +111,6 @@ class KalaController extends Controller
             'number'=>$request->get('number'),
             'body'=>$request->get('body'),
             'image'=>$image,
-            'status'=>0
         ]);
         return redirect()->back();
     }

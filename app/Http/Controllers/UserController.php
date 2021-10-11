@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +11,22 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
 
+    public function UpdateThis(Request $request,User $user)
+    {
+        $user->update([
+            'Role_id'=>$request->get('Role_id')
+        ]);
+        return redirect()->back();
+    }
+
+
+    public function ListAll()
+    {
+        return view('Panel.User.index',[
+            'users'=>User::all()->where('id','!=','1'),
+            'roles'=>Role::all()
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -145,6 +162,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-
+        $user->delete();
+        return redirect()->back();
     }
 }

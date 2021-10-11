@@ -30,7 +30,6 @@ class CreateKalasTable extends Migration
             $table->string('Global_import_value');
             $table->string('Iran_rank_in_production');
             $table->string('Number_of_commodity_group_tariff_codes');
-            $table->string('status');
             $table->timestamps();
         });
     }

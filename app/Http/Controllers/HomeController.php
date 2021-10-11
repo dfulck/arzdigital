@@ -18,18 +18,24 @@ class HomeController extends Controller
         $res = json_decode($response);
         dd($res->data->currency);
         return view('Panel.Booksv.PriceTest', [
-            'response' =>$res->data->currency
+            'response' => $res->data->currency
         ]);
     }
+
     public function PriceCallector()
     {
-        $client = new Client();
         $URI = Http::get('https://production.api.coindesk.com/v1/currency/ticker?currencies=BTC,ETH,LTC,XRP,BCH')->json();
         $response = json_encode($URI);
         $res = json_decode($response);
 
+        $URL = Http::get('https://tejaratnews.com/api/v2/ajax/prices/instrument-price.php?id=17321&period=m&chart=line&token=e7579bbf62340c23')->json();
+        $dollars = json_encode($URL);
+        $jsondecode = json_decode($dollars);
+        $count=count($jsondecode->data)-1;
+        $dollar=$jsondecode->data[$count]->meta->price;
         return view('Panel.Booksv.price',[
-            'response'=>$res->data->currency
+            'response'=>$res->data->currency,
+            'dollar'=>$dollar
         ]);
     }
 
@@ -40,7 +46,6 @@ class HomeController extends Controller
         $params['headers'] = ['Content-Type' => 'application/x-www-form-urlencoded'];
         $params['form_params'] = array('action' => 'query', 'qid' => '502', 'code' => $search);
         $response = $client->post($URI, $params);
-
         var_dump($response);
 //        return view('Panel.Booksv.gavanin',[
 //            'response'=> $json_decode,

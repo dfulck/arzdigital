@@ -19,11 +19,16 @@ class UserSeeder extends Seeder
         $role_id=Role::query()->create([
             'title'=>'Admin'
         ]);
-        Role::query()->create([
-            'title'=>'guest'
-        ]);
+        Role::query()->insert(
+            [
+                [
+                    'title'=>'guest'
+                ],
+                [
+                    'title'=>'writer'
+                ],
+            ]);
 
-        $role_id->Permissions()->attach(Permission::all());
 
         User::query()->insert([
             'CollectionLink'=>"http://127.0.0.1:8000/users/create?id=cloberfan@gmail.com",

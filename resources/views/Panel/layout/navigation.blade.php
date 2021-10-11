@@ -23,7 +23,7 @@
                     <i class="icon ti-layers"></i>
                 </a>
             </li>
-            <li  data-toggle="tooltip" title="پروفایل کاربری">
+            <li data-toggle="tooltip" title="پروفایل کاربری">
                 <a href="#navigationPages" title="پروفایل کاربری">
                     <i class="icon ti-user"></i>
                 </a>
@@ -39,8 +39,8 @@
     </div>
     <div class="navigation-menu-body">
         <ul id="navigationDashboards" class="navigation-active">
-            <li class="navigation-divider">داشبورد</li>
-            <li class="navigation-divider"><a href="{{route('users.show',$user)}}">پروفایل کاربری</a></li>
+            <li class="navigation-divider">صفحه اصلی</li>
+            <li class="navigation-divider"><a href="{{route('users.show',$user)}}">داشبورد</a></li>
             <li class="active" title="خروج">
                 <form action="{{route('users.logout')}}" method="post">
                     @csrf
@@ -51,11 +51,18 @@
             <li>
                 <a href="#">لیست سرگرمی ها</a>
                 <ul>
-                   <li><a href="{{route('game')}}">فیلم شانسی</a></li>
+                    <li><a href="{{route('game')}}">فیلم شانسی</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">کتاب مقررات صادرات و واردات</a>
+                <a href="#">مدیریت کاربران</a>
+                <ul>
+                    <li><a href="{{route('users.ListAll')}}">لیست کاربران</a></li>
+                </ul>
+            </li>
+           @if(auth()->user()->Role_id===1)
+            <li>
+                <a href="#">لیست داده ها</a>
                 <ul>
                     <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
                     <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
@@ -65,10 +72,12 @@
                     <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
                     <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
                     <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
-                    <li><a href="{{route('cataloges')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
+                    <li><a href="{{route('catalogues.index')}}">مدیریت کاتالوگ ها {ادمین}</a></li>
+                    <li><a href="{{route('catalogues.create')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
                     <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
                     <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
-                    <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a></li>
+                    <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
+                    </li>
                     <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
                 </ul>
             </li>
@@ -80,6 +89,7 @@
                     <li><a href="{{route('list.esto')}}">لیست کل</a></li>
                 </ul>
             </li>
+            @endif
         </ul>
         <ul id="navigationApps">
             <li class="navigation-divider">دسته بندی ها</li>
@@ -431,7 +441,8 @@
                     <a href="#" class="nav-link bg-none" data-sidebar-open="#userProfile">
                         <div>
                             <figure class="avatar avatar-state-success avatar-sm">
-                                <img src="{{url('/storage/app/'.auth()->user()->image)}}" class="rounded-circle" alt="image">
+                                <img src="{{url('/storage/app/'.auth()->user()->image)}}" class="rounded-circle"
+                                     alt="image">
                             </figure>
                         </div>
                     </a>

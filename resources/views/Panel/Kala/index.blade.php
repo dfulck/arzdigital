@@ -46,26 +46,6 @@
                                         <input class="btn btn-danger btn-block" type="submit" value="حدف این مطلب ">
                                     </form>
                                 </div>
-                                <div class="form-group col-sm-3 ">
-                                    <label class="form-check-label m-2">
-                                        فعال
-                                        <input @if($kala->status==1)
-                                               checked
-                                               @else
-                                               disabled
-                                            @endif
-                                               class="form-control-sm form-check" type="radio" value="1">
-                                    </label>
-                                    <label class="form-check-label">
-                                        غیر فعال
-                                        <input @if($kala->status==0)
-                                            checked
-                                                @else
-                                                    disabled
-                                            @endif
-                                            class="form-control-sm form-check" type="radio" value="0">
-                                    </label>
-                                </div>
                             </div>
                             <hr>
                         @endforeach

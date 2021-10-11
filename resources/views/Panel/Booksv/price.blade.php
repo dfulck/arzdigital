@@ -54,7 +54,7 @@
                                                                                                             data-coin-block-reward=" 12.5"
                                                                                                             data-coin-block-time=" 139.0"
                                                                                                             data-coin-difficulty=" 11186802.16269"
-                                                                                                            data-coin-price-usd=" 165.3900000000"
+                                                                                                            data-coin-price-usd="{{$response->LTC->quotes->USD->price}}"
                                                                                                             data-coin-market-cap-usd=" 11382993050.00">
                                                                                                         &rlm;Litecoin &rlm;(Scrypt)
                                                                                                     </option>
@@ -679,8 +679,8 @@
                                                                                         <span
                                                                                             class="mbm-price-dollar-text col-lg-8 col-md-8 col-sm-8 justify-content-center align-self-center ">قیمت دلار کریپتو به تومان: </span>
                                                                                             <input type="text" id="dollar"
-                                                                                                   data-value="28158"
-                                                                                                   value="28158"
+                                                                                                   data-value="{{$dollar}}"
+                                                                                                   value="{{$dollar}}"
                                                                                                    class="form-control mbm-converted-price col-lg-4 col-md-4 col-sm-4">
                                                                                         </div>
                                                                                     </div>
