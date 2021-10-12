@@ -16,7 +16,7 @@
     <link rel='preload' as='font' href="/wp-content/themes/jannah/assets/fonts/fontawesome/fa-brands-400.woff2" type='font/woff2' crossorigin='anonymous'/>
     <link rel='preload' as='font' href="/wp-content/themes/jannah/assets/fonts/fontawesome/fa-regular-400.woff2" type='font/woff2' crossorigin='anonymous'/>
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
-    <title>ماشین حساب ماینینگ - میهن بلاکچین</title>
+    <title>ماشین حساب ماینینگ</title>
     <meta name="description" content="با صفحه ماشین حساب ماینینگ میهن بلاکچین می توانید میزان سود آوری استخراج ارز های دیجیتال را محاسبه کنید."/>
     <link rel="canonical" href="https://mihanblockchain.com/mining-calculator/"/>
     <meta property="og:locale" content="fa_IR"/>
@@ -20839,20 +20839,20 @@
             margin: 0 5px 5px
         }
     </style>
-    <script>
-        if (!navigator.userAgent.match(/x11.*fox\/54|oid\s4.*xus.*ome\/62|x11.*ome\/62|oobot|ighth|tmetr|eadles|ingdo/i)) {
-            var wpo_min0efb1f58 = document.createElement("link");
-            wpo_min0efb1f58.rel = "stylesheet",
-                wpo_min0efb1f58.type = "text/css",
-                wpo_min0efb1f58.media = "async",
-                wpo_min0efb1f58.href = "https://mihanblockchain.com/wp-content/themes/jannah-child/assets/css/fontiran.css",
-                wpo_min0efb1f58.onload = function() {
-                    wpo_min0efb1f58.media = "all"
-                }
-                ,
-                document.getElementsByTagName("head")[0].appendChild(wpo_min0efb1f58)
-        }
-    </script>
+{{--    <script>--}}
+{{--        if (!navigator.userAgent.match(/x11.*fox\/54|oid\s4.*xus.*ome\/62|x11.*ome\/62|oobot|ighth|tmetr|eadles|ingdo/i)) {--}}
+{{--            var wpo_min0efb1f58 = document.createElement("link");--}}
+{{--            wpo_min0efb1f58.rel = "stylesheet",--}}
+{{--                wpo_min0efb1f58.type = "text/css",--}}
+{{--                wpo_min0efb1f58.media = "async",--}}
+{{--                wpo_min0efb1f58.href = "https://mihanblockchain.com/wp-content/themes/jannah-child/assets/css/fontiran.css",--}}
+{{--                wpo_min0efb1f58.onload = function() {--}}
+{{--                    wpo_min0efb1f58.media = "all"--}}
+{{--                }--}}
+{{--                ,--}}
+{{--                document.getElementsByTagName("head")[0].appendChild(wpo_min0efb1f58)--}}
+{{--        }--}}
+{{--    </script>--}}
     <style class="optimize_css_2" type="text/css" media="all">
         html {
             direction: rtl
@@ -33076,6 +33076,7 @@
         }
     </style>
     <script type='text/javascript' src='https://mihanblockchain.com/wp-content/cache/wpo-minify/1633514489/assets/wpo-minify-header-717d095f.min.js' id='wpo_min-header-0-js'></script>
+
     <link rel="https://api.w.org/" href="/wp-json/"/>
     <link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/51964"/>
     <link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmihanblockchain.com%2Fmining-calculator%2F"/>

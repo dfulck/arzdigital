@@ -16,9 +16,12 @@ class WriterMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->Role_id!=3){
-            abort(403);
+        if (auth()->user()->Role_id!=1){
+            if (auth()->user()->Role_id!=3){
+                abort(403);
+            }
         }
+
         return $next($request);
     }
 }

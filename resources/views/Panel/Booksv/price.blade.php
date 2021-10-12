@@ -42,7 +42,7 @@
                                                                                                             data-coin-block-reward=" 6.3482727643936"
                                                                                                             data-coin-block-time=" 546.0"
                                                                                                             data-coin-difficulty=" 19893045048575"
-                                                                                                            data-coin-price-usd="{{$response->BTC->quotes->USD->price}}"
+                                                                                                            data-coin-price-usd="{{$response->getPrice('bitcoin', 'usd')['bitcoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 955266889995.00">
                                                                                                         &rlm;Bitcoin &rlm;(SHA-256)
                                                                                                     </option>
@@ -54,7 +54,7 @@
                                                                                                             data-coin-block-reward=" 12.5"
                                                                                                             data-coin-block-time=" 139.0"
                                                                                                             data-coin-difficulty=" 11186802.16269"
-                                                                                                            data-coin-price-usd="{{$response->LTC->quotes->USD->price}}"
+                                                                                                            data-coin-price-usd="{{$response->getPrice('litecoin', 'usd')['litecoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 11382993050.00">
                                                                                                         &rlm;Litecoin &rlm;(Scrypt)
                                                                                                     </option>
@@ -66,7 +66,7 @@
                                                                                                             data-coin-block-reward=" 25"
                                                                                                             data-coin-block-time=" 144.0"
                                                                                                             data-coin-difficulty=" 104.70940683044"
-                                                                                                            data-coin-price-usd=" 0.4964580000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('vertcoin', 'usd')['vertcoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 30967304.00">
                                                                                                         &rlm;Vertcoin &rlm;(Verthash)
                                                                                                     </option>
@@ -78,7 +78,7 @@
                                                                                                             data-coin-block-reward=" 10000"
                                                                                                             data-coin-block-time=" 63.0"
                                                                                                             data-coin-difficulty=" 3923138.4203897"
-                                                                                                            data-coin-price-usd=" 0.2464650000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('dogecoin', 'usd')['dogecoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 32461568499.00">
                                                                                                         &rlm;Dogecoin &rlm;(Scrypt)
                                                                                                     </option>
@@ -90,7 +90,7 @@
                                                                                                             data-coin-block-reward=" 40"
                                                                                                             data-coin-block-time=" 62.0"
                                                                                                             data-coin-difficulty=" 50.438212516235"
-                                                                                                            data-coin-price-usd=" 0.0228380000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('feathercoin', 'usd')['feathercoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 5729932.00">
                                                                                                         &rlm;Feathercoin
                                                                                                         &rlm;(NeoScrypt)
@@ -103,7 +103,7 @@
                                                                                                             data-coin-block-reward=" 1.95"
                                                                                                             data-coin-block-time=" 66.0"
                                                                                                             data-coin-difficulty=" 412.48395741647"
-                                                                                                            data-coin-price-usd=" 0.0406060000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('einsteinium', 'usd')['einsteinium']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 9128906.00">
                                                                                                         &rlm;Einsteinium
                                                                                                         &rlm;(Scrypt)
@@ -116,7 +116,7 @@
                                                                                                             data-coin-block-reward=" 3.2023438634448"
                                                                                                             data-coin-block-time=" 2060.0"
                                                                                                             data-coin-difficulty=" 105.21"
-                                                                                                            data-coin-price-usd=" 0.0235550000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('worldcoin', 'usd')['worldcoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 3309063.00">
                                                                                                         &rlm;WorldCoin &rlm;(Scrypt)
                                                                                                     </option>
@@ -128,7 +128,7 @@
                                                                                                             data-coin-block-reward=" 1.2321896650926"
                                                                                                             data-coin-block-time=" 157.0"
                                                                                                             data-coin-difficulty=" 97863564.240079"
-                                                                                                            data-coin-price-usd=" 171.7300000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('dash', 'usd')['dash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1785439988.00">
                                                                                                         &rlm;Dash &rlm;(X11)
                                                                                                     </option>
@@ -140,7 +140,7 @@
                                                                                                             data-coin-block-reward=" 5"
                                                                                                             data-coin-block-time=" 63.0"
                                                                                                             data-coin-difficulty=" 854481.63967984"
-                                                                                                            data-coin-price-usd=" 0.8834040000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('groestlcoin', 'usd')['groestlcoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 70372779.00">
                                                                                                         &rlm;Groestlcoin
                                                                                                         &rlm;(Groestl)
@@ -153,7 +153,7 @@
                                                                                                             data-coin-block-reward=" 45.499644370202"
                                                                                                             data-coin-block-time=" 2700.0"
                                                                                                             data-coin-difficulty=" 2332352911.7538"
-                                                                                                            data-coin-price-usd=" 0.8192490000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('peercoin', 'usd')['peercoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 21996908.00">
                                                                                                         &rlm;Peercoin &rlm;(SHA-256)
                                                                                                     </option>
@@ -165,7 +165,7 @@
                                                                                                             data-coin-block-reward=" 0.840527921405"
                                                                                                             data-coin-block-time=" 121.0"
                                                                                                             data-coin-difficulty=" 335537722425"
-                                                                                                            data-coin-price-usd=" 263.6400000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('monero', 'usd')['monero']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 4755769547.00">
                                                                                                         &rlm;Monero &rlm;(RandomX)
                                                                                                     </option>
@@ -177,7 +177,7 @@
                                                                                                             data-coin-block-reward=" 74.33951482"
                                                                                                             data-coin-block-time=" 118.0"
                                                                                                             data-coin-difficulty=" 10604717059"
-                                                                                                            data-coin-price-usd=" 0.0003270000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('bytecoin', 'usd')['bytecoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 58425443.00">
                                                                                                         &rlm;Bytecoin &rlm;(CryptoNight)
                                                                                                     </option>
@@ -189,7 +189,7 @@
                                                                                                             data-coin-block-reward=" 8564"
                                                                                                             data-coin-block-time=" 103.0"
                                                                                                             data-coin-difficulty=" 264.56239947015"
-                                                                                                            data-coin-price-usd=" 0.0000220000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('mooncoin', 'usd')['mooncoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 5055449.00">
                                                                                                         &rlm;Mooncoin &rlm;(Scrypt)
                                                                                                     </option>
@@ -201,7 +201,7 @@
                                                                                                             data-coin-block-reward=" 2.2160166891407"
                                                                                                             data-coin-block-time=" 13.6711"
                                                                                                             data-coin-difficulty=" 9.2833428380481E+15"
-                                                                                                            data-coin-price-usd=" 3376.4500000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('ethereum', 'usd')['ethereum']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 397882017922.00">
                                                                                                         &rlm;Ethereum &rlm;(Ethash)
                                                                                                     </option>
@@ -213,7 +213,7 @@
                                                                                                             data-coin-block-reward=" 7.2010506476429"
                                                                                                             data-coin-block-time=" 329.0"
                                                                                                             data-coin-difficulty=" 16263867229.805"
-                                                                                                            data-coin-price-usd=" 118.2000000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('decred', 'usd')['decred']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1584195365.00">
                                                                                                         &rlm;Decred &rlm;(Blake
                                                                                                         (14r))
@@ -226,7 +226,7 @@
                                                                                                             data-coin-block-reward=" 2.5"
                                                                                                             data-coin-block-time=" 75.0"
                                                                                                             data-coin-difficulty=" 49915311.797707"
-                                                                                                            data-coin-price-usd=" 116.3900000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zcash', 'usd')['zcash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1359129993.00">
                                                                                                         &rlm;Zcash &rlm;(Equihash)
                                                                                                     </option>
@@ -238,7 +238,7 @@
                                                                                                             data-coin-block-reward=" 0.78125"
                                                                                                             data-coin-block-time=" 75.0"
                                                                                                             data-coin-difficulty=" 23.629982227003"
-                                                                                                            data-coin-price-usd=" 0.1938610000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zclassic', 'usd')['zclassic']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1800387.00">
                                                                                                         &rlm;Zclassic &rlm;(EquihashZero)
                                                                                                     </option>
@@ -250,7 +250,7 @@
                                                                                                             data-coin-block-reward=" 4"
                                                                                                             data-coin-block-time=" 85.0"
                                                                                                             data-coin-difficulty=" 4817956008001"
-                                                                                                            data-coin-price-usd=" 0.2961090000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('ubiq', 'usd')['ubiq']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 13776377.00">
                                                                                                         &rlm;Ubiq &rlm;(Ubqhash)
                                                                                                     </option>
@@ -262,7 +262,7 @@
                                                                                                             data-coin-block-reward=" 3"
                                                                                                             data-coin-block-time=" 64.0"
                                                                                                             data-coin-difficulty=" 247556936.50584"
-                                                                                                            data-coin-price-usd=" 0.9629810000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('komodo', 'usd')['komodo']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 123612232.00">
                                                                                                         &rlm;Komodo &rlm;(Equihash)
                                                                                                     </option>
@@ -274,7 +274,7 @@
                                                                                                             data-coin-block-reward=" 6.25"
                                                                                                             data-coin-block-time=" 270.0"
                                                                                                             data-coin-difficulty=" 1241.8563"
-                                                                                                            data-coin-price-usd=" 7.2100000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zcoin', 'usd')['zcoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 89433095.00">
                                                                                                         &rlm;Firo &rlm;(MTP)
                                                                                                     </option>
@@ -286,7 +286,7 @@
                                                                                                             data-coin-block-reward=" 2.9654740689497"
                                                                                                             data-coin-block-time=" 240.0"
                                                                                                             data-coin-difficulty=" 7411788123"
-                                                                                                            data-coin-price-usd=" 0.1466850000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('karbo', 'usd')['karbo']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1352842.00">
                                                                                                         &rlm;Karbo &rlm;(CryptoNight)
                                                                                                     </option>
@@ -298,7 +298,7 @@
                                                                                                             data-coin-block-reward=" 3.75"
                                                                                                             data-coin-block-time=" 153.0"
                                                                                                             data-coin-difficulty=" 45317473.273907"
-                                                                                                            data-coin-price-usd=" 71.8200000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zencash', 'usd')['zencash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 834649032.00">
                                                                                                         &rlm;Horizen &rlm;(Equihash)
                                                                                                     </option>
@@ -310,7 +310,7 @@
                                                                                                             data-coin-block-reward=" 0"
                                                                                                             data-coin-block-time=" 60.0"
                                                                                                             data-coin-difficulty=" 10.81445403"
-                                                                                                            data-coin-price-usd=" 0.3437110000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('denarius', 'usd')['denarius']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 2617481.00">
                                                                                                         &rlm;Denarius &rlm;(Tribus)
                                                                                                     </option>
@@ -322,7 +322,7 @@
                                                                                                             data-coin-block-reward=" 85.15"
                                                                                                             data-coin-block-time=" 244.0"
                                                                                                             data-coin-difficulty=" 2269613893"
-                                                                                                            data-coin-price-usd=" 0.0640790000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('sumokoin', 'usd')['sumokoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 2652192.00">
                                                                                                         &rlm;Sumokoin &rlm;(CryptoNightR)
                                                                                                     </option>
@@ -334,7 +334,7 @@
                                                                                                             data-coin-block-reward=" 2.9874771619342"
                                                                                                             data-coin-block-time=" 52.0"
                                                                                                             data-coin-difficulty=" 36837.967218177"
-                                                                                                            data-coin-price-usd=" 0.0055120000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('smartcash', 'usd')['smartcash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 15166829.00">
                                                                                                         &rlm;SmartCash &rlm;(Keccak)
                                                                                                     </option>
@@ -346,7 +346,7 @@
                                                                                                             data-coin-block-reward=" 0.78125"
                                                                                                             data-coin-block-time=" 142.0"
                                                                                                             data-coin-difficulty=" 15.380629546611"
-                                                                                                            data-coin-price-usd=" 0.2001070000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('bitcore', 'usd')['bitcore']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 3749495.00">
                                                                                                         &rlm;BitCore &rlm;(Mega-BTX)
                                                                                                     </option>
@@ -358,7 +358,7 @@
                                                                                                             data-coin-block-reward=" 11875"
                                                                                                             data-coin-block-time=" 177.0"
                                                                                                             data-coin-difficulty=" 2881.0688189585"
-                                                                                                            data-coin-price-usd=" 0.0005290000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('bitcoinz', 'usd')['bitcoinz']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 5470545.00">
                                                                                                         &rlm;BitcoinZ &rlm;(Zhash)
                                                                                                     </option>
@@ -370,7 +370,7 @@
                                                                                                             data-coin-block-reward=" 3.645"
                                                                                                             data-coin-block-time=" 121.0"
                                                                                                             data-coin-difficulty=" 39735.353679561"
-                                                                                                            data-coin-price-usd=" 0.2305140000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zero', 'usd')['zero']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 2433648.00">
                                                                                                         &rlm;Zero &rlm;(EquihashZero)
                                                                                                     </option>
@@ -382,7 +382,7 @@
                                                                                                             data-coin-block-reward=" 1"
                                                                                                             data-coin-block-time=" 240.0"
                                                                                                             data-coin-difficulty=" 29777"
-                                                                                                            data-coin-price-usd=" 0.1923970000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('deeponion', 'usd')['deeponion']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 4342324.00">
                                                                                                         &rlm;DeepOnion &rlm;(X13)
                                                                                                     </option>
@@ -394,7 +394,7 @@
                                                                                                             data-coin-block-reward=" 4.84307455"
                                                                                                             data-coin-block-time=" 60.0"
                                                                                                             data-coin-difficulty=" 102"
-                                                                                                            data-coin-price-usd=" 0.1145230000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('bismuth', 'usd')['bismuth']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 2779868.00">
                                                                                                         &rlm;Bismuth &rlm;(SHA-224)
                                                                                                     </option>
@@ -406,7 +406,7 @@
                                                                                                             data-coin-block-reward=" 5000"
                                                                                                             data-coin-block-time=" 59.0"
                                                                                                             data-coin-difficulty=" 121944.96763203"
-                                                                                                            data-coin-price-usd=" 0.1045650000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('ravencoin', 'usd')['ravencoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 1026358045.00">
                                                                                                         &rlm;Ravencoin &rlm;(KawPow)
                                                                                                     </option>
@@ -418,7 +418,7 @@
                                                                                                             data-coin-block-reward=" 412.5"
                                                                                                             data-coin-block-time=" 151.0"
                                                                                                             data-coin-difficulty=" 5525078994"
-                                                                                                            data-coin-price-usd=" 0.0503360000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('bytom', 'usd')['bytom']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 85781506.00">
                                                                                                         &rlm;Bytom &rlm;(Tensority)
                                                                                                     </option>
@@ -430,7 +430,7 @@
                                                                                                             data-coin-block-reward=" 4.5"
                                                                                                             data-coin-block-time=" 10.0"
                                                                                                             data-coin-difficulty=" 6972235"
-                                                                                                            data-coin-price-usd=" 0.1509140000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('aion', 'usd')['aion']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 75158877.00">
                                                                                                         &rlm;Aion &rlm;(Equihash
                                                                                                         (210,9))
@@ -443,7 +443,7 @@
                                                                                                             data-coin-block-reward=" 12.47"
                                                                                                             data-coin-block-time=" 121.0"
                                                                                                             data-coin-difficulty=" 2.3440007"
-                                                                                                            data-coin-price-usd=" 0.0026270000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('suqa', 'usd')['suqa']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 2049136.00">
                                                                                                         &rlm;SINOVATE &rlm;(X25X)
                                                                                                     </option>
@@ -455,7 +455,7 @@
                                                                                                             data-coin-block-reward=" 37.5"
                                                                                                             data-coin-block-time=" 121.0"
                                                                                                             data-coin-difficulty=" 3396.9646933765"
-                                                                                                            data-coin-price-usd=" 0.4049790000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zelcash', 'usd')['zelcash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 75983551.00">
                                                                                                         &rlm;Flux &rlm;(ZelHash)
                                                                                                     </option>
@@ -467,7 +467,7 @@
                                                                                                             data-coin-block-reward=" 0.748322489348"
                                                                                                             data-coin-block-time=" 29.0"
                                                                                                             data-coin-difficulty=" 2022849976"
-                                                                                                            data-coin-price-usd=" 22.9100000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('dero', 'usd')['dero']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 249881952.00">
                                                                                                         &rlm;Dero &rlm;(AstroBWT)
                                                                                                     </option>
@@ -479,7 +479,7 @@
                                                                                                             data-coin-block-reward=" 26456.83"
                                                                                                             data-coin-block-time=" 30.0"
                                                                                                             data-coin-difficulty=" 5475626456"
-                                                                                                            data-coin-price-usd=" 0.0000970000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('turtlecoin', 'usd')['turtlecoin']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 10855406.00">
                                                                                                         &rlm;TurtleCoin
                                                                                                         &rlm;(ChukwaV2)
@@ -492,7 +492,7 @@
                                                                                                             data-coin-block-reward=" 40"
                                                                                                             data-coin-block-time=" 59.0"
                                                                                                             data-coin-difficulty=" 27013644"
-                                                                                                            data-coin-price-usd=" 0.5547590000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('beam', 'usd')['beam']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 54502113.00">
                                                                                                         &rlm;BEAM &rlm;(BeamHashIII)
                                                                                                     </option>
@@ -504,7 +504,7 @@
                                                                                                             data-coin-block-reward=" 96.228"
                                                                                                             data-coin-block-time=" 181.0"
                                                                                                             data-coin-difficulty=" 3639150"
-                                                                                                            data-coin-price-usd=" 0.0978380000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('aeternity', 'usd')['aeternity']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 38261844.00">
                                                                                                         &rlm;Aeternity &rlm;(CuckooCycle)
                                                                                                     </option>
@@ -516,7 +516,7 @@
                                                                                                             data-coin-block-reward=" 2853.68082"
                                                                                                             data-coin-block-time=" 60.0"
                                                                                                             data-coin-difficulty=" 2809535.27"
-                                                                                                            data-coin-price-usd=" 0.0043220000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('nimiq-2', 'usd')['nimiq-2']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 35942381.00">
                                                                                                         &rlm;Nimiq &rlm;(Argon2d-NIM)
                                                                                                     </option>
@@ -528,7 +528,7 @@
                                                                                                             data-coin-block-reward=" 2.317314"
                                                                                                             data-coin-block-time=" 150.0"
                                                                                                             data-coin-difficulty=" 2546.762933938"
-                                                                                                            data-coin-price-usd=" 0.6761940000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('nexus', 'usd')['nexus']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 48923600.00">
                                                                                                         &rlm;Nexus &rlm;(NexusHash)
                                                                                                     </option>
@@ -540,7 +540,7 @@
                                                                                                             data-coin-block-reward=" 6"
                                                                                                             data-coin-block-time=" 121.0"
                                                                                                             data-coin-difficulty=" 247000000"
-                                                                                                            data-coin-price-usd=" 0.5614110000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('conceal', 'usd')['conceal']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 6517345.00">
                                                                                                         &rlm;Conceal &rlm;(CryptoNightGPU)
                                                                                                     </option>
@@ -552,7 +552,7 @@
                                                                                                             data-coin-block-reward=" 2.5168"
                                                                                                             data-coin-block-time=" 9.8822"
                                                                                                             data-coin-difficulty=" 43924681323"
-                                                                                                            data-coin-price-usd=" 0.0220280000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('quark-chain', 'usd')['quark-chain']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 144548329.00">
                                                                                                         &rlm;QuarkChain
                                                                                                         &rlm;(Ethash)
@@ -565,7 +565,7 @@
                                                                                                             data-coin-block-reward=" 2000"
                                                                                                             data-coin-block-time=" 602.0"
                                                                                                             data-coin-difficulty=" 833377296"
-                                                                                                            data-coin-price-usd=" 0.2109410000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('handshake', 'usd')['handshake']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 88920896.00">
                                                                                                         &rlm;Handshake &rlm;(Handshake)
                                                                                                     </option>
@@ -577,7 +577,7 @@
                                                                                                             data-coin-block-reward=" 4.4"
                                                                                                             data-coin-block-time=" 16.1863"
                                                                                                             data-coin-difficulty=" 435047939354"
-                                                                                                            data-coin-price-usd=" 0.1640270000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('super-zero', 'usd')['super-zero']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 54189279.00">
                                                                                                         &rlm;SERO &rlm;(ProgPow)
                                                                                                     </option>
@@ -589,7 +589,7 @@
                                                                                                             data-coin-block-reward=" 7"
                                                                                                             data-coin-block-time=" 13.7948"
                                                                                                             data-coin-difficulty=" 135702"
-                                                                                                            data-coin-price-usd=" 0.2022680000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('cortex', 'usd')['cortex']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 37375475.00">
                                                                                                         &rlm;Cortex &rlm;(CuckooCycleCortex)
                                                                                                     </option>
@@ -601,7 +601,7 @@
                                                                                                             data-coin-block-reward=" 1"
                                                                                                             data-coin-block-time=" 120.0"
                                                                                                             data-coin-difficulty=" 1840830512602"
-                                                                                                            data-coin-price-usd=" 2.4600000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('zano', 'usd')['zano']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 31674962.00">
                                                                                                         &rlm;Zano &rlm;(ProgPowZ)
                                                                                                     </option>
@@ -613,7 +613,7 @@
                                                                                                             data-coin-block-reward=" 1.0782085"
                                                                                                             data-coin-block-time=" 1.5004"
                                                                                                             data-coin-difficulty=" 4.2070247617657E+16"
-                                                                                                            data-coin-price-usd=" 2.0700000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('kadena', 'usd')['kadena']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 316072439.00">
                                                                                                         &rlm;Kadena &rlm;(Kadena)
                                                                                                     </option>
@@ -625,7 +625,7 @@
                                                                                                             data-coin-block-reward=" 1.9914574326565"
                                                                                                             data-coin-block-time=" 1.1719"
                                                                                                             data-coin-difficulty=" 1150655716458"
-                                                                                                            data-coin-price-usd=" 0.3144210000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('conflux-token', 'usd')['conflux-token']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 316924401.00">
                                                                                                         &rlm;Conflux &rlm;(Octopus)
                                                                                                     </option>
@@ -637,7 +637,7 @@
                                                                                                             data-coin-block-reward=" 5.9375"
                                                                                                             data-coin-block-time=" 153.0"
                                                                                                             data-coin-difficulty=" 392.8"
-                                                                                                            data-coin-price-usd=" 0.3915240000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('ycash', 'usd')['ycash']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 4560138.00">
                                                                                                         &rlm;Ycash &rlm;(EquihashZero)
                                                                                                     </option>
@@ -649,7 +649,7 @@
                                                                                                             data-coin-block-reward=" 67.511"
                                                                                                             data-coin-block-time=" 82.0"
                                                                                                             data-coin-difficulty=" 2.7076118079078E+15"
-                                                                                                            data-coin-price-usd=" 11.5400000000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('ergo', 'usd')['ergo']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 509176307.00">
                                                                                                         &rlm;Ergo &rlm;(Autolykos)
                                                                                                     </option>
@@ -661,7 +661,7 @@
                                                                                                             data-coin-block-reward=" 4.6569"
                                                                                                             data-coin-block-time=" 119.0"
                                                                                                             data-coin-difficulty=" 95472484"
-                                                                                                            data-coin-price-usd=" 0.2536690000"
+                                                                                                            data-coin-price-usd=" {{$response->getPrice('triton', 'usd')['triton']['usd']}}"
                                                                                                             data-coin-market-cap-usd=" 13975926.00">
                                                                                                         &rlm;Equilibria
                                                                                                         &rlm;(CryptoNightGPU)

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Psr7\Stream;
 use GuzzleHttp\Client;
+use Codenixsv\CoinGeckoApi\CoinGeckoClient;
 
 class HomeController extends Controller
 {
@@ -24,18 +25,19 @@ class HomeController extends Controller
 
     public function PriceCallector()
     {
-        $URI = Http::get('https://production.api.coindesk.com/v1/currency/ticker?currencies=BTC,ETH,LTC,XRP,BCH')->json();
-        $response = json_encode($URI);
-        $res = json_decode($response);
-
+//        $URI = Http::get('https://production.api.coindesk.com/v1/currency/ticker?currencies=BTC,ETH,LTC,XRP,BCH')->json();
+//        $response = json_encode($URI);
+//        $res = json_decode($response);
+        $client = new CoinGeckoClient();
+        $data = $client->simple();
         $URL = Http::get('https://tejaratnews.com/api/v2/ajax/prices/instrument-price.php?id=17321&period=m&chart=line&token=e7579bbf62340c23')->json();
         $dollars = json_encode($URL);
         $jsondecode = json_decode($dollars);
-        $count=count($jsondecode->data)-1;
-        $dollar=$jsondecode->data[$count]->meta->price;
-        return view('Panel.Booksv.price',[
-            'response'=>$res->data->currency,
-            'dollar'=>$dollar
+        $count = count($jsondecode->data) - 1;
+        $dollar = $jsondecode->data[$count]->meta->price;
+        return view('Panel.Booksv.price', [
+            'response' => $data,
+            'dollar' => $dollar
         ]);
     }
 
