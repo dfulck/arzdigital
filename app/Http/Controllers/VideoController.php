@@ -46,6 +46,7 @@ class VideoController extends Controller
             'title'=>$request->get('title'),
             'image'=>$request->file('image')->storeAs('public/VideoCoverImage', $request->file('image')->getClientOriginalName()),
         ]);
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -89,7 +90,7 @@ class VideoController extends Controller
             'title'=>$request->get('title'),
             'image'=>$image
         ]);
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
     /**
@@ -102,6 +103,7 @@ class VideoController extends Controller
     {
         Storage::delete([$video->video,$video->image]);
         $video->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

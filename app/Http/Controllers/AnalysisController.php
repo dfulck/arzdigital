@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Analysis;
 use App\Models\Part;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AnalysisController extends Controller
 {
@@ -48,7 +49,7 @@ class AnalysisController extends Controller
             'body'=>$request->get('body'),
             'creator'=>auth()->user()->username
         ]);
-
+        session()->flash('success', "ایجاد شد");
         return redirect(route('analyses.index'));
     }
 
@@ -109,6 +110,7 @@ class AnalysisController extends Controller
             'part_body'=>$request->get('part_body'),
             'part_image'=>$request->file('part_image')->storeAs('public/PartImage', $request->file('part_image')->getClientOriginalName()),
         ]);
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
 
@@ -120,6 +122,10 @@ class AnalysisController extends Controller
      */
     public function destroy(Analysis $analysis)
     {
-
+        $analysis->delete();
+        Storage::delete($analysis->image);
+        Storage::delete($analysis->LogoImage);
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

@@ -55,7 +55,7 @@ class PostController extends Controller
         ]);
 
         $post->tags()->attach($request->get('tag'));
-
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -110,7 +110,7 @@ class PostController extends Controller
             'part_body'=>$request->get('part_body'),
         ]);
         $post->tags()->sync($request->get('tag'));
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
 
@@ -124,6 +124,7 @@ class PostController extends Controller
     {
         Storage::delete($post->image);
         $post->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

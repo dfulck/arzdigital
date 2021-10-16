@@ -40,7 +40,7 @@ class AnswerController extends Controller
         $user = auth()->user();
 
         $question->users()->attach($user, ['answer' => $request->answer]);
-        session()->flash('success','Answer Added Successfully');
+        session()->flash('success', "ایجاد شد");
         return back();
 
     }

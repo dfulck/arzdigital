@@ -40,6 +40,7 @@ class TagController extends Controller
         Tag::query()->create([
             'title'=>$request->get('title')
         ]);
+        session()->flash('success', "ایجاد شد");
         return redirect(route('tags.index'));
     }
 
@@ -79,6 +80,7 @@ class TagController extends Controller
         $tag->update([
             'title'=>$request->get('title')
         ]);
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect(route('tags.index'));
     }
 
@@ -91,6 +93,7 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

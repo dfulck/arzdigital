@@ -48,7 +48,7 @@ class UserController extends Controller
             return back()->withErrors(['password' => 'this password in incorect']);
         }
         auth()->login($user);
-        session()->flash('success', "Login {$user->username} Successfully");
+        session()->flash('success', "با موفقیت وارد شدید");
         return redirect(route('users.dashboard'));
     }
 
@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
         auth()->logout($user);
-        session()->flash('error', "Logout successfully");
+        session()->flash('error', "با موفقیت خارج شدید");
         return redirect(route('users.index'));
     }
 
@@ -89,7 +89,7 @@ class UserController extends Controller
             'email' => ['required', 'email']
         ]);
         User::RegisterUser($request);
-        session()->flash('success', 'sucessfull Registred');
+        session()->flash('success', 'ثبت نام شما با موفقیت انجام شد');
 
         $user = auth()->user();
         return redirect(route('users.show', $user));
@@ -149,7 +149,7 @@ class UserController extends Controller
             ]);
         }
 
-        session()->flash('info', 'update successfully');
+        session()->flash('info', 'اطلاعات شما اپدیت شد');
         return redirect()->back();
 
     }
@@ -163,6 +163,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        session()->flash('error', "کاربر با موفقیت حذف شد");
         return redirect()->back();
     }
 }

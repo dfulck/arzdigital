@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{route('etsos.store')}}" method="post">
+                        <form action="{{route('etsos.store')}}" method="post" >
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">فرم ایجاد </label>

@@ -43,7 +43,7 @@ class QuestionController extends Controller
         ]);
 
         $post->questions()->attach($question->id);
-        session()->flash('success','Question Added Successfully');
+        session()->flash('success', "ایجاد شد");
         return back();
 
     }
@@ -77,6 +77,7 @@ class QuestionController extends Controller
      */
     public function update(Request $request,Post $post,Question $question)
     {
+        session()->flash('info', "ویرایش تکمیل شد");
         dd('update');
     }
 
@@ -88,6 +89,7 @@ class QuestionController extends Controller
      */
     public function destroy(Post $post,Question $question)
     {
+        session()->flash('error', "با موفقیت حذف شد");
         dd('destroy');
     }
 }

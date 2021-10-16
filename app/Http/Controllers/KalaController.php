@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KalaController extends Controller
 {
@@ -54,6 +55,7 @@ class KalaController extends Controller
             'body'=>$request->get('body'),
             'image'=>$request->file('image')->storeAs('public/Kalaimage', $request->file('image')->getClientOriginalName()),
         ]);
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -112,6 +114,7 @@ class KalaController extends Controller
             'body'=>$request->get('body'),
             'image'=>$image,
         ]);
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
 
@@ -124,7 +127,8 @@ class KalaController extends Controller
     public function destroy(Kala $kala)
     {
         $kala->delete();
-
+        Storage::delete($kala->image);
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

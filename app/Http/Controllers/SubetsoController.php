@@ -47,7 +47,7 @@ class SubetsoController extends Controller
            'number'=>$request->get('number'),
            'fox'=>$request->get('fox'),
        ]);
-
+        session()->flash('success', "ایجاد شد");
        return redirect()->back();
     }
 
@@ -82,6 +82,7 @@ class SubetsoController extends Controller
     public function destroy(etso $etso,subetso $subetso)
     {
         $subetso->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

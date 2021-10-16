@@ -48,6 +48,7 @@ class SubfooterController extends Controller
             'title'=>$request->get('title'),
             'link'=>$request->get('link'),
         ]);
+        session()->flash('success', "ایجاد شد");
         return redirect(route('subfooters.index'));
     }
 
@@ -70,7 +71,12 @@ class SubfooterController extends Controller
      */
     public function edit(Subfooter $subfooter)
     {
-        //
+        return view('Panel.Subfooter.edit',[
+            'subcategories'=>Subcategory::all(),
+            'analyses'=>Analysis::all(),
+            'leaders'=>Leader::all(),
+            'subfooter'=>$subfooter
+        ]);
     }
 
     /**
@@ -82,7 +88,11 @@ class SubfooterController extends Controller
      */
     public function update(Request $request, Subfooter $subfooter)
     {
-        //
+        $subfooter->update([
+            'title'=>$request->get('title'),
+        ]);
+        session()->flash('info', "ویرایش تکمیل شد");
+        return redirect(route('subfooters.index'));
     }
 
     /**
@@ -93,6 +103,12 @@ class SubfooterController extends Controller
      */
     public function destroy(Subfooter $subfooter)
     {
-        //
+        if ($subfooter->footers()){
+            session()->flash('error', "برای حذف این دسته باید اول فرزندان ان را پاک کنید(مدیریت فوتر سایت /مدیریت لیست) ");
+            return redirect()->back();
+        }
+        $subfooter->delete();
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

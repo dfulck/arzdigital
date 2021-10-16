@@ -42,7 +42,7 @@ class SubcategoryController extends Controller
        ]);
 
         $category->subcategories()->attach($subcategory);
-
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
 
     }
@@ -58,7 +58,7 @@ class SubcategoryController extends Controller
     {
 
       $category->subcategories()->sync($request->get('title'));
-
+        session()->flash('info', "ویرایش تکمیل شد");
       return redirect()->back();
     }
     /**
@@ -68,6 +68,7 @@ class SubcategoryController extends Controller
     {
         $subcategory->categories()->detach(Category::all());
        $subcategory->delete();
+        session()->flash('error', "با موفقیت حذف شد");
        return redirect()->back();
     }
 

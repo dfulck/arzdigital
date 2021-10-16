@@ -78,6 +78,7 @@ class MassageController extends Controller
         foreach ($emails as $email){
             Mail::to($email->email)->send(new MassageEmail($massage));
         }
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -123,6 +124,8 @@ class MassageController extends Controller
      */
     public function destroy(Massage $massage)
     {
-        //
+        $massage->delete();
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

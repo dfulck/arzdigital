@@ -48,6 +48,7 @@ class ContentController extends Controller
             'image'=>$request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName()),
             'leader_id'=>$leader->id,
         ]);
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -94,7 +95,7 @@ class ContentController extends Controller
             'body'=>$request->get('body'),
             'image'=>$image,
         ]);
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
 
@@ -108,6 +109,7 @@ class ContentController extends Controller
     {
         Storage::delete($content->image);
         $content->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

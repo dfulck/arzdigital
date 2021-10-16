@@ -8,6 +8,7 @@
                     <span class="badge badge-warning">2</span>
                 </a>
             </li>
+            @if(auth()->user()->Role_id===1 || auth()->user()->Role_id===3)
             <li data-toggle="tooltip" title="مدیریت منو ها">
                 <a href="#navigationApps" title="دسته بندی ها">
                     <i class="icon ti-package"></i>
@@ -23,6 +24,7 @@
                     <i class="icon ti-layers"></i>
                 </a>
             </li>
+            @endif
             <li data-toggle="tooltip" title="پروفایل کاربری">
                 <a href="#navigationPages" title="پروفایل کاربری">
                     <i class="icon ti-user"></i>
@@ -54,14 +56,13 @@
                     <li><a href="{{route('game')}}">فیلم شانسی</a></li>
                 </ul>
             </li>
-            @if(auth()->user()->Role_id===1)
-                <li>
-                    <a href="#">مدیریت کاربران</a>
-                    <ul>
-                        <li><a href="{{route('users.ListAll')}}">لیست کاربران</a></li>
-                    </ul>
-                </li>
-            @endif
+            <li>
+                <a href="#">فرم ها</a>
+                <ul>
+                    <li><a href="{{route('forms.create')}}">ایجاد فرم</a></li>
+                    <li><a href="{{route('forms.index')}}">لیست فرم ها</a></li>
+                </ul>
+            </li>
             @if(auth()->user()->Role_id===3)
                 <li>
                     <a href="#">لیست دسترسی نویسنده </a>
@@ -80,110 +81,126 @@
                         <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">لیست داده ها</a>
+                    <ul>
+                        <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
+                        <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
+                        <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
+                        <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
+                        <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
+                        <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
+                        <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
+                        <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
+                        </li>
+                        <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
+                    </ul>
+                </li>
             @endif
             @if(auth()->user()->Role_id===1)
-            <li>
-                <a href="#">لیست دسترسی ادمین</a>
-                <ul>
-                    <li>
-                        <a href="#">لیست شهر های عضو اتحادیه</a>
-                        <ul>
-                            <li><a href="{{route('etsos.create')}}">اضافه کردن شهر</a></li>
-                            <li><a href="{{route('etsos.index')}}">برای مدیریت لیست کلیک کنید</a></li>
-                            <li><a href="{{route('list.esto')}}">لیست کل</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
-                    <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
-                    <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
-                    <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
-                    <li><a href="{{route('catalogues.index')}}">مدیریت کاتالوگ ها {ادمین}</a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">لیست دسترسی ادمین</a>
+                    <ul>
+                        <li>
+                            <a href="#">لیست شهر های عضو اتحادیه</a>
+                            <ul>
+                                <li><a href="{{route('etsos.create')}}">اضافه کردن شهر</a></li>
+                                <li><a href="{{route('etsos.index')}}">برای مدیریت لیست کلیک کنید</a></li>
+                                <li><a href="{{route('list.esto')}}">لیست کل</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
+                        <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
+                        <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
+                        <li><a href="{{route('catalogues.index')}}">مدیریت کاتالوگ ها {ادمین}</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">لیست داده ها</a>
+                    <ul>
+                        <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
+                        <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
+                        <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
+                        <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
+                        <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
+                        <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
+                        <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
+                        <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
+                        </li>
+                        <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
+                    </ul>
+                </li>
             @endif
-            <li>
-                <a href="#">لیست داده ها</a>
-                <ul>
-                    <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
-                    <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
-                    <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
-                    <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
-                    <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
-                    <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
-                    <li><a href="{{route('catalogues.create')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
-                    <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
-                    <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
-                    </li>
-                    <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
-                </ul>
-            </li>
+            <li><a href="{{route('catalogues.create')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
         </ul>
         <ul id="navigationApps">
             <li class="navigation-divider">دسته بندی ها</li>
             @if(auth()->user()->Role_id===1)
-            <li>
-                <a href="#">مدیریت منوی سایت</a>
-                <ul>
-                    <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
-                    <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">برچسب های سایت </a>
-                <ul>
-                    <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
-                    <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">تحلیل ارز ها</a>
-                <ul>
-                    <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
-                    <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">مدیریت منوی سایت</a>
+                    <ul>
+                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
+                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">برچسب های سایت </a>
+                    <ul>
+                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
+                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">تحلیل ارز ها</a>
+                    <ul>
+                        <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
+                        <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
+                    </ul>
+                </li>
             @endif
             @if(auth()->user()->Role_id===3)
-            <li>
-                <a href="#">مدیریت منوی سایت</a>
-                <ul>
-                    <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
-                    <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">برچسب های سایت </a>
-                <ul>
-                    <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
-                    <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">تحلیل ارز ها</a>
-                <ul>
-                    <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
-                    <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">مدیریت منوی سایت</a>
+                    <ul>
+                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
+                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">برچسب های سایت </a>
+                    <ul>
+                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
+                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">تحلیل ارز ها</a>
+                    <ul>
+                        <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
+                        <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
+                    </ul>
+                </li>
             @endif
         </ul>
         <ul id="navigationPlugins">
             <li class="navigation-divider"> مدیریت طاهر سایت</li>
             @if(auth()->user()->Role_id===3)
-            <li>
-                <a href="#">ایحاد لینک برای فوتر</a>
-                <ul>
-                    <li><a href="{{route('subfooters.create')}}">اضافه کردن لینک</a></li>
-                    <li><a href="{{route('subfooters.index')}}">مدیریت لینک ها</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">مدیرت فوتر سایت</a>
-                <ul>
-                    <li><a href="{{route('footers.create')}}">اضافه کردن منوی پایین سایت</a></li>
-                    <li><a href="{{route('footers.index')}}">مدیریت لیست (ویرایش و اضافه کردن)</a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">ایحاد لینک برای فوتر</a>
+                    <ul>
+                        <li><a href="{{route('subfooters.create')}}">اضافه کردن لینک</a></li>
+                        <li><a href="{{route('subfooters.index')}}">مدیریت لینک ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">مدیرت فوتر سایت</a>
+                    <ul>
+                        <li><a href="{{route('footers.create')}}">اضافه کردن منوی پایین سایت</a></li>
+                        <li><a href="{{route('footers.index')}}">مدیریت لیست (ویرایش و اضافه کردن)</a></li>
+                    </ul>
+                </li>
             @endif
             @if(auth()->user()->Role_id===1)
                 <li>
@@ -205,33 +222,33 @@
         <ul id="navigationElements">
             <li class="navigation-divider">مدیریت مطالب</li>
             @if(auth()->user()->Role_id===1)
-            <li>
-                <a href="#">مطالب و اخبار سایت</a>
-                <ul>
-                    <li><a href="{{route('leaders.create')}}">اضافه کردن دسته برای مطالب </a></li>
-                    <li><a href="{{route('leaders.index')}}">مدیریت و اضافه کردن خبر جدید</a></li>
-                    <li><a href="{{route('contents.index')}}">لبست تمامی مطالب و خبر ها</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">ایجاد پست </a>
-                <ul>
-                    <li><a href="{{route('subcategories.index')}}">اضافه کردن پست برای دسته بندی های فرزند</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">گالری ویدیو ها</a>
-                <ul>
-                    <li><a href="{{route('videocats.create')}}">ایجاد دسته بندی برای ویدیو ها </a></li>
-                    <li><a href="{{route('videocats.index')}}">مدیریت دسته بندی های مرنبط (اضافه کردن و...)</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">نظرات کاربران</a>
-                <ul>
-                    <li><a href="{{route('questions.index')}}">لیست نظرات</a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">مطالب و اخبار سایت</a>
+                    <ul>
+                        <li><a href="{{route('leaders.create')}}">اضافه کردن دسته برای مطالب </a></li>
+                        <li><a href="{{route('leaders.index')}}">مدیریت و اضافه کردن خبر جدید</a></li>
+                        <li><a href="{{route('contents.index')}}">لبست تمامی مطالب و خبر ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ایجاد پست </a>
+                    <ul>
+                        <li><a href="{{route('subcategories.index')}}">اضافه کردن پست برای دسته بندی های فرزند</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">گالری ویدیو ها</a>
+                    <ul>
+                        <li><a href="{{route('videocats.create')}}">ایجاد دسته بندی برای ویدیو ها </a></li>
+                        <li><a href="{{route('videocats.index')}}">مدیریت دسته بندی های مرنبط (اضافه کردن و...)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">نظرات کاربران</a>
+                    <ul>
+                        <li><a href="{{route('questions.index')}}">لیست نظرات</a></li>
+                    </ul>
+                </li>
             @endif
             @if(auth()->user()->Role_id===3)
                 <li>
@@ -259,21 +276,27 @@
         </ul>
         <ul id="navigationPages">
             @if(auth()->user()->Role_id===1)
-            <li>
-                <a href="#">دسترسی ها</a>
-                <ul>
-                    <li><a href="{{route('roles.create')}}">ایجاد دسترسی برای کاربران</a></li>
-                    <li><a href="{{route('roles.index')}}">لیست دسترسی ها </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">ارسال ایمیل به کاربران</a>
-                <ul>
-                    <li><a href="{{route('massages.create')}}">ایجاد</a></li>
-                    <li><a href="{{route('massages.index')}}">لیست</a></li>
-                </ul>
-            </li>
+                <li>
+                    <a href="#">ارسال ایمیل به کاربران</a>
+                    <ul>
+                        <li><a href="{{route('massages.create')}}">ایجاد</a></li>
+                        <li><a href="{{route('massages.index')}}">لیست</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">مدیریت کاربران</a>
+                    <ul>
+                        <li><a href="{{route('users.ListAll')}}">لیست کاربران</a></li>
+                    </ul>
+                </li>
             @endif
+                <li>
+                    <a href="#">ویرایش پروفایل</a>
+                    <ul>
+                        <li><a href="{{route('users.edit',$user)}}">ویرایش </a></li>
+                    </ul>
+                </li>
+
         </ul>
     </div>
 </div>
@@ -321,7 +344,7 @@
                                 <div class="col-6">
                                     <a href="#">
                                         <div
-                                            class="d-flex flex-column font-size-13 bg-danger-bright bg-hover pt-3 pb-3 border-radius-1 text-danger text-center mb-3">
+                                                class="d-flex flex-column font-size-13 bg-danger-bright bg-hover pt-3 pb-3 border-radius-1 text-danger text-center mb-3">
                                             <i class="fa fa-sitemap mb-2 font-size-20"></i>
                                             دسته‌بندی ها
                                         </div>
@@ -330,7 +353,7 @@
                                 <div class="col-6">
                                     <a href="#">
                                         <div
-                                            class="d-flex flex-column font-size-13 bg-info-bright bg-hover pt-3 pb-3 border-radius-1 text-info text-center mb-3">
+                                                class="d-flex flex-column font-size-13 bg-info-bright bg-hover pt-3 pb-3 border-radius-1 text-info text-center mb-3">
                                             <i class="ti-game mb-2 font-size-20"></i>
                                             محصولات
                                         </div>
@@ -339,7 +362,7 @@
                                 <div class="col-6">
                                     <a href="#">
                                         <div
-                                            class="d-flex flex-column font-size-13 bg-warning-bright bg-hover pt-3 pb-3 border-radius-1 text-warning text-center">
+                                                class="d-flex flex-column font-size-13 bg-warning-bright bg-hover pt-3 pb-3 border-radius-1 text-warning text-center">
                                             <i class="ti-bar-chart-alt mb-2 font-size-20"></i>
                                             گزارشات
                                         </div>
@@ -348,7 +371,7 @@
                                 <div class="col-6">
                                     <a href="#">
                                         <div
-                                            class="d-flex flex-column font-size-13 bg-secondary-bright bg-hover pt-3 pb-3 border-radius-1 text-secondary text-center">
+                                                class="d-flex flex-column font-size-13 bg-secondary-bright bg-hover pt-3 pb-3 border-radius-1 text-secondary text-center">
                                             <i class="fa fa-share mb-2 font-size-20"></i>
                                             سایر
                                         </div>
@@ -489,7 +512,7 @@
                                     <div>
                                         <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
 												<span
-                                                    class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                                        class="avatar-title bg-warning-bright text-warning rounded-circle">
 													<i class="fa fa-money font-size-20"></i>
 												</span>
                                         </figure>
@@ -508,7 +531,7 @@
                                     <div>
                                         <figure class="avatar avatar-sm m-r-15 bring-forward">
 												<span
-                                                    class="avatar-title bg-success-bright text-success rounded-circle">
+                                                        class="avatar-title bg-success-bright text-success rounded-circle">
 													<i class="fa fa-dollar font-size-20"></i>
 												</span>
                                         </figure>

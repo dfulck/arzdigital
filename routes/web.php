@@ -6,7 +6,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LeaderController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TagController;
@@ -29,11 +28,7 @@ use App\Http\Controllers\CatalogueController;
 use App\Http\Middleware\GuestMiddleware;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\WriterMiddleware;
-
-
-session()->flash('success', "ایجاد شد");
-session()->flash('info', "ویرایش تکمیل شد");
-session()->flash('error', "با موفقیت حذف شد");
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,14 +48,16 @@ Route::get('/users/create?id=', [UserController::class, 'create'])->name('users.
 Route::resource('users', UserController::class);
 Route::post('/Users/login', [UserController::class, 'login'])->name('users.login');
 Route::post('/Users/logout', [UserController::class, 'logout'])->name('users.logout');
+
+//Form
+Route::resource('forms',FormController::class);
+//End Form
+
 //Admin
 Route::middleware(AdminMiddleware::class)->group(function () {
     //Start Useremails
     Route::resource('massages', MassageController::class);
 //End Useremails
-//Role for User
-    Route::resource('roles', RoleController::class);
-//End Role
     //Question Answer
     Route::resource('questions', QuestionController::class);
 //End Question Answer

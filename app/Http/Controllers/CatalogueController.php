@@ -39,8 +39,9 @@ class CatalogueController extends Controller
      */
     public function create()
     {
+        $user=auth()->user();
         return view('Panel.Catalogue.create', [
-            'catalogues' => catalogue::all()
+            'catalogues' => catalogue::query()->where('user_id',$user->id)->get()
         ]);
     }
 
@@ -59,8 +60,9 @@ class CatalogueController extends Controller
             'body' => $request->get('body'),
             'mizan_tolid_dr_sal' => $request->get('mizan_tolid_dr_sal'),
             'qymt_be_tonazh' => $request->get('qymt_be_tonazh'),
+            'user_id'=>auth()->id()
         ]);
-
+        session()->flash('success', "ایجاد شد");
         return redirect()->back();
     }
 
@@ -110,7 +112,7 @@ class CatalogueController extends Controller
             'mizan_tolid_dr_sal' => $request->get('mizan_tolid_dr_sal'),
             'qymt_be_tonazh' => $request->get('qymt_be_tonazh'),
         ]);
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
 
@@ -122,6 +124,9 @@ class CatalogueController extends Controller
      */
     public function destroy(catalogue $catalogue)
     {
-
+        $catalogue->delete();
+        Storage::delete($catalogue->image);
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

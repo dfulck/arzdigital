@@ -44,6 +44,7 @@ class FooterController extends Controller
             'title'=>$request->get('title')
         ]);
         $footer->subfooters()->attach($request->get('link'));
+        session()->flash('success', "ایجاد شد");
         return redirect(route('footers.index'));
     }
 
@@ -81,7 +82,7 @@ class FooterController extends Controller
      */
     public function update(Request $request, Footer $footer)
     {
-        //
+        session()->flash('info', "ویرایش تکمیل شد");
     }
 
     /**
@@ -92,6 +93,9 @@ class FooterController extends Controller
      */
     public function destroy(Footer $footer)
     {
-        //
+        $footer->subfooters()->detach(Subfooter::all());
+        $footer->delete();
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

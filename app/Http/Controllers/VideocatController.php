@@ -41,6 +41,7 @@ class VideocatController extends Controller
        Videocat::query()->create([
            'title'=>$request->get('title')
        ]);
+        session()->flash('success', "ایجاد شد");
        return redirect(route('videocats.index'));
     }
 
@@ -81,6 +82,7 @@ class VideocatController extends Controller
         $videocat->update([
             'title'=>$request->get('title')
         ]);
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect(route('videocats.index'));
     }
 
@@ -94,10 +96,11 @@ class VideocatController extends Controller
     {
         $video=Video::query()->where('videocat_id',$videocat->id)->exists();
         if ($video){
-            session()->flash('error','this category have video first please delete the video of this category');
+            session()->flash('error','این دسته بندی حاوی ویدیو است / لطفا اول ویدیو های فرزند را پاک کنید و دوباره اقدام کتید');
             return redirect()->back();
         }else{
             $videocat->delete();
+            session()->flash('error', "با موفقیت حذف شد");
             return redirect()->back();
         }
 

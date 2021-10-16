@@ -35,7 +35,10 @@ class NewsemailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+
+        session()->flash('success', "ایجاد شد");
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\etso;
+use App\Models\subetso;
 use Illuminate\Http\Request;
 
 class EtsoController extends Controller
@@ -37,10 +38,13 @@ class EtsoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required']
+        ]);
         etso::query()->create([
             'title'=>$request->get('title')
         ]);
-
+        session()->flash('success', "ایجاد شد");
         return redirect(route('etsos.index'));
     }
 
@@ -63,7 +67,7 @@ class EtsoController extends Controller
      */
     public function edit(etso $etso)
     {
-        //
+
     }
 
     /**
@@ -86,6 +90,12 @@ class EtsoController extends Controller
      */
     public function destroy(etso $etso)
     {
-        //
+       $subetso= subetso::query()->where('etso_id',$etso->id)->get();
+       foreach ($subetso as $sub){
+           $sub->delete();
+       }
+        $etso->delete();
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

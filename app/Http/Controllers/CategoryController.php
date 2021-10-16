@@ -38,10 +38,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
         Category::query()->create([
            'title'=>$request->get('title')
         ]);
-
+        session()->flash('success', "ایجاد شد");
         return redirect(route('categories.index'));
     }
 
@@ -84,7 +85,7 @@ class CategoryController extends Controller
         $category->update([
             'title'=>$request->get('title')
         ]);
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect(route('categories.index'));
     }
     /**
@@ -97,6 +98,7 @@ class CategoryController extends Controller
     {
         $category->subcategories()->detach(Subcategory::all());
         $category->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

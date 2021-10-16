@@ -45,6 +45,8 @@ class AmarsaderatController extends Controller
             'year' => $request->get('year')
         ]);
 
+        session()->flash('success', "ایجاد شد");
+
         return redirect(route('amarsaderat.index'));
     }
 
@@ -91,6 +93,7 @@ class AmarsaderatController extends Controller
     public function destroy(Amarsaderat $amarsaderat)
     {
         $amarsaderat->delete();
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }

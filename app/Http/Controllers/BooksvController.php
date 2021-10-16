@@ -45,7 +45,7 @@ class BooksvController extends Controller
                 'title'=>$request->get('title'),
                 'pdf'=>$request->file('pdf')->storeAs('public/PdfBook', $request->file('pdf')->getClientOriginalName())
             ]);
-
+            session()->flash('success', "ایجاد شد");
             return redirect()->back();
         }
 
@@ -93,7 +93,8 @@ class BooksvController extends Controller
      */
     public function destroy(Booksv $booksv)
     {
-       $booksv->delete();
-       return redirect()->back();
+        $booksv->delete();
+        session()->flash('error', "با موفقیت حذف شد");
+        return redirect()->back();
     }
 }

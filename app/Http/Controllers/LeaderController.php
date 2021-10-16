@@ -41,7 +41,7 @@ class LeaderController extends Controller
         Leader::query()->create([
             'title'=>$request->get('title')
         ]);
-
+        session()->flash('success', "ایجاد شد");
         return redirect(route('leaders.index'));
     }
 
@@ -81,7 +81,7 @@ class LeaderController extends Controller
         $leader->update([
             'title'=>$request->get('title')
         ]);
-
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect(route('leaders.index'));
     }
 
@@ -99,7 +99,7 @@ class LeaderController extends Controller
         }
 
         $leader->delete();
-
+        session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();
     }
 }
