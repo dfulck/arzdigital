@@ -41,6 +41,12 @@ class SubetsoController extends Controller
      */
     public function store(Request $request,etso $etso)
     {
+       $request->validate([
+           'etso_id'=>['required'],
+           'NameTashakol'=>['required'],
+           'number'=>['required'],
+           'fox'=>['required'],
+       ]);
        subetso::query()->create([
            'etso_id'=>$etso->id,
            'NameTashakol'=>$request->get('NameTashakol'),

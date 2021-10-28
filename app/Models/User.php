@@ -35,6 +35,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function UserRoleText()
+    {
+        if (auth()->user()->Role_id===1){
+            return 'ادمین سایت';
+        }
+        elseif (auth()->user()->Role_id===2){
+            return 'کاربر میهمان';
+        }
+        return 'نویسنده';
+
+    }
+
     public function massages(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Massage::class);
@@ -50,7 +62,7 @@ class User extends Authenticatable
         $user = null;
         $otp = 1111;
         $email=$request->get('email');
-        $Register="http://127.0.0.1:8000/users/create?id=$email";
+        $Register="shacra.ir/arzdigital/users/create?id=$email";
         $userexsits = User::query()->where('email', $request->get('email'));
         if ($userexsits->exists()){
             $user = $userexsits->first();
@@ -59,6 +71,7 @@ class User extends Authenticatable
             ]);
         } else {
             $user = User::query()->create([
+                'image'=>'public/UserImage/141295684.jpeg',
                 'User_id'=>$collection,
                 'email' => $request->get('email'),
                 'number' => $request->get('number'),
@@ -73,9 +86,18 @@ class User extends Authenticatable
         return $user;
     }
 
+//    public function UserMassages()
+//    {
+//        return Massage::query()->where('id',$this->id)
+//    }
     public function UsersParent()
     {
-        return self::query()->where('id',$this->id)->firstOrFail();
+        return self::query()->where('id',$this->User_id)->firstOrFail();
+    }
+
+    public function UserparentExists()
+    {
+        return self::query()->where('id',$this->User_id)->exists();
     }
 
     public function UsersCollection()

@@ -42,6 +42,12 @@ class ContentController extends Controller
      */
     public function store(Leader $leader,Request $request)
     {
+        $request->validate([
+            'header'=>['required'],
+            'body'=>['required'],
+            'image'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+            'leader_id'=>['required'],
+        ]);
         Content::query()->create([
             'header'=>$request->get('header'),
             'body'=>$request->get('body'),
@@ -85,6 +91,10 @@ class ContentController extends Controller
      */
     public function update(Request $request, Content $content)
     {
+        $request->validate([
+            'header'=>['required'],
+            'body'=>['required'],
+        ]);
         $image=$content->image;
         if ($request->hasFile('image')){
             Storage::delete($content->image);

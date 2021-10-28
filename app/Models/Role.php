@@ -11,10 +11,6 @@ class Role extends Model
 
     protected $guarded=[];
 
-    public function users()
-    {
-        return $this->belongsToMany(User::class);
-    }
 
     /**
      * @param $title
@@ -24,6 +20,6 @@ class Role extends Model
     public static function findByTitle($title)
     {
         return self::query()->whereTitle($title)->firstOrFail();
-
     }
+
 }

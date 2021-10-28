@@ -15,7 +15,7 @@ class CreateFootersTable extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('title')->nullable();
+            $table->text('title')->nullable();
             $table->timestamps();
         });
     }

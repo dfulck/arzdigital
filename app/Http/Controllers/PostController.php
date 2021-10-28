@@ -16,10 +16,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Subcategory $subcategory)
+    public function index()
     {
         return view('Panel.Post.index', [
-            'posts' => Post::query()->where('subcategory_id', $subcategory->id)->get()
+            'posts' => Post::all()
         ]);
     }
 
@@ -28,11 +28,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Subcategory $subcategory)
+    public function create()
     {
         return view('Panel.Post.create', [
-            'subcategory' => $subcategory,
-            'posts' => Post::query()->where('subcategory_id', $subcategory->id)->get(),
             'tags' => Tag::all()
         ]);
     }
@@ -43,20 +41,24 @@ class PostController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Subcategory $subcategory)
+    public function store(Request $request)
     {
+        $request->validate([
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
+            'TimeRead' => ['required'],
+            'header' => ['required'],
+            'body' => ['required'],
+        ]);
         $post = Post::query()->create([
             'image' => $request->file('image')->storeAs('public/PostImage', $request->file('image')->getClientOriginalName()),
             'TimeRead' => $request->get('TimeRead'),
             'creator' => auth()->user()->username,
             'header' => $request->get('header'),
             'body' => $request->get('body'),
-            'subcategory_id' => $subcategory->id
         ]);
-
         $post->tags()->attach($request->get('tag'));
         session()->flash('success', "ایجاد شد");
-        return redirect()->back();
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -80,7 +82,6 @@ class PostController extends Controller
     {
         return view('Panel.Post.edit', [
             'post' => $post,
-            'parts' => $post->parts()->where('partable_id', $post->id)->get()
         ]);
     }
 
@@ -93,27 +94,26 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $request->validate([
+            'TimeRead' => ['required'],
+            'header' => ['required'],
+            'body' => ['required'],
+        ]);
         $image = $post->image;
         if ($request->hasFile('image')) {
             Storage::delete($post->image);
             $image = $request->file('image')->storeAs('public/ContentImage', $request->file('image')->getClientOriginalName());
         }
         $post->update([
-            'TimeRead' => $request->get('TimeRead',$post->TimeRead),
-            'header' => $request->get('header',$post->header),
-            'body' => $request->get('body',$post->body),
+            'TimeRead' => $request->get('TimeRead', $post->TimeRead),
+            'header' => $request->get('header', $post->header),
+            'body' => $request->get('body', $post->body),
             'image' => $image,
-        ]);
-        $post->parts()->create([
-            'part_image'=>$request->file('part_image')->storeAs('public/PostPartImage', $request->file('part_image')->getClientOriginalName()),
-            'part_header'=>$request->get('part_header'),
-            'part_body'=>$request->get('part_body'),
         ]);
         $post->tags()->sync($request->get('tag'));
         session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -123,6 +123,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         Storage::delete($post->image);
+        $post->tags()->detach(Tag::all());
         $post->delete();
         session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();

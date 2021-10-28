@@ -15,6 +15,7 @@ class CreateCataloguesTable extends Migration
     {
         Schema::create('catalogues', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('image');
             $table->string('status');
             $table->string('title');

@@ -1,9 +1,6 @@
 <?php
-$jason = file_get_contents('C:\laravel\arzdigital\arzdigital\resources\views\Panel\Booksv\bazarhayemontakhab.json');
-
+$jason = file_get_contents('resources/views/Panel/Booksv/bazarhayemontakhab.json');
 $jason_decode = json_decode($jason)->data;
-
-
 ?>
 
 

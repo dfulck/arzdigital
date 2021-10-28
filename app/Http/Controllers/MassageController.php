@@ -46,6 +46,9 @@ class MassageController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required'],
+        ]);
         $collect=collect($request->get('role'))->filter(function ($item){
             return $item;
         });

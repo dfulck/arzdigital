@@ -3,22 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
-use App\Models\Subfooter;
 use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-       return view('Panel.Footer.index',[
-           'footers'=>Footer::all()
-       ]);
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -27,75 +16,53 @@ class FooterController extends Controller
      */
     public function create()
     {
-        return view('Panel.Footer.create',[
-            'subfooters'=>Subfooter::all()
-        ]);
+       return view('Panel.Footer.create',[
+           'footer1'=>Footer::query()->where('id',1)->firstOrFail(),
+           'footer2'=>Footer::query()->where('id',2)->firstOrFail(),
+       ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $footer=Footer::query()->create([
-            'title'=>$request->get('title')
-        ]);
-        $footer->subfooters()->attach($request->get('link'));
-        session()->flash('success', "ایجاد شد");
-        return redirect(route('footers.index'));
-    }
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show()
     {
 
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Footer  $footer
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Footer $footer
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Footer $footer)
+    public function edit(Request $request)
     {
-        return view('Panel.Footer.edit',[
-            'footer'=>$footer,
-            'subfooters'=>Subfooter::all()
-        ]);
-    }
+       $footer1= Footer::query()->where('id',1)->firstOrFail();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Footer  $footer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Footer $footer)
-    {
+       $footer1->update([
+          'title'=>$request->get('title')
+       ]);
         session()->flash('info', "ویرایش تکمیل شد");
+       return redirect()->back();
+
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Footer  $footer
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Footer $footer)
+    public function update(Request $request)
     {
-        $footer->subfooters()->detach(Subfooter::all());
-        $footer->delete();
-        session()->flash('error', "با موفقیت حذف شد");
+
+        $footer2= Footer::query()->where('id',2)->firstOrFail();
+
+        $footer2->update([
+            'title'=>$request->get('title')
+        ]);
+        session()->flash('info', "ویرایش تکمیل شد");
         return redirect()->back();
+
     }
+
 }

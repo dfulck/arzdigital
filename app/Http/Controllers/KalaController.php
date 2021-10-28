@@ -38,6 +38,23 @@ class KalaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required'],
+            'Unit'=>['required'],
+            'Top_importing_countries'=>['required'],
+            'Top_exporting_countries'=>['required'],
+            'Total_volume_of_world_trade'=>['required'],
+            'Value_of_Iranian_imports'=>['required'],
+            'Global_export_value'=>['required'],
+            'Value_of_Iranian_exports'=>['required'],
+            'Production_rate'=>['required'],
+            'Global_import_value'=>['required'],
+            'Iran_rank_in_production'=>['required'],
+            'Number_of_commodity_group_tariff_codes'=>['required'],
+            'number'=>['required'],
+            'body'=>['required'],
+            'image'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+        ]);
         Kala::query()->create([
             'title'=>$request->get('title'),
             'Unit'=>$request->get('Unit'),
@@ -92,6 +109,22 @@ class KalaController extends Controller
      */
     public function update(Request $request, Kala $kala)
     {
+        $request->validate([
+            'title'=>['required'],
+            'Unit'=>['required'],
+            'Top_importing_countries'=>['required'],
+            'Top_exporting_countries'=>['required'],
+            'Total_volume_of_world_trade'=>['required'],
+            'Value_of_Iranian_imports'=>['required'],
+            'Global_export_value'=>['required'],
+            'Value_of_Iranian_exports'=>['required'],
+            'Production_rate'=>['required'],
+            'Global_import_value'=>['required'],
+            'Iran_rank_in_production'=>['required'],
+            'Number_of_commodity_group_tariff_codes'=>['required'],
+            'number'=>['required'],
+            'body'=>['required'],
+        ]);
         if ($request->hasFile('image')){
             Storage::delete($kala->image);
             $image=$request->file('image')->storeAs('public/Kalaimage', $request->file('image')->getClientOriginalName());

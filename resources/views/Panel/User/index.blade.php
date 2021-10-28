@@ -49,7 +49,7 @@
                                             <form action="{{route('users.destroy',$user)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <input type="submit" class="btn btn-danger" value="جدف کاربر">
+                                                <input type="submit" class="btn btn-danger" value="حذف کاربر">
                                             </form>
                                         </td>
                                     </tr>

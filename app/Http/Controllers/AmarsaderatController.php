@@ -38,15 +38,19 @@ class AmarsaderatController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'ostan' => ['required'],
+            'price' => ['required'],
+            'weight' => ['required'],
+            'year' => ['required'],
+        ]);
         Amarsaderat::query()->create([
             'ostan' => $request->get('ostan'),
             'price' => $request->get('price'),
             'weight' => $request->get('weight'),
             'year' => $request->get('year')
         ]);
-
         session()->flash('success', "ایجاد شد");
-
         return redirect(route('amarsaderat.index'));
     }
 

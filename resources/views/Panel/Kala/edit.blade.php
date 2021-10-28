@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <img height="150px" width="100%" src="{{url('/storage/app/'.$kala->image)}}" class="card-img-top"
+                                    <img height="300px" width="70%" src="{{url('/storage/app/'.$kala->image)}}" class="card-img-top"
                                          alt="image">
                                     <label for="exampleFormControlFile1">تصویر کاتالوگ</label>
                                     <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">

@@ -43,9 +43,19 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $user = User::query()->whereEmail($request->get('email'))->firstOrFail();
+        $request->validate([
+            'email'=>['required'],
+            'password'=>['required'],
+        ]);
+        $userexists = User::query()->whereEmail($request->get('email'));
+        if (!$userexists->exists()){
+            session()->flash('error', "اطلاعات وارد شده صحیح نمیباشد");
+            return redirect()->back();
+        }
+        $user=$userexists->first();
         if (!Hash::check($request->get('password'), $user->password)) {
-            return back()->withErrors(['password' => 'this password in incorect']);
+            session()->flash('error', "اطلاعات وارد شده صحیح نمیباشد");
+            return redirect()->back();
         }
         auth()->login($user);
         session()->flash('success', "با موفقیت وارد شدید");
@@ -61,7 +71,7 @@ class UserController extends Controller
         $user = auth()->user();
         auth()->logout($user);
         session()->flash('error', "با موفقیت خارج شدید");
-        return redirect(route('users.index'));
+        return redirect(route('login'));
     }
 
     /**
@@ -86,11 +96,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'email' => ['required', 'email']
+            'email' => ['required', 'email'],
+            'number' => ['required'],
+            'name' => ['required'],
+            'lastname' => ['required'],
         ]);
         User::RegisterUser($request);
         session()->flash('success', 'ثبت نام شما با موفقیت انجام شد');
-
         $user = auth()->user();
         return redirect(route('users.show', $user));
     }

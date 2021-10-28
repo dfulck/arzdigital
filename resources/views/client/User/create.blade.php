@@ -9,7 +9,7 @@
 
         <!-- logo -->
         <div class="logo">
-            <img src="/assets/media/image/logo-sm.png" alt="image">
+            <img width="80px" src="{{url('')}}/assets/media/image/logoasra.png" alt="image">
         </div>
         <!-- ./ logo -->
 
@@ -31,25 +31,25 @@
                 <input type="text" name="number" class="form-control text-left" placeholder="شماره تلفن" dir="ltr" required>
             </div>
             @if($collection)
-            <div hidden class="form-group">
-                <label for="collection">دعوت کننده شما به این سایت</label>
-                <input id="collection" type="text" class="form-control text-left" name="collection" value="{{$collection}}">
-            </div>
+                <div hidden class="form-group">
+                    <label for="collection">دعوت کننده شما به این سایت</label>
+                    <input id="collection" type="text" class="form-control text-left" name="collection" value="{{$collection}}">
+                </div>
             @endif
             <input type="submit" class="btn btn-primary btn-block" value="ثبت نام">
         </form>
         <hr>
         <p class="text-muted">حساب کاربری دارید؟</p>
-        <a href="{{route('users.index')}}" class="btn btn-outline-light btn-sm">وارد شوید!</a>
+        <a href="{{route('login')}}" class="btn btn-outline-light btn-sm">وارد شوید!</a>
         <!-- ./ form -->
 
     </div>
 
     <!-- Plugin scripts -->
-    <script src="/vendors/bundle.js"></script>
+    <script src="{{url('')}}/vendors/bundle.js"></script>
 
     <!-- App scripts -->
-    <script src="/assets/js/app.js"></script>
+    <script src="{{url('')}}/assets/js/app.js"></script>
     </body>
 
 @endsection

@@ -18,7 +18,6 @@ class BooksvController extends Controller
             'booksvs'=>Booksv::all()
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +27,6 @@ class BooksvController extends Controller
     {
         return view('Panel.Booksv.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -37,6 +35,10 @@ class BooksvController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required'],
+            'pdf'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+        ]);
         if ($request->file('pdf')->getClientMimeType()!=='application/pdf'){
              session()->flash('error','فرمت پی دی اف نمیباشد لطفا مجددا تلاش فرمایید');
             return redirect()->back();
@@ -70,7 +72,7 @@ class BooksvController extends Controller
      */
     public function edit(Booksv $booksv)
     {
-        //
+
     }
 
     /**
@@ -93,8 +95,8 @@ class BooksvController extends Controller
      */
     public function destroy(Booksv $booksv)
     {
-        $booksv->delete();
+       $booksv->delete();
         session()->flash('error', "با موفقیت حذف شد");
-        return redirect()->back();
+       return redirect()->back();
     }
 }

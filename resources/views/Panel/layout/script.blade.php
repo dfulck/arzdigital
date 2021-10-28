@@ -1,5 +1,4 @@
 @include('Panel.layout.error')
-
 <script src="{{url('')}}/vendors/bundle.js"></script>
 
 <!-- Form wizard -->

@@ -40,6 +40,12 @@ class VideoController extends Controller
      */
     public function store(Request $request,Videocat $videocat)
     {
+        $request->validate([
+            'video'=>['required'],
+            'videocat_id'=>['required'],
+            'title'=>['required'],
+            'image'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+        ]);
         Video::query()->create([
             'video'=>$request->file('video')->storeAs('public/VideoGallery', $request->file('video')->getClientOriginalName()),
             'videocat_id'=>$videocat->id,
@@ -81,6 +87,10 @@ class VideoController extends Controller
      */
     public function update(Request $request,Videocat $videocat, Video $video)
     {
+        $request->validate([
+            'videocat_id'=>['required'],
+            'title'=>['required'],
+        ]);
         $image=$video->image;
         if ($request->hasFile('image')){
             Storage::delete($video->image);

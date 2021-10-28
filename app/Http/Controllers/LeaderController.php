@@ -38,6 +38,9 @@ class LeaderController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required'],
+        ]);
         Leader::query()->create([
             'title'=>$request->get('title')
         ]);
@@ -78,6 +81,9 @@ class LeaderController extends Controller
      */
     public function update(Request $request, Leader $leader)
     {
+        $request->validate([
+            'title'=>['required'],
+        ]);
         $leader->update([
             'title'=>$request->get('title')
         ]);
@@ -93,7 +99,6 @@ class LeaderController extends Controller
      */
     public function destroy(Leader $leader)
     {
-
         if ($leader->HasNumberContent()){
             return session()->flash('error','this category have contets');
         }

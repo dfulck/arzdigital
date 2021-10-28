@@ -1,5 +1,5 @@
 <?php
-$jason = file_get_contents('C:\laravel\arzdigital\arzdigital\resources\views\Panel\Booksv\otaghaye_bazargani_sanaye.json');
+$jason = file_get_contents('resources/views/Panel/Booksv/otaghaye_bazargani_sanaye.json');
 
 $jason_decode = json_decode($jason)->data;
 

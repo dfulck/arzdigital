@@ -17,7 +17,6 @@ class HomeController extends Controller
         $URI = Http::get('https://production.api.coindesk.com/v1/currency/ticker?currencies=BTC,ETH,LTC,XRP,BCH')->json();
         $response = json_encode($URI);
         $res = json_decode($response);
-        dd($res->data->currency);
         return view('Panel.Booksv.PriceTest', [
             'response' => $res->data->currency
         ]);
@@ -41,14 +40,16 @@ class HomeController extends Controller
         ]);
     }
 
-    public function searchdata($search)
+    public function searchdata()
     {
         $client = new Client();
         $URI = 'https://tpo.ir/inc/ajax.ashx';
         $params['headers'] = ['Content-Type' => 'application/x-www-form-urlencoded'];
-        $params['form_params'] = array('action' => 'query', 'qid' => '502', 'code' => $search);
+        $params['form_params'] = array('action=query&qid=261&trade_year=1400&trade_month=&table_6115_length=10&undefined=&draw=1&columns%5B0%5D%5Bdata%5D=0&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=true&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=1&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=2&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=3&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&order=1&start=0&length=10&search%5Bvalue%5D=&search%5Bregex%5D=false&order_dir=asc&search_value=');
         $response = $client->post($URI, $params);
-        var_dump($response);
+        $dollars = json_encode($response);
+        $jsondecode = json_decode($dollars);
+
 //        return view('Panel.Booksv.gavanin',[
 //            'response'=> $json_decode,
 //            'search'=>$search
@@ -95,7 +96,7 @@ class HomeController extends Controller
         $params['headers'] = ['Content-Type' => 'application/x-www-form-urlencoded'];
         $params['form_params'] = array('action' => 'query', 'qid' => '21', 'code' => $code);
         $response = $client->post($URI, $params);
-        return view('Panel.Booksv.gavanin', [
+        return view('Panel.Booksv.world', [
             'response' => $response->getBody()
         ]);
     }
@@ -130,7 +131,7 @@ class HomeController extends Controller
         if (auth()->user()) {
             return redirect(route('users.dashboard'));
         }
-        return redirect(route('users.index'));
+        return redirect(route('login'));
 
     }
 

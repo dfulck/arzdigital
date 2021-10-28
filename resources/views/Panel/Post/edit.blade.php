@@ -49,44 +49,6 @@
                                 <input type="submit" class="btn btn-success" value="edit">
                             </div>
                         </form>
-                        <form action="{{route('posts.update',$post)}}" enctype="multipart/form-data" method="post">
-                            @csrf
-                            @method('PATCH')
-                            <h1>اضافه کردن مطالب آنالیز </h1>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">هدر مطلب</label>
-                                <input type="text" name="part_header" class="form-control text-left"
-                                       id="exampleFormControlInput1" placeholder="header text" dir="ltr">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">متن اصلی </label>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="card-title">ویرایشگر کلاسیک</h6>
-                                        <textarea name="part_body" id="editor-demo2"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">تصویر مطلب</label>
-                                <input type="file" name="part_image" class="form-control-file" id="exampleFormControlFile1">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block" value="send">
-                            </div>
-                        </form>
-                        @foreach($parts as $part)
-                            <div class="card col-md-6">
-                                <img src="{{url('/storage/app/'.$part->part_image)}}" class="card-img-top" alt="image">
-                                <div class="card-body">
-                                    <h6 class="card-title">{{$part->part_header}}</h6>
-                                    <p class="card-text">{{$part->part_body}}</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">{{$part->created_at}}</small>
-                                    </p>
-                                </div>
-                            </div>
-                        @endforeach
                     </div>
                 </div>
             </div>

@@ -1,0 +1,154 @@
+.container {
+    width: 80%;
+    margin: 5rem auto;
+    box-shadow: 0 0 15px gainsboro;
+    padding: .8rem;
+    border-radius: 15px;
+}
+
+.mbm-wrapper-coin-title-span {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+#mbm-coins-option {
+    width: 30%;
+    height: 40px;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+#calculator {
+    margin-top: 1rem;
+}
+
+.mbm-price-dollar {
+    text-align: center;
+    padding: 1rem;
+}
+
+.mbm-price-dollar-text {
+    font-size: 16px;
+    margin-left: .5rem;
+}
+
+.mbm-converted-price {
+    border: 2px solid gainsboro;
+    outline: none;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.mbm-top-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.mbm-wrapper-block-info,
+.mbm-wrapper-block {
+    width: 33%;
+    height: 100%;
+}
+
+.mbm-wrapper-cell-info {
+    background-color: azure;    
+    width: 90%;
+    margin: .5rem auto;
+    border-radius: 25px;
+    display: flex;
+    padding: .5rem .8rem;
+}
+
+.mbm-wrapper-cell-info .row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputs-data-wrapper .row {
+    /* display: inlinse-block; */
+    /* height: 120px; */
+}
+
+.data-container {
+    width: 33%;
+    display: inline-block;
+    height: 80px;
+}
+
+.data-container label{
+    font-size: 16px;
+    /* padding: .5rem 0; */
+    height: 50px;
+}
+
+.data-container select{
+    font-size: 16px;
+    padding: .5rem 0;
+    margin-top: .5rem;
+    width: 15%;
+
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+}
+
+.data-container input:first-of-type{
+    font-size: 16px;
+    padding: .5rem 0;
+    display: block;
+    width: 80%;
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    margin-top: .5rem;
+    outline: none;
+}
+
+.table-bottom {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: .5rem;
+    margin-top: 2rem;
+}
+
+.table-bottom table {
+    width: 100%;
+}
+
+.table-bottom thead {
+    border-bottom: 1px solid gainsboro;
+}
+
+.table-bottom th {
+    padding: 0 .5rem;
+}
+
+.table-bottom th p {
+    margin: 0;
+    margin-top: .5rem;
+    border-top: 1.5px solid grey;
+    color: gray;
+}
+
+tbody {
+    height: 50px;
+}
+
+tbody  tr {
+    height: 50px;
+    text-align: center;
+}
+
+tbody  tr td {
+    border: 1px solid gainsboro;
+
+}
+
+.strongf {
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 14px;
+}

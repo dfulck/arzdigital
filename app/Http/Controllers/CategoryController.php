@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Content;
+use App\Models\Post;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
@@ -38,7 +40,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'title'=>['required']
+        ]);
         Category::query()->create([
            'title'=>$request->get('title')
         ]);
@@ -56,6 +60,8 @@ class CategoryController extends Controller
     {
         return view('Panel.Category.show',[
            'category'=>$category,
+            'posts'=>Post::all(),
+            'contents'=>Content::all(),
             'subcategories'=>Subcategory::all()
         ]);
     }
@@ -82,6 +88,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'title'=>['required']
+        ]);
         $category->update([
             'title'=>$request->get('title')
         ]);

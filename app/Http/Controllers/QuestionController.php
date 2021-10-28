@@ -38,6 +38,9 @@ class QuestionController extends Controller
     public function store(Request $request,post $post)
     {
 
+        $request->validate([
+            'question'=>['required'],
+        ]);
         $question=Question::query()->create([
             'question'=>$request->get('question')
         ]);
@@ -77,6 +80,9 @@ class QuestionController extends Controller
      */
     public function update(Request $request,Post $post,Question $question)
     {
+        $request->validate([
+            'question'=>['required'],
+        ]);
         session()->flash('info', "ویرایش تکمیل شد");
         dd('update');
     }

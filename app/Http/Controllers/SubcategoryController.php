@@ -37,8 +37,12 @@ class SubcategoryController extends Controller
     public function store(Request $request,Category $category)
     {
 
+       $request->validate([
+           'title'=>['required'],
+       ]);
        $subcategory=Subcategory::query()->create([
-           'title'=>$request->get('title')
+           'title'=>$request->get('title'),
+           'link'=>$request->get('link')
        ]);
 
         $category->subcategories()->attach($subcategory);
@@ -56,7 +60,9 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-
+        $request->validate([
+            'title'=>['required'],
+        ]);
       $category->subcategories()->sync($request->get('title'));
         session()->flash('info', "ویرایش تکمیل شد");
       return redirect()->back();

@@ -2,7 +2,7 @@
 
 @section('master')
 
-    <body class="dark">
+
 
     @include('Panel.layout.sidebar')
 
@@ -34,9 +34,10 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control"  name="year" id="year">
-                                    @for($i=1390;$i<=1401;$i++)
-                                    <option class="form-control" value="{{$i}}">{{$i}}</option>
-                                        @endfor
+                                    <option value="1400" selected>1400</option>
+{{--                                    @for($i=1390;$i<=1401;$i++)--}}
+{{--                                    <option class="form-control" value="{{$i}}">{{$i}}</option>--}}
+{{--                                    @endfor--}}
                                 </select>
                             </div>
                             <div class="form-group">
@@ -52,6 +53,6 @@
 
     <!-- Plugin scripts -->
     @include('Panel.layout.script')
-    </body>
+
 
 @endsection

@@ -22,7 +22,7 @@
                         <h2>GDP per capita (PPP)</h2>
 
                         <div id="svgMapGPD"></div>
-                        <script src="/assets/gdp.js"></script>
+                        <script src="{{url('')}}/assets/gdp.js"></script>
                         <script>
                             new svgMap({
                                 targetElementID: 'svgMapGPD',
@@ -32,7 +32,6 @@
                             });
                         </script>
                     </div>
-
                 </div>
             </div>
         </div>

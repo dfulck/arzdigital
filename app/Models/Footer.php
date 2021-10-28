@@ -11,15 +11,4 @@ class Footer extends Model
 
     protected $guarded=[];
 
-    public function subfooters()
-    {
-        return $this->belongsToMany(Subfooter::class);
-    }
-
-    public function TitleSubfooter()
-    {
-        return $this->subfooters()->get();
-    }
-
-
 }

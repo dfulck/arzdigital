@@ -53,6 +53,13 @@ class CatalogueController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => ['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+            'title' => ['required'],
+            'body' => ['required'],
+            'mizan_tolid_dr_sal' => ['required'],
+            'qymt_be_tonazh' => ['required'],
+        ]);
         catalogue::query()->create([
             'status' => 0,
             'image' => $request->file('image')->storeAs('public/CataloguImage', $request->file('image')->getClientOriginalName()),
@@ -99,6 +106,13 @@ class CatalogueController extends Controller
      */
     public function update(Request $request, catalogue $catalogue)
     {
+        $request->validate([
+            'status' => ['required'],
+            'title' => ['required'],
+            'body' => ['required'],
+            'mizan_tolid_dr_sal' => ['required'],
+            'qymt_be_tonazh' => ['required'],
+        ]);
         if ($request->hasFile('image')) {
             Storage::delete($catalogue->image);
             $image = $request->file('image')->storeAs('public/CataloguImage', $request->file('image')->getClientOriginalName());

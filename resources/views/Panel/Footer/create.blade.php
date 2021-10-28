@@ -12,24 +12,36 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('footers.store')}}" method="post">
+                    <form action="{{route('footers.store1')}}" method="post">
                         @csrf
-                        <h6 class="card-title">اضافه کردن</h6>
+                        @method('PATCH')
                         <div class="form-group">
-                            <input placeholder="نام فوتر" type="text" class="form-control"
-                                   name="title">
+                            <label for="exampleFormControlTextarea1">فوتر سایت بخش اول</label>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">ویرایشگر کلاسیک</h6>
+                                    <textarea name="title" id="editor-demo1">{!! $footer1->title !!}</textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <select class="js-example-basic-single" multiple name="link[]">
-                                <optgroup label="link ha ">
-                                    @foreach($subfooters as $subfooter)
-                                        <option value="{{$subfooter->id}}">{{$subfooter->title}}</option>
-                                    @endforeach
-                                </optgroup>
-                            </select>
+                            <input type="submit" class="btn btn-success" value="ویرایش">
+                        </div>
+                    </form>
+                    <form action="{{route('footers.store2')}}" method="post">
+                        @csrf
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">فوتر سایت بخش دوم</label>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">ویرایشگر کلاسیک</h6>
+                                    <textarea name="title" id="editor-demo2">{!! $footer2->title !!}</textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="send">
+                            <input type="submit" class="btn btn-success" value="ویرایش">
                         </div>
                     </form>
                 </div>

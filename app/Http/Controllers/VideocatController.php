@@ -38,6 +38,9 @@ class VideocatController extends Controller
      */
     public function store(Request $request)
     {
+       $request->validate([
+           'title'=>['required'],
+       ]);
        Videocat::query()->create([
            'title'=>$request->get('title')
        ]);
@@ -79,6 +82,9 @@ class VideocatController extends Controller
      */
     public function update(Request $request, Videocat $videocat)
     {
+        $request->validate([
+            'title'=>['required'],
+        ]);
         $videocat->update([
             'title'=>$request->get('title')
         ]);

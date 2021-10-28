@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\content;
 
-class Leader extends Model
+class leader extends Model
 {
     use HasFactory;
 
@@ -14,13 +15,14 @@ class Leader extends Model
 
     public function contents()
     {
-        return $this->belongsToMany(Content::class);
+        return $this->belongsToMany(content::class);
 
     }
 
     public function HasNumberContent(): int
     {
-        return Content::query()->where('leader_id',$this->id)->count();
+        return content::query()->where('leader_id',$this->id)->count();
    }
+
 
 }

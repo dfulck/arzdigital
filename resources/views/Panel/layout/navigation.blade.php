@@ -56,14 +56,66 @@
                     <li><a href="{{route('game')}}">فیلم شانسی</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="#">فرم ها</a>
-                <ul>
-                    <li><a href="{{route('forms.create')}}">ایجاد فرم</a></li>
-                    <li><a href="{{route('forms.index')}}">لیست فرم ها</a></li>
-                </ul>
-            </li>
             @if(auth()->user()->Role_id===3)
+
+            @endif
+            @if(auth()->user()->Role_id===1)
+
+
+            @endif
+            <li><a href="{{route('catalogues.create')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
+        </ul>
+        <ul id="navigationApps">
+            <li class="navigation-divider">داده ها</li>
+            @if(auth()->user()->Role_id===1)
+                <li>
+                    <a href="#">فرم ها</a>
+                    <ul>
+                        <li><a href="{{route('forms.create')}}">ایجاد فرم</a></li>
+                        <li><a href="{{route('forms.index')}}">لیست فرم ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">لیست دسترسی ادمین</a>
+                    <ul>
+                        <li>
+                            <a href="#">لیست شهر های عضو اتحادیه</a>
+                            <ul>
+                                <li><a href="{{route('etsos.create')}}">اضافه کردن شهر</a></li>
+                                <li><a href="{{route('etsos.index')}}">برای مدیریت لیست کلیک کنید</a></li>
+                                <li><a href="{{route('list.esto')}}">لیست کل</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
+                        <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
+                        <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{route('catalogues.index')}}">مدیریت کاتالوگ ها {ادمین}</a></li>
+                <li>
+                    <a href="#">لیست داده ها</a>
+                    <ul>
+                        <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
+                        <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
+                        <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
+                        <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
+                        <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
+                        <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
+                        <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
+                        <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
+                        </li>
+                        <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
+                    </ul>
+                </li>
+            @endif
+            @if(auth()->user()->Role_id===3)
+                <li>
+                    <a href="#">فرم ها</a>
+                    <ul>
+                        <li><a href="{{route('forms.create')}}">ایجاد فرم</a></li>
+                        <li><a href="{{route('forms.index')}}">لیست فرم ها</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#">لیست دسترسی نویسنده </a>
                     <ul>
@@ -97,126 +149,30 @@
                     </ul>
                 </li>
             @endif
-            @if(auth()->user()->Role_id===1)
-                <li>
-                    <a href="#">لیست دسترسی ادمین</a>
-                    <ul>
-                        <li>
-                            <a href="#">لیست شهر های عضو اتحادیه</a>
-                            <ul>
-                                <li><a href="{{route('etsos.create')}}">اضافه کردن شهر</a></li>
-                                <li><a href="{{route('etsos.index')}}">برای مدیریت لیست کلیک کنید</a></li>
-                                <li><a href="{{route('list.esto')}}">لیست کل</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{route('booksvs.create')}}">ایجاد کتاب </a></li>
-                        <li><a href="{{route('amarsaderat.create')}}">ایجاد آمار صادرات</a></li>
-                        <li><a href="{{route('kalas.index')}}">مدیریت راهنمای کالا و خدمات تجاری</a></li>
-                        <li><a href="{{route('catalogues.index')}}">مدیریت کاتالوگ ها {ادمین}</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">لیست داده ها</a>
-                    <ul>
-                        <li><a href="{{route('booksvs.index')}}">لیست کتاب ها</a></li>
-                        <li><a href="{{route('gaaninbooks')}}">کتاب فوانین سال 1399</a></li>
-                        <li><a href="{{route('amarsaderat.index')}}">لیست آمار صادرات</a></li>
-                        <li><a href="{{route('bazarhayemontakhab')}}">بازارهای منتخب</a></li>
-                        <li><a href="{{route('Erth.data')}}">نقشه تجارت</a></li>
-                        <li><a href="{{route('price.callector')}}">ماشین حساب </a></li>
-                        <li><a href="{{route('etehadie')}}">اتحادیه ها و تشکل های صادراتی</a></li>
-                        <li><a href="{{route('otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</a>
-                        </li>
-                        <li><a href="{{route('paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</a></li>
-                    </ul>
-                </li>
-            @endif
-            <li><a href="{{route('catalogues.create')}}">ایجاد کاتالوگ برای محصولات خود</a></li>
-        </ul>
-        <ul id="navigationApps">
-            <li class="navigation-divider">دسته بندی ها</li>
-            @if(auth()->user()->Role_id===1)
-                <li>
-                    <a href="#">مدیریت منوی سایت</a>
-                    <ul>
-                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
-                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">برچسب های سایت </a>
-                    <ul>
-                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
-                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">تحلیل ارز ها</a>
-                    <ul>
-                        <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
-                        <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
-                    </ul>
-                </li>
-            @endif
-            @if(auth()->user()->Role_id===3)
-                <li>
-                    <a href="#">مدیریت منوی سایت</a>
-                    <ul>
-                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
-                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">برچسب های سایت </a>
-                    <ul>
-                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
-                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">تحلیل ارز ها</a>
-                    <ul>
-                        <li><a href="{{route('analyses.create')}}">ایجاد تحلیل</a></li>
-                        <li><a href="{{route('analyses.index')}}">مدیریت تحلیل ها </a></li>
-                    </ul>
-                </li>
-            @endif
         </ul>
         <ul id="navigationPlugins">
-            <li class="navigation-divider"> مدیریت طاهر سایت</li>
+            <li class="navigation-divider"> مدیریت ظاهر سایت</li>
             @if(auth()->user()->Role_id===3)
                 <li>
-                    <a href="#">ایحاد لینک برای فوتر</a>
+                    <a href="#">مدیریت منوی سایت</a>
                     <ul>
-                        <li><a href="{{route('subfooters.create')}}">اضافه کردن لینک</a></li>
-                        <li><a href="{{route('subfooters.index')}}">مدیریت لینک ها</a></li>
+                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
+                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
+                        </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">مدیرت فوتر سایت</a>
-                    <ul>
-                        <li><a href="{{route('footers.create')}}">اضافه کردن منوی پایین سایت</a></li>
-                        <li><a href="{{route('footers.index')}}">مدیریت لیست (ویرایش و اضافه کردن)</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{route('footers.manager')}}">مدیرت فوتر سایت</a></li>
             @endif
             @if(auth()->user()->Role_id===1)
                 <li>
-                    <a href="#">ایحاد لینک برای فوتر</a>
+                    <a href="#">مدیریت منوی سایت</a>
                     <ul>
-                        <li><a href="{{route('subfooters.create')}}">اضافه کردن لینک</a></li>
-                        <li><a href="{{route('subfooters.index')}}">مدیریت لینک ها</a></li>
+                        <li><a href="{{route('categories.create')}}">ایجاد دسته بندی برای منو</a></li>
+                        <li><a href="{{route('categories.index')}}">مدیریت دسته بندی ها (اضافه کردن دسته های فرزند)</a>
+                        </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">مدیرت فوتر سایت</a>
-                    <ul>
-                        <li><a href="{{route('footers.create')}}">اضافه کردن منوی پایین سایت</a></li>
-                        <li><a href="{{route('footers.index')}}">مدیریت لیست (ویرایش و اضافه کردن)</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{route('footers.manager')}}">مدیرت فوتر سایت</a></li>
             @endif
         </ul>
         <ul id="navigationElements">
@@ -231,9 +187,17 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">ایجاد پست </a>
+                    <a href="#">برچسب های پست </a>
                     <ul>
-                        <li><a href="{{route('subcategories.index')}}">اضافه کردن پست برای دسته بندی های فرزند</a></li>
+                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
+                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">مدیریت پست </a>
+                    <ul>
+                        <li><a href="{{route('posts.create')}}">ایجاد پست</a></li>
+                        <li><a href="{{route('posts.index')}}">لیست پست ها</a></li>
                     </ul>
                 </li>
                 <li>
@@ -260,9 +224,17 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">ایجاد پست </a>
+                    <a href="#">برچسب های پست </a>
                     <ul>
-                        <li><a href="{{route('subcategories.index')}}">اضافه کردن پست برای دسته بندی های فرزند</a></li>
+                        <li><a href="{{route('tags.create')}}">ایجاد برچسب</a></li>
+                        <li><a href="{{route('tags.index')}}">لیست برچسب ها</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">مدیریت پست </a>
+                    <ul>
+                        <li><a href="{{route('posts.create')}}">ایجاد پست</a></li>
+                        <li><a href="{{route('posts.index')}}">لیست پست ها</a></li>
                     </ul>
                 </li>
                 <li>
@@ -321,18 +293,6 @@
         <div class="header-body-right">
             <!-- begin::navbar main body -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="جستجو">
-                            <div class="input-group-append">
-                                <button class="btn btn-light" type="button">
-                                    <i class="ti-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" data-toggle="dropdown">
                         <i class="ti-plus"></i>
@@ -381,6 +341,7 @@
                         </div>
                     </div>
                 </li>
+{{--           massage--}}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link nav-link-notify" data-toggle="dropdown">
                         <i class="ti-comment"></i>
@@ -388,175 +349,36 @@
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
                         <div class="p-4 text-center" data-backround-image="assets/media/image/image1.png">
                             <h6 class="m-b-0">پیام ها</h6>
-                            <small class="font-size-13 opacity-7 d-inline-block m-t-5">1 پیام خوانده نشده</small>
                         </div>
                         <div>
                             <ul class="list-group list-group-flush">
+                                @foreach(auth()->user()->massages as $massage)
                                 <li>
                                     <a href="#"
                                        class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
                                         <div>
                                             <figure class="avatar avatar-sm m-r-15">
-                                                <span class="avatar-title bg-success rounded-circle">آ</span>
+                                                <span class="avatar-title bg-success rounded-circle">جدید</span>
                                             </figure>
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="mb-1 d-flex justify-content-between primary-font">
-                                                استیو راجرز
                                                 <i title="علامت خوانده نشده" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
+                                                   class="hide-show-toggler-item fa fa-check font-size-13">
+                                                    {!! $massage->title !!}
+                                                </i>
                                             </h6>
-                                            <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
-                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
+                                            <span class="text-muted m-r-10 small">{{$massage->created_at}}</span>
+                                            <span class="text-muted small line-height-24">{!! $massage->title !!}</span>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#"
-                                       class="p-3 list-group-item d-flex align-items-center link-1 bg-secondary-bright hide-show-toggler">
-                                        <div>
-                                            <figure class="avatar avatar-sm m-r-15">
-                                                <span class="avatar-title bg-primary rounded-circle">ج</span>
-                                            </figure>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
-                                                جان اسنو
-                                                <i title="علامت خوانده شده" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-circle-o font-size-13"></i>
-                                            </h6>
-                                            <span class="text-muted m-r-10 small">10:23 ب.ظ</span>
-                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
-                                        <div>
-                                            <figure class="avatar avatar-sm m-r-15">
-                                                <span class="avatar-title bg-danger rounded-circle">ک</span>
-                                            </figure>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
-                                                استیو جابز
-                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
-                                            </h6>
-                                            <span class="text-muted m-r-10 small">08:50 ب.ظ</span>
-                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       class="p-3 list-group-item d-flex align-items-center link-1 hide-show-toggler">
-                                        <div>
-                                            <figure class="avatar avatar-sm m-r-15">
-                                                <span class="avatar-title bg-info rounded-circle">ن‌پ</span>
-                                            </figure>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-1 d-flex justify-content-between primary-font">
-                                                ناتالی پورتمن
-                                                <i title="علامت خوانده نشده" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-13"></i>
-                                            </h6>
-                                            <span class="text-muted m-r-10 small">20:13 ب.ظ</span>
-                                            <span class="text-muted small line-height-24">لورم ایپسوم متن ساختگی</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="p-3 text-right">
-                            <ul class="list-inline small">
-                                <li class="list-inline-item">
-                                    <a href="#">علامت خوانده شده به همه</a>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-toggle="dropdown">
-                        <i class="ti-bell"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
-                        <div class="p-4 text-center" data-backround-image="assets/media/image/image1.png">
-                            <h6 class="m-b-0">اعلان ها</h6>
-                            <small class="font-size-13 opacity-7">2 اعلان خوانده نشده</small>
-                        </div>
-                        <div class="p-3">
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div>
-                                        <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
-												<span class="avatar-title bg-info-bright text-info rounded-circle">
-													<i class="fa fa-file-text-o font-size-20"></i>
-												</span>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-5">
-                                            <a href="#">استیو جابز</a> یک ضمیمه جدید به تیکت افزود
-                                            <a href="#">گزارش باگ نرم افزار</a>
-                                        </p>
-                                        <small class="text-muted">
-                                            <i class="fa fa-clock-o m-r-5"></i> 8 ساعت پیش
-                                        </small>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div>
-                                        <figure class="avatar avatar-state-danger avatar-sm m-r-15 bring-forward">
-												<span
-                                                        class="avatar-title bg-warning-bright text-warning rounded-circle">
-													<i class="fa fa-money font-size-20"></i>
-												</span>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-5">
-                                            <a href="#">کاترین</a> یک تیکت جدید ثبت کرد
-                                            <a href="#">نحوه پرداخت</a>
-                                        </p>
-                                        <small class="text-muted">
-                                            <i class="fa fa-clock-o m-r-5"></i> دیروز
-                                        </small>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div>
-                                        <figure class="avatar avatar-sm m-r-15 bring-forward">
-												<span
-                                                        class="avatar-title bg-success-bright text-success rounded-circle">
-													<i class="fa fa-dollar font-size-20"></i>
-												</span>
-                                        </figure>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-5">
-                                            <a href="#">کاترین</a> تنظیمات دسته تیکت را تغییر داد
-                                            <a href="#">پرداخت و صورتحساب</a>
-                                        </p>
-                                        <small class="text-muted">
-                                            <i class="fa fa-clock-o m-r-5"></i> 1 روز پیش
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-3 text-right">
-                            <ul class="list-inline small">
-                                <li class="list-inline-item">
-                                    <a href="#">علامت خوانده شده به همه</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+{{--               end massage--}}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link bg-none" data-sidebar-open="#userProfile">
                         <div>
