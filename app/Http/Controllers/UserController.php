@@ -71,7 +71,7 @@ class UserController extends Controller
         $user = auth()->user();
         auth()->logout($user);
         session()->flash('error', "با موفقیت خارج شدید");
-        return redirect(route('login'));
+        return redirect('/');
     }
 
     /**

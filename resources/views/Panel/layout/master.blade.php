@@ -38,8 +38,15 @@
 
     <!-- App styles -->
     <link rel="stylesheet" href="{{url('')}}/assets/css/app.css" type="text/css">
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <style>
+        .search-terms-header{
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
 @yield('master')
+<script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
 </body>
 </html>

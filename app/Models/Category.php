@@ -29,4 +29,5 @@ class Category extends Model
         return $this->subcategories()->where('id',$parameter->id)->exists();
     }
 
+
 }

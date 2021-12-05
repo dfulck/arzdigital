@@ -46,6 +46,18 @@
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
+                                <label for="TagInput">برچسب مورد نطر را انتخاب نمایید </label>
+                                <select class="form-control" name="tag" id="TagInput">
+                                    @foreach($tags as $tag)
+                                        <option value="{{$tag->id}}"
+                                        @if($post->HasTag())
+                                            selected
+                                        @endif
+                                        >{{$tag->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <input type="submit" class="btn btn-success" value="edit">
                             </div>
                         </form>

@@ -8,26 +8,6 @@ use Illuminate\Http\Request;
 class NewsemailController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,54 +15,11 @@ class NewsemailController extends Controller
      */
     public function store(Request $request)
     {
-
-
-
+        Newsemail::query()->create([
+            'email'=>$request->get('email')
+        ]);
         session()->flash('success', "ایجاد شد");
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Newsemail  $newsemail
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Newsemail $newsemail)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Newsemail  $newsemail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Newsemail $newsemail)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Newsemail  $newsemail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Newsemail $newsemail)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Newsemail  $newsemail
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Newsemail $newsemail)
-    {
-        //
-    }
 }

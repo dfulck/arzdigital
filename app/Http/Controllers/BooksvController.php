@@ -37,7 +37,7 @@ class BooksvController extends Controller
     {
         $request->validate([
             'title'=>['required'],
-            'pdf'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
+            'pdf'=>['required'],
         ]);
         if ($request->file('pdf')->getClientMimeType()!=='application/pdf'){
              session()->flash('error','فرمت پی دی اف نمیباشد لطفا مجددا تلاش فرمایید');

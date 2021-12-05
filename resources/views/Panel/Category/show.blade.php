@@ -26,19 +26,28 @@
                             <div class="form-group">
                                 <select class="js-example-basic-single" name="link">
                                     <optgroup label="لیست داده های آماده">
-                                        <option value="">در دست ساخت </option>
+                                        <option value="{{route('data.etehadie')}}">اتحادیه ها و تشکل های صادراتی</option>
+                                        <option value="{{route('data.bazarhayemontakhab')}}">بازارهای منتخب</option>
+                                        <option value="{{route('data.otaghayebazargani')}}">اتاق های بازرگانی صنایع، معادن و کشاورزی ایران</option>
+                                        <option value="{{route('data.paygahetelaresani')}}">سازمان های صنعت، معدن و تجارت استان</option>
                                     </optgroup>
                                     <optgroup label="پست ها">
                                         @foreach($posts as $post)
                                             <option
-                                                value="{{route('posts.show',$post)}}">{{$post->header}}</option>
+                                                value="{{route('show.posts',$post)}}">{{$post->header}}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label=" مطالب">
                                         @foreach($contents as $content)
                                             <option
-                                                value="{{route('content.show',$content)}}">{{$content->header}}</option>
+                                                value="{{route('show.artical',$content)}}">{{$content->header}}</option>
                                         @endforeach
+                                    </optgroup>
+                                    <optgroup label="داده های متمرکز">
+                                        <option value="{{route('amarsaderat')}}">آمار صادرات</option>
+                                        <option value="{{route('esto')}}">شهر های عضو اتحادیه</option>
+                                        <option value="{{route('forms')}}">فرم ها</option>
+                                        <option value="{{route('listketabha')}}"> کتاب ها</option>
                                     </optgroup>
                                 </select>
                             </div>

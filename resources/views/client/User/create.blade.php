@@ -41,6 +41,7 @@
         <hr>
         <p class="text-muted">حساب کاربری دارید؟</p>
         <a href="{{route('login')}}" class="btn btn-outline-light btn-sm">وارد شوید!</a>
+        <a href="{{route('forgot')}}" class="btn btn-outline-light btn-sm">فراموشی رمز عبور</a>
         <!-- ./ form -->
 
     </div>

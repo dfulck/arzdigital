@@ -14,72 +14,33 @@ class LinkController extends Controller
      */
     public function index()
     {
-        //
+        return view('Panel.Link.index', [
+            'instagram' => link::query()->where('title', 'instagram')->firstOrFail(),
+            'telegram' => link::query()->where('title', 'telegram')->firstOrFail(),
+            'twitter' => link::query()->where('title', 'whatsapp')->firstOrFail()
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
      */
-    public function create()
+    public function update(Request $request)
     {
-        //
+        $instagram = link::query()->where('title', 'instagram')->firstOrFail();
+        $telegram = link::query()->where('title', 'telegram')->firstOrFail();
+        $twitter = link::query()->where('title', 'whatsapp')->firstOrFail();
+        $instagram->update([
+           'link'=>$request->get('instagram')
+        ]);
+        $telegram->update([
+            'link'=>$request->get('telegram')
+        ]);
+        $twitter->update([
+            'link'=>$request->get('twitter')
+        ]);
+
+        session()->flash('info', "ویرایش با موفقیت انجام شد");
+        return redirect()->back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function show(link $link)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(link $link)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, link $link)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\link  $link
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(link $link)
-    {
-        //
-    }
 }

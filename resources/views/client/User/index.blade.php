@@ -32,6 +32,7 @@
             <hr>
             <p class="text-muted">حسابی ندارید؟</p>
             <a href="{{route('users.register')}}" class="btn btn-outline-light btn-sm">هم اکنون ثبت نام کنید!</a>
+            <a href="{{route('forgot')}}" class="btn btn-outline-light btn-sm">فراموشی رمز عبور</a>
         </form>
         <!-- ./ form -->
 

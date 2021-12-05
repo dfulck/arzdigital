@@ -1,5 +1,5 @@
 <?php
-$jason = file_get_contents('resources/views/Panel/Booksv/paygah_etelati_sherkathaye_modiriat_saderat.json');
+$jason = file_get_contents('C:\laravel\arzdigital\arzdigital\resources\views\Panel\Booksv\paygah_etelati_sherkathaye_modiriat_saderat.json');
 
 $jason_decode = json_decode($jason)->data;
 

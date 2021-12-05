@@ -113,11 +113,11 @@ class CatalogueController extends Controller
             'mizan_tolid_dr_sal' => ['required'],
             'qymt_be_tonazh' => ['required'],
         ]);
+        $image = $catalogue->image;
         if ($request->hasFile('image')) {
             Storage::delete($catalogue->image);
             $image = $request->file('image')->storeAs('public/CataloguImage', $request->file('image')->getClientOriginalName());
         }
-        $image = $catalogue->image;
         $catalogue->update([
             'status' => $request->get('status',0),
             'image' => $image,

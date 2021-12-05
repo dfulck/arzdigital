@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
-use App\Models\Leader;
+use App\Models\leader;
 use Illuminate\Http\Request;
 
-class LeaderController extends Controller
+class leaderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class LeaderController extends Controller
     public function index()
     {
         return view('Panel.Leader.index',[
-            'leaders'=>Leader::all()
+            'leaders'=>leader::all()
         ]);
     }
 
@@ -41,7 +41,7 @@ class LeaderController extends Controller
         $request->validate([
             'title'=>['required'],
         ]);
-        Leader::query()->create([
+        leader::query()->create([
             'title'=>$request->get('title')
         ]);
         session()->flash('success', "ایجاد شد");
@@ -51,10 +51,10 @@ class LeaderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Leader  $leader
+     * @param  \App\Models\leader  $leader
      * @return \Illuminate\Http\Response
      */
-    public function show(Leader $leader)
+    public function show(leader $leader)
     {
 
     }
@@ -62,10 +62,10 @@ class LeaderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Leader  $leader
+     * @param  \App\Models\leader  $leader
      * @return \Illuminate\Http\Response
      */
-    public function edit(Leader $leader)
+    public function edit(leader $leader)
     {
         return view('Panel.Leader.edit',[
             'leader'=>$leader
@@ -76,10 +76,10 @@ class LeaderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Leader  $leader
+     * @param  \App\Models\leader  $leader
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Leader $leader)
+    public function update(Request $request, leader $leader)
     {
         $request->validate([
             'title'=>['required'],
@@ -94,13 +94,14 @@ class LeaderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Leader  $leader
+     * @param  \App\Models\leader  $leader
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Leader $leader)
+    public function destroy(leader $leader)
     {
         if ($leader->HasNumberContent()){
-            return session()->flash('error','this category have contets');
+            session()->flash('error','این دسته بندی حاوی مطلب میباشد');
+            return redirect()->back();
         }
 
         $leader->delete();

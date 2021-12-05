@@ -16,7 +16,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('Panel.Question.index',[
-            'posts'=>Post::all()
+            'questions'=>Question::all()
         ]);
     }
 
@@ -37,17 +37,18 @@ class QuestionController extends Controller
      */
     public function store(Request $request,post $post)
     {
-
         $request->validate([
             'question'=>['required'],
         ]);
         $question=Question::query()->create([
-            'question'=>$request->get('question')
+            'status'=>'0',
+            'title'=>$request->get('question'),
+            'name'=>auth()->user()->name,
+            'image'=>auth()->user()->image
         ]);
-
         $post->questions()->attach($question->id);
         session()->flash('success', "ایجاد شد");
-        return back();
+        return redirect()->back();
 
     }
 
@@ -78,13 +79,13 @@ class QuestionController extends Controller
      * @param Post $post
      * @param Question $question
      */
-    public function update(Request $request,Post $post,Question $question)
+    public function update(Request $request,Question $question)
     {
-        $request->validate([
-            'question'=>['required'],
-        ]);
+       $question->update([
+          'status'=>$request->get('status')
+       ]);
         session()->flash('info', "ویرایش تکمیل شد");
-        dd('update');
+        return redirect()->back();
     }
 
     /**
@@ -96,6 +97,5 @@ class QuestionController extends Controller
     public function destroy(Post $post,Question $question)
     {
         session()->flash('error', "با موفقیت حذف شد");
-        dd('destroy');
     }
 }

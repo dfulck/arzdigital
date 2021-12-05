@@ -2,15 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\City;
+use App\Models\Content;
+use App\Models\Footer;
+use App\Models\Kala;
+use App\Models\leader;
+use App\Models\Post;
+use App\Models\Tag;
+use App\Models\Video;
+use App\Models\Videocat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Psr7\Stream;
 use GuzzleHttp\Client;
 use Codenixsv\CoinGeckoApi\CoinGeckoClient;
+use phpDocumentor\Reflection\Types\Integer;
+use App\Models\link;
+use Picqer\Barcode\BarcodeGeneratorHTML;
+use Picqer\Barcode\BarcodeGeneratorPNG;
 
 class HomeController extends Controller
 {
+
     public function PriceTest()
     {
         $client = new Client();
@@ -66,7 +81,6 @@ class HomeController extends Controller
         $response = $client->post($URI, $params);
         return view('Panel.Booksv.gavanin', [
             'response' => $response->getBody(),
-            'search' => $request->get('search')
         ]);
     }
 
@@ -113,6 +127,8 @@ class HomeController extends Controller
 
     public function otaghayebazargani()
     {
+        echo "OK";
+        exit();
         return view('Panel.Booksv.otaghayebazargani');
     }
 
@@ -123,16 +139,24 @@ class HomeController extends Controller
 
     public function etehadie()
     {
-        return view('Panel.Booksv.createjson');
+        return view('Panel.Booksv.etehadie');
     }
 
     public function index()
     {
-        if (auth()->user()) {
-            return redirect(route('users.dashboard'));
-        }
-        return redirect(route('login'));
-
+        $client = new CoinGeckoClient();
+        $data = $client->simple();
+        $URL = Http::get('https://tejaratnews.com/api/v2/ajax/prices/instrument-price.php?id=17321&period=m&chart=line&token=e7579bbf62340c23')->json();
+        $dollars = json_encode($URL);
+        $jsondecode = json_decode($dollars);
+        $count = count($jsondecode->data) - 1;
+        $dollar = $jsondecode->data[$count]->meta->price;
+        $new=str_replace(',','',$dollar);
+       return view('client.dashboard.Home',[
+           'BookSearch'=>null,
+           'response' => $data,
+           'dollar' => $new,
+       ]);
     }
 
     public function Game()

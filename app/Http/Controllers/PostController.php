@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Part;
 use App\Models\Post;
+use App\Models\Question;
 use App\Models\Subcategory;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -82,6 +83,7 @@ class PostController extends Controller
     {
         return view('Panel.Post.edit', [
             'post' => $post,
+            'tags'=>Tag::all()
         ]);
     }
 
@@ -124,6 +126,7 @@ class PostController extends Controller
     {
         Storage::delete($post->image);
         $post->tags()->detach(Tag::all());
+        $post->questions()->detach(Question::all());
         $post->delete();
         session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();

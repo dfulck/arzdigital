@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Footer;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use phpDocumentor\Reflection\DocBlock\Tags\Link;
 
 class UserSeeder extends Seeder
 {
@@ -16,6 +18,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+
+
+
         $role_id=Role::query()->create([
             'title'=>'Admin'
         ]);

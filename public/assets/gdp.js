@@ -1,29 +1,30 @@
 var svgMapDataGPD = {
   data: {
-    gdp: {
-      name: 'GDP per capita',
-      format: '{0} USD',
-      thousandSeparator: ','
-    },
-    change: {
-      name: 'Change to year before',
-      format: '{0} %'
-    },
-    gdpAdjusted: {
-      name: 'Purchasing Power Parity',
-      format: '{0} USD',
-      thousandSeparator: ',',
-      thresholdMax: 60000,
-      thresholdMin: 1000
-    },
-    changeAdjusted: {
-      name: 'Change to year before',
-      format: '{0} %'
-    }
+      gdp: {
+          name: 'تولید ناخالص داخلی سرانه',
+          format: '{0} دلار',
+          thousandSeparator: ','
+      },
+      change: {
+          name: 'تغییرات در 1سال',
+          format: '{0} %'
+      },
+      gdpAdjusted: {
+          name: 'برابری قدرت خرید',
+          format: '{0} دلار',
+          thousandSeparator: ',',
+          thresholdMax: 60000,
+          thresholdMin: 1000
+      },
+      changeAdjusted: {
+          name: 'تغییرات در 2سال',
+          format: '{0} %'
+      }
   },
   applyData: 'gdpAdjusted',
   values: {
     AF: {
+        method: 'POST',
       link: '/data/world/AF',
       linkTarget: '_blank',
       gdp: 587,
@@ -33,6 +34,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.02
     },
     AL: {
+        method: 'POST',
       link: '/data/world/AL',
       linkTarget: '_blank',
       gdp: 4583,
@@ -42,6 +44,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.04
     },
     DZ: {
+        method: 'POST',
       link: '/data/world/DZ',
       linkTarget: '_blank',
       gdp: 4293,
@@ -51,6 +54,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.33
     },
     AO: {
+        method: 'POST',
       link: '/data/world/AO',
       linkTarget: '_blank',
       gdp: 4408,
@@ -60,6 +64,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.56
     },
     AG: {
+        method: 'POST',
       link: '/data/world/AG',
       linkTarget: '_blank',
       gdp: 16702,
@@ -69,6 +74,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.15
     },
     AR: {
+        method: 'POST',
       link: '/data/world/AR',
       linkTarget: '_blank',
       gdp: 14467,
@@ -78,6 +84,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.77
     },
     AM: {
+        method: 'POST',
       link: '/data/world/AM',
       linkTarget: '_blank',
       gdp: 3861,
@@ -87,6 +94,7 @@ var svgMapDataGPD = {
       changeAdjusted: 7.33
     },
     AU: {
+        method: 'POST',
       link: '/data/world/AU',
       linkTarget: '_blank',
       gdp: 55707,
@@ -96,6 +104,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.97
     },
     AT: {
+        method: 'POST',
       link: '/data/world/AT',
       linkTarget: '_blank',
       gdp: 47290,
@@ -105,6 +114,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.66
     },
     AZ: {
+        method: 'POST',
       link: '/data/world/AZ',
       linkTarget: '_blank',
       gdp: 4141,
@@ -114,6 +124,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.91
     },
     BS: {
+        method: 'POST',
       link: '/data/world/BS',
       linkTarget: '_blank',
       gdp: 31255,
@@ -123,6 +134,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.31
     },
     BH: {
+        method: 'POST',
       link: '/data/world/BH',
       linkTarget: '_blank',
       gdp: 24029,
@@ -132,6 +144,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.02
     },
     BD: {
+        method: 'POST',
       link: '/data/world/BD',
       linkTarget: '_blank',
       gdp: 1602,
@@ -141,6 +154,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.1
     },
     BB: {
+        method: 'POST',
       link: '/data/world/BB',
       linkTarget: '_blank',
       gdp: 17859,
@@ -150,6 +164,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.64
     },
     BY: {
+        method: 'POST',
       link: '/data/world/BY',
       linkTarget: '_blank',
       gdp: 5760,
@@ -159,6 +174,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.52
     },
     BE: {
+        method: 'POST',
       link: '/data/world/BE',
       linkTarget: '_blank',
       gdp: 43582,
@@ -168,6 +184,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.13
     },
     BZ: {
+        method: 'POST',
       link: '/data/world/BZ',
       linkTarget: '_blank',
       gdp: 4806,
@@ -177,6 +194,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.35
     },
     BJ: {
+        method: 'POST',
       link: '/data/world/BJ',
       linkTarget: '_blank',
       gdp: 830,
@@ -186,6 +204,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.46
     },
     BT: {
+        method: 'POST',
       link: '/data/world/BT',
       linkTarget: '_blank',
       gdp: 2903,
@@ -195,6 +214,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.82
     },
     BO: {
+        method: 'POST',
       link: '/data/world/BO',
       linkTarget: '_blank',
       gdp: 3353,
@@ -204,6 +224,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.73
     },
     BA: {
+        method: 'POST',
       link: '/data/world/BA',
       linkTarget: '_blank',
       gdp: 5149,
@@ -213,6 +234,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.6
     },
     BW: {
+        method: 'POST',
       link: '/data/world/BW',
       linkTarget: '_blank',
       gdp: 7877,
@@ -222,6 +244,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.38
     },
     BR: {
+        method: 'POST',
       link: '/data/world/BR',
       linkTarget: '_blank',
       gdp: 9895,
@@ -231,6 +254,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.23
     },
     BN: {
+        method: 'POST',
       link: '/data/world/BN',
       linkTarget: '_blank',
       gdp: 29712,
@@ -240,6 +264,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.7
     },
     BG: {
+        method: 'POST',
       link: '/data/world/BG',
       linkTarget: '_blank',
       gdp: 8064,
@@ -249,6 +274,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.23
     },
     BF: {
+        method: 'POST',
       link: '/data/world/BF',
       linkTarget: '_blank',
       gdp: 664,
@@ -258,6 +284,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.55
     },
     BI: {
+        method: 'POST',
       link: '/data/world/BI',
       linkTarget: '_blank',
       gdp: 312,
@@ -267,6 +294,7 @@ var svgMapDataGPD = {
       changeAdjusted: -5.2
     },
     KH: {
+        method: 'POST',
       link: '/data/world/KH',
       linkTarget: '_blank',
       gdp: 1389,
@@ -276,6 +304,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.46
     },
     CM: {
+        method: 'POST',
       link: '/data/world/CM',
       linkTarget: '_blank',
       gdp: 1401,
@@ -285,6 +314,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.62
     },
     CA: {
+        method: 'POST',
       link: '/data/world/CA',
       linkTarget: '_blank',
       gdp: 45077,
@@ -294,6 +324,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.1
     },
     XK: {
+        method: 'POST',
       link: '/data/world/XK',
       linkTarget: '_blank',
       gdp: 3880,
@@ -303,6 +334,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.14
     },
     CV: {
+        method: 'POST',
       link: '/data/world/CV',
       linkTarget: '_blank',
       gdp: 3237,
@@ -312,6 +344,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.69
     },
     CF: {
+        method: 'POST',
       link: '/data/world/CF',
       linkTarget: '_blank',
       gdp: 387,
@@ -321,6 +354,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.45
     },
     TD: {
+        method: 'POST',
       link: '/data/world/TD',
       linkTarget: '_blank',
       gdp: 810,
@@ -330,6 +364,7 @@ var svgMapDataGPD = {
       changeAdjusted: -6.15
     },
     CL: {
+        method: 'POST',
       link: '/data/world/CL',
       linkTarget: '_blank',
       gdp: 15070,
@@ -339,6 +374,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.69
     },
     CN: {
+        method: 'POST',
       link: '/data/world/CN',
       linkTarget: '_blank',
       gdp: 8643,
@@ -348,6 +384,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.47
     },
     CO: {
+        method: 'POST',
       link: '/data/world/CO',
       linkTarget: '_blank',
       gdp: 6273,
@@ -357,6 +394,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.96
     },
     KM: {
+        method: 'POST',
       link: '/data/world/KM',
       linkTarget: '_blank',
       gdp: 788,
@@ -366,6 +404,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.25
     },
     CG: {
+        method: 'POST',
       link: '/data/world/CG',
       linkTarget: '_blank',
       gdp: 1958,
@@ -375,6 +414,7 @@ var svgMapDataGPD = {
       changeAdjusted: -7.2
     },
     CR: {
+        method: 'POST',
       link: '/data/world/CR',
       linkTarget: '_blank',
       gdp: 11685,
@@ -384,6 +424,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.24
     },
     HR: {
+        method: 'POST',
       link: '/data/world/HR',
       linkTarget: '_blank',
       gdp: 13138,
@@ -393,6 +434,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.15
     },
     CY: {
+        method: 'POST',
       link: '/data/world/CY',
       linkTarget: '_blank',
       gdp: 24976,
@@ -402,6 +444,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.95
     },
     CZ: {
+        method: 'POST',
       link: '/data/world/CZ',
       linkTarget: '_blank',
       gdp: 20152,
@@ -411,6 +454,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.23
     },
     CD: {
+        method: 'POST',
       link: '/data/world/CD',
       linkTarget: '_blank',
       gdp: 478,
@@ -420,6 +464,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.2
     },
     DK: {
+        method: 'POST',
       link: '/data/world/DK',
       linkTarget: '_blank',
       gdp: 56444,
@@ -429,6 +474,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.49
     },
     DJ: {
+        method: 'POST',
       link: '/data/world/DJ',
       linkTarget: '_blank',
       gdp: 1989,
@@ -438,6 +484,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.19
     },
     DM: {
+        method: 'POST',
       link: '/data/world/DM',
       linkTarget: '_blank',
       gdp: 7921,
@@ -447,6 +494,7 @@ var svgMapDataGPD = {
       changeAdjusted: -4.69
     },
     DO: {
+        method: 'POST',
       link: '/data/world/DO',
       linkTarget: '_blank',
       gdp: 7375,
@@ -456,6 +504,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.5
     },
     EC: {
+        method: 'POST',
       link: '/data/world/EC',
       linkTarget: '_blank',
       gdp: 6098,
@@ -465,6 +514,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.29
     },
     EG: {
+        method: 'POST',
       link: '/data/world/EG',
       linkTarget: '_blank',
       gdp: 2501,
@@ -474,6 +524,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.36
     },
     SV: {
+        method: 'POST',
       link: '/data/world/SV',
       linkTarget: '_blank',
       gdp: 4400,
@@ -483,6 +534,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.88
     },
     GQ: {
+        method: 'POST',
       link: '/data/world/GQ',
       linkTarget: '_blank',
       gdp: 12727,
@@ -492,6 +544,7 @@ var svgMapDataGPD = {
       changeAdjusted: -7.97
     },
     ER: {
+        method: 'POST',
       link: '/data/world/ER',
       linkTarget: '_blank',
       gdp: 980,
@@ -501,6 +554,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.73
     },
     EE: {
+        method: 'POST',
       link: '/data/world/EE',
       linkTarget: '_blank',
       gdp: 19840,
@@ -510,6 +564,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.08
     },
     ET: {
+        method: 'POST',
       link: '/data/world/ET',
       linkTarget: '_blank',
       gdp: 873,
@@ -519,6 +574,7 @@ var svgMapDataGPD = {
       changeAdjusted: 8.43
     },
     FM: {
+        method: 'POST',
       link: '/data/world/FM',
       linkTarget: '_blank',
       gdp: 3200,
@@ -528,6 +584,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     FJ: {
+        method: 'POST',
       link: '/data/world/FJ',
       linkTarget: '_blank',
       gdp: 5740,
@@ -537,6 +594,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.08
     },
     FI: {
+        method: 'POST',
       link: '/data/world/FI',
       linkTarget: '_blank',
       gdp: 46017,
@@ -546,6 +604,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.63
     },
     FR: {
+        method: 'POST',
       link: '/data/world/FR',
       linkTarget: '_blank',
       gdp: 39869,
@@ -555,6 +614,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.46
     },
     GA: {
+        method: 'POST',
       link: '/data/world/GA',
       linkTarget: '_blank',
       gdp: 7972,
@@ -564,6 +624,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.33
     },
     GM: {
+        method: 'POST',
       link: '/data/world/GM',
       linkTarget: '_blank',
       gdp: 480,
@@ -573,6 +634,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.56
     },
     GE: {
+        method: 'POST',
       link: '/data/world/GE',
       linkTarget: '_blank',
       gdp: 4099,
@@ -582,6 +644,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.07
     },
     DE: {
+        method: 'POST',
       link: '/data/world/DE',
       linkTarget: '_blank',
       gdp: 44550,
@@ -591,6 +654,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.07
     },
     GH: {
+        method: 'POST',
       link: '/data/world/GH',
       linkTarget: '_blank',
       gdp: 1663,
@@ -600,6 +664,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.28
     },
     GR: {
+        method: 'POST',
       link: '/data/world/GR',
       linkTarget: '_blank',
       gdp: 18637,
@@ -609,6 +674,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.56
     },
     GD: {
+        method: 'POST',
       link: '/data/world/GD',
       linkTarget: '_blank',
       gdp: 10360,
@@ -618,6 +684,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.04
     },
     GT: {
+        method: 'POST',
       link: '/data/world/GT',
       linkTarget: '_blank',
       gdp: 4472,
@@ -627,6 +694,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.81
     },
     GN: {
+        method: 'POST',
       link: '/data/world/GN',
       linkTarget: '_blank',
       gdp: 749,
@@ -636,6 +704,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.09
     },
     GW: {
+        method: 'POST',
       link: '/data/world/GW',
       linkTarget: '_blank',
       gdp: 794,
@@ -645,6 +714,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.57
     },
     GY: {
+        method: 'POST',
       link: '/data/world/GY',
       linkTarget: '_blank',
       gdp: 4710,
@@ -654,6 +724,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.55
     },
     HT: {
+        method: 'POST',
       link: '/data/world/HT',
       linkTarget: '_blank',
       gdp: 784,
@@ -663,6 +734,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.03
     },
     HN: {
+        method: 'POST',
       link: '/data/world/HN',
       linkTarget: '_blank',
       gdp: 2766,
@@ -672,6 +744,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.17
     },
     HK: {
+        method: 'POST',
       link: '/data/world/HK',
       linkTarget: '_blank',
       gdp: 46109,
@@ -681,6 +754,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.9
     },
     HU: {
+        method: 'POST',
       link: '/data/world/HU',
       linkTarget: '_blank',
       gdp: 15531,
@@ -690,6 +764,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.32
     },
     IS: {
+        method: 'POST',
       link: '/data/world/IS',
       linkTarget: '_blank',
       gdp: 70332,
@@ -699,6 +774,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.87
     },
     IN: {
+        method: 'POST',
       link: '/data/world/IN',
       linkTarget: '_blank',
       gdp: 1983,
@@ -708,6 +784,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.43
     },
     ID: {
+        method: 'POST',
       link: '/data/world/ID',
       linkTarget: '_blank',
       gdp: 3876,
@@ -717,6 +794,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.33
     },
     IR: {
+        method: 'POST',
       link: '/data/world/IR',
       linkTarget: '_blank',
       gdp: 5305,
@@ -726,6 +804,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.24
     },
     IQ: {
+        method: 'POST',
       link: '/data/world/IQ',
       linkTarget: '_blank',
       gdp: 5088,
@@ -735,6 +814,7 @@ var svgMapDataGPD = {
       changeAdjusted: -3.79
     },
     IE: {
+        method: 'POST',
       link: '/data/world/IE',
       linkTarget: '_blank',
       gdp: 70638,
@@ -744,6 +824,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.92
     },
     IL: {
+        method: 'POST',
       link: '/data/world/IL',
       linkTarget: '_blank',
       gdp: 40258,
@@ -753,6 +834,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.77
     },
     IT: {
+        method: 'POST',
       link: '/data/world/IT',
       linkTarget: '_blank',
       gdp: 31984,
@@ -762,6 +844,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.59
     },
     CI: {
+        method: 'POST',
       link: '/data/world/CI',
       linkTarget: '_blank',
       gdp: 1617,
@@ -771,6 +854,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.28
     },
     JM: {
+        method: 'POST',
       link: '/data/world/JM',
       linkTarget: '_blank',
       gdp: 5048,
@@ -780,6 +864,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.67
     },
     JP: {
+        method: 'POST',
       link: '/data/world/JP',
       linkTarget: '_blank',
       gdp: 38440,
@@ -789,6 +874,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.94
     },
     JO: {
+        method: 'POST',
       link: '/data/world/JO',
       linkTarget: '_blank',
       gdp: 5678,
@@ -798,6 +884,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.13
     },
     KZ: {
+        method: 'POST',
       link: '/data/world/KZ',
       linkTarget: '_blank',
       gdp: 8841,
@@ -807,6 +894,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.87
     },
     KE: {
+        method: 'POST',
       link: '/data/world/KE',
       linkTarget: '_blank',
       gdp: 1702,
@@ -816,6 +904,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.29
     },
     KI: {
+        method: 'POST',
       link: '/data/world/KI',
       linkTarget: '_blank',
       gdp: 1721,
@@ -825,6 +914,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.43
     },
     KW: {
+        method: 'POST',
       link: '/data/world/KW',
       linkTarget: '_blank',
       gdp: 26005,
@@ -834,6 +924,7 @@ var svgMapDataGPD = {
       changeAdjusted: -4.31
     },
     KG: {
+        method: 'POST',
       link: '/data/world/KG',
       linkTarget: '_blank',
       gdp: 1144,
@@ -843,6 +934,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.05
     },
     LA: {
+        method: 'POST',
       link: '/data/world/LA',
       linkTarget: '_blank',
       gdp: 2543,
@@ -852,6 +944,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.38
     },
     LV: {
+        method: 'POST',
       link: '/data/world/LV',
       linkTarget: '_blank',
       gdp: 15547,
@@ -861,6 +954,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.58
     },
     LB: {
+        method: 'POST',
       link: '/data/world/LB',
       linkTarget: '_blank',
       gdp: 11408,
@@ -870,6 +964,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.63
     },
     LS: {
+        method: 'POST',
       link: '/data/world/LS',
       linkTarget: '_blank',
       gdp: 1425,
@@ -879,6 +974,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.78
     },
     LR: {
+        method: 'POST',
       link: '/data/world/LR',
       linkTarget: '_blank',
       gdp: 729,
@@ -888,6 +984,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.05
     },
     LY: {
+        method: 'POST',
       link: '/data/world/LY',
       linkTarget: '_blank',
       gdp: 4859,
@@ -897,6 +994,7 @@ var svgMapDataGPD = {
       changeAdjusted: 69.48
     },
     LT: {
+        method: 'POST',
       link: '/data/world/LT',
       linkTarget: '_blank',
       gdp: 16730,
@@ -906,6 +1004,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.38
     },
     LU: {
+        method: 'POST',
       link: '/data/world/LU',
       linkTarget: '_blank',
       gdp: 105803,
@@ -915,6 +1014,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.27
     },
     MO: {
+        method: 'POST',
       link: '/data/world/MO',
       linkTarget: '_blank',
       gdp: 77451,
@@ -924,6 +1024,7 @@ var svgMapDataGPD = {
       changeAdjusted: 9.42
     },
     MK: {
+        method: 'POST',
       link: '/data/world/MK',
       linkTarget: '_blank',
       gdp: 5474,
@@ -933,6 +1034,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.06
     },
     MG: {
+        method: 'POST',
       link: '/data/world/MG',
       linkTarget: '_blank',
       gdp: 448,
@@ -942,6 +1044,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     MW: {
+        method: 'POST',
       link: '/data/world/MW',
       linkTarget: '_blank',
       gdp: 324,
@@ -951,6 +1054,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.13
     },
     MY: {
+        method: 'POST',
       link: '/data/world/MY',
       linkTarget: '_blank',
       gdp: 9813,
@@ -960,6 +1064,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.55
     },
     MV: {
+        method: 'POST',
       link: '/data/world/MV',
       linkTarget: '_blank',
       gdp: 12527,
@@ -969,6 +1074,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.98
     },
     ML: {
+        method: 'POST',
       link: '/data/world/ML',
       linkTarget: '_blank',
       gdp: 811,
@@ -978,6 +1084,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.31
     },
     MT: {
+        method: 'POST',
       link: '/data/world/MT',
       linkTarget: '_blank',
       gdp: 27250,
@@ -987,6 +1094,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.26
     },
     MH: {
+        method: 'POST',
       link: '/data/world/MH',
       linkTarget: '_blank',
       gdp: 3625,
@@ -996,6 +1104,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.83
     },
     MR: {
+        method: 'POST',
       link: '/data/world/MR',
       linkTarget: '_blank',
       gdp: 1318,
@@ -1005,6 +1114,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.52
     },
     MU: {
+        method: 'POST',
       link: '/data/world/MU',
       linkTarget: '_blank',
       gdp: 9794,
@@ -1014,6 +1124,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.67
     },
     MX: {
+        method: 'POST',
       link: '/data/world/MX',
       linkTarget: '_blank',
       gdp: 9304,
@@ -1023,6 +1134,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.91
     },
     MD: {
+        method: 'POST',
       link: '/data/world/MD',
       linkTarget: '_blank',
       gdp: 2280,
@@ -1032,6 +1144,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.24
     },
     MN: {
+        method: 'POST',
       link: '/data/world/MN',
       linkTarget: '_blank',
       gdp: 3640,
@@ -1041,6 +1154,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.65
     },
     ME: {
+        method: 'POST',
       link: '/data/world/ME',
       linkTarget: '_blank',
       gdp: 7647,
@@ -1050,6 +1164,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.16
     },
     MA: {
+        method: 'POST',
       link: '/data/world/MA',
       linkTarget: '_blank',
       gdp: 3151,
@@ -1059,6 +1174,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.96
     },
     MZ: {
+        method: 'POST',
       link: '/data/world/MZ',
       linkTarget: '_blank',
       gdp: 429,
@@ -1068,6 +1184,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.09
     },
     MM: {
+        method: 'POST',
       link: '/data/world/MM',
       linkTarget: '_blank',
       gdp: 1264,
@@ -1077,6 +1194,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.82
     },
     NA: {
+        method: 'POST',
       link: '/data/world/NA',
       linkTarget: '_blank',
       gdp: 5413,
@@ -1086,6 +1204,7 @@ var svgMapDataGPD = {
       changeAdjusted: -3.12
     },
     NR: {
+        method: 'POST',
       link: '/data/world/NR',
       linkTarget: '_blank',
       gdp: 8575,
@@ -1095,6 +1214,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.22
     },
     NP: {
+        method: 'POST',
       link: '/data/world/NP',
       linkTarget: '_blank',
       gdp: 834,
@@ -1104,6 +1224,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.41
     },
     NL: {
+        method: 'POST',
       link: '/data/world/NL',
       linkTarget: '_blank',
       gdp: 48346,
@@ -1113,6 +1234,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.83
     },
     NZ: {
+        method: 'POST',
       link: '/data/world/NZ',
       linkTarget: '_blank',
       gdp: 41593,
@@ -1122,6 +1244,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.03
     },
     NI: {
+        method: 'POST',
       link: '/data/world/NI',
       linkTarget: '_blank',
       gdp: 2207,
@@ -1131,6 +1254,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.82
     },
     NE: {
+        method: 'POST',
       link: '/data/world/NE',
       linkTarget: '_blank',
       gdp: 440,
@@ -1140,6 +1264,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     NG: {
+        method: 'POST',
       link: '/data/world/NG',
       linkTarget: '_blank',
       gdp: 1994,
@@ -1149,6 +1274,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.76
     },
     NO: {
+        method: 'POST',
       link: '/data/world/NO',
       linkTarget: '_blank',
       gdp: 74941,
@@ -1158,6 +1284,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.87
     },
     OM: {
+        method: 'POST',
       link: '/data/world/OM',
       linkTarget: '_blank',
       gdp: 17973,
@@ -1167,6 +1294,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.23
     },
     PK: {
+        method: 'POST',
       link: '/data/world/PK',
       linkTarget: '_blank',
       gdp: 1541,
@@ -1176,6 +1304,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.58
     },
     PW: {
+        method: 'POST',
       link: '/data/world/PW',
       linkTarget: '_blank',
       gdp: 17096,
@@ -1185,6 +1314,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.06
     },
     PA: {
+        method: 'POST',
       link: '/data/world/PA',
       linkTarget: '_blank',
       gdp: 15089,
@@ -1194,6 +1324,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.82
     },
     PG: {
+        method: 'POST',
       link: '/data/world/PG',
       linkTarget: '_blank',
       gdp: 2861,
@@ -1203,6 +1334,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.46
     },
     PY: {
+        method: 'POST',
       link: '/data/world/PY',
       linkTarget: '_blank',
       gdp: 4260,
@@ -1212,6 +1344,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.06
     },
     PE: {
+        method: 'POST',
       link: '/data/world/PE',
       linkTarget: '_blank',
       gdp: 6199,
@@ -1221,6 +1354,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.31
     },
     PH: {
+        method: 'POST',
       link: '/data/world/PH',
       linkTarget: '_blank',
       gdp: 2976,
@@ -1230,6 +1364,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.15
     },
     PL: {
+        method: 'POST',
       link: '/data/world/PL',
       linkTarget: '_blank',
       gdp: 13822,
@@ -1239,6 +1374,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.73
     },
     PT: {
+        method: 'POST',
       link: '/data/world/PT',
       linkTarget: '_blank',
       gdp: 21161,
@@ -1248,6 +1384,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.08
     },
     PR: {
+        method: 'POST',
       link: '/data/world/PR',
       linkTarget: '_blank',
       gdp: 30488,
@@ -1257,6 +1394,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.35
     },
     QA: {
+        method: 'POST',
       link: '/data/world/QA',
       linkTarget: '_blank',
       gdp: 60804,
@@ -1266,6 +1404,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.31
     },
     RO: {
+        method: 'POST',
       link: '/data/world/RO',
       linkTarget: '_blank',
       gdp: 10757,
@@ -1275,6 +1414,7 @@ var svgMapDataGPD = {
       changeAdjusted: 7.49
     },
     RU: {
+        method: 'POST',
       link: '/data/world/RU',
       linkTarget: '_blank',
       gdp: 10608,
@@ -1284,6 +1424,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.5
     },
     RW: {
+        method: 'POST',
       link: '/data/world/RW',
       linkTarget: '_blank',
       gdp: 772,
@@ -1293,6 +1434,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.7
     },
     KN: {
+        method: 'POST',
       link: '/data/world/KN',
       linkTarget: '_blank',
       gdp: 16296,
@@ -1302,6 +1444,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.71
     },
     LC: {
+        method: 'POST',
       link: '/data/world/LC',
       linkTarget: '_blank',
       gdp: 9607,
@@ -1311,6 +1454,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.51
     },
     VC: {
+        method: 'POST',
       link: '/data/world/VC',
       linkTarget: '_blank',
       gdp: 7270,
@@ -1320,6 +1464,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.7
     },
     WS: {
+        method: 'POST',
       link: '/data/world/WS',
       linkTarget: '_blank',
       gdp: 4253,
@@ -1329,6 +1474,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.8
     },
     SM: {
+        method: 'POST',
       link: '/data/world/SM',
       linkTarget: '_blank',
       gdp: 47406,
@@ -1338,6 +1484,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.65
     },
     ST: {
+        method: 'POST',
       link: '/data/world/ST',
       linkTarget: '_blank',
       gdp: 1785,
@@ -1347,6 +1494,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.58
     },
     SA: {
+        method: 'POST',
       link: '/data/world/SA',
       linkTarget: '_blank',
       gdp: 21120,
@@ -1356,6 +1504,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.63
     },
     SN: {
+        method: 'POST',
       link: '/data/world/SN',
       linkTarget: '_blank',
       gdp: 1038,
@@ -1365,6 +1514,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.39
     },
     RS: {
+        method: 'POST',
       link: '/data/world/RS',
       linkTarget: '_blank',
       gdp: 5899,
@@ -1374,6 +1524,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.83
     },
     SC: {
+        method: 'POST',
       link: '/data/world/SC',
       linkTarget: '_blank',
       gdp: 15686,
@@ -1383,6 +1534,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.75
     },
     SL: {
+        method: 'POST',
       link: '/data/world/SL',
       linkTarget: '_blank',
       gdp: 492,
@@ -1392,6 +1544,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.35
     },
     SG: {
+        method: 'POST',
       link: '/data/world/SG',
       linkTarget: '_blank',
       gdp: 57713,
@@ -1401,6 +1554,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.22
     },
     SK: {
+        method: 'POST',
       link: '/data/world/SK',
       linkTarget: '_blank',
       gdp: 17664,
@@ -1410,6 +1564,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.61
     },
     SI: {
+        method: 'POST',
       link: '/data/world/SI',
       linkTarget: '_blank',
       gdp: 23654,
@@ -1419,6 +1574,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.93
     },
     SB: {
+        method: 'POST',
       link: '/data/world/SB',
       linkTarget: '_blank',
       gdp: 2081,
@@ -1428,6 +1584,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.29
     },
     SO: {
+        method: 'POST',
       link: '/data/world/SO',
       linkTarget: '_blank',
       gdp: 486,
@@ -1437,6 +1594,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.82
     },
     ZA: {
+        method: 'POST',
       link: '/data/world/ZA',
       linkTarget: '_blank',
       gdp: 6180,
@@ -1446,6 +1604,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.07
     },
     KR: {
+        method: 'POST',
       link: '/data/world/KR',
       linkTarget: '_blank',
       gdp: 29891,
@@ -1455,6 +1614,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.72
     },
     SS: {
+        method: 'POST',
       link: '/data/world/SS',
       linkTarget: '_blank',
       gdp: 228,
@@ -1464,6 +1624,7 @@ var svgMapDataGPD = {
       changeAdjusted: -12.82
     },
     ES: {
+        method: 'POST',
       link: '/data/world/ES',
       linkTarget: '_blank',
       gdp: 28359,
@@ -1473,6 +1634,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.01
     },
     LK: {
+        method: 'POST',
       link: '/data/world/LK',
       linkTarget: '_blank',
       gdp: 4085,
@@ -1482,6 +1644,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.46
     },
     SD: {
+        method: 'POST',
       link: '/data/world/SD',
       linkTarget: '_blank',
       gdp: 1428,
@@ -1491,6 +1654,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.82
     },
     SR: {
+        method: 'POST',
       link: '/data/world/SR',
       linkTarget: '_blank',
       gdp: 5746,
@@ -1500,6 +1664,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.87
     },
     SZ: {
+        method: 'POST',
       link: '/data/world/SZ',
       linkTarget: '_blank',
       gdp: 3915,
@@ -1509,6 +1674,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.67
     },
     SE: {
+        method: 'POST',
       link: '/data/world/SE',
       linkTarget: '_blank',
       gdp: 53218,
@@ -1518,6 +1684,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.68
     },
     CH: {
+        method: 'POST',
       link: '/data/world/CH',
       linkTarget: '_blank',
       gdp: 80591,
@@ -1527,6 +1694,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.24
     },
     TW: {
+        method: 'POST',
       link: '/data/world/TW',
       linkTarget: '_blank',
       gdp: 24577,
@@ -1536,6 +1704,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.51
     },
     TJ: {
+        method: 'POST',
       link: '/data/world/TJ',
       linkTarget: '_blank',
       gdp: 824,
@@ -1545,6 +1714,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.06
     },
     TZ: {
+        method: 'POST',
       link: '/data/world/TZ',
       linkTarget: '_blank',
       gdp: 1034,
@@ -1554,6 +1724,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.96
     },
     TH: {
+        method: 'POST',
       link: '/data/world/TH',
       linkTarget: '_blank',
       gdp: 6591,
@@ -1563,6 +1734,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.68
     },
     TL: {
+        method: 'POST',
       link: '/data/world/TL',
       linkTarget: '_blank',
       gdp: 2104,
@@ -1572,6 +1744,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.67
     },
     TG: {
+        method: 'POST',
       link: '/data/world/TG',
       linkTarget: '_blank',
       gdp: 611,
@@ -1581,6 +1754,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.95
     },
     TO: {
+        method: 'POST',
       link: '/data/world/TO',
       linkTarget: '_blank',
       gdp: 4177,
@@ -1590,6 +1764,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.26
     },
     TT: {
+        method: 'POST',
       link: '/data/world/TT',
       linkTarget: '_blank',
       gdp: 15769,
@@ -1599,6 +1774,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.58
     },
     TN: {
+        method: 'POST',
       link: '/data/world/TN',
       linkTarget: '_blank',
       gdp: 3496,
@@ -1608,6 +1784,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.85
     },
     TR: {
+        method: 'POST',
       link: '/data/world/TR',
       linkTarget: '_blank',
       gdp: 10512,
@@ -1617,6 +1794,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.68
     },
     TM: {
+        method: 'POST',
       link: '/data/world/TM',
       linkTarget: '_blank',
       gdp: 6643,
@@ -1626,6 +1804,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.86
     },
     TV: {
+        method: 'POST',
       link: '/data/world/TV',
       linkTarget: '_blank',
       gdp: 3638,
@@ -1635,6 +1814,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.34
     },
     UG: {
+        method: 'POST',
       link: '/data/world/UG',
       linkTarget: '_blank',
       gdp: 699,
@@ -1644,6 +1824,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.86
     },
     UA: {
+        method: 'POST',
       link: '/data/world/UA',
       linkTarget: '_blank',
       gdp: 2583,
@@ -1653,6 +1834,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.02
     },
     AE: {
+        method: 'POST',
       link: '/data/world/AE',
       linkTarget: '_blank',
       gdp: 37226,
@@ -1662,6 +1844,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.86
     },
     GB: {
+        method: 'POST',
       link: '/data/world/GB',
       linkTarget: '_blank',
       gdp: 39735,
@@ -1671,6 +1854,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.21
     },
     US: {
+        method: 'POST',
       link: '/data/world/US',
       linkTarget: '_blank',
       gdp: 59501,
@@ -1680,6 +1864,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.48
     },
     UY: {
+        method: 'POST',
       link: '/data/world/UY',
       linkTarget: '_blank',
       gdp: 16722,
@@ -1689,6 +1874,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.74
     },
     UZ: {
+        method: 'POST',
       link: '/data/world/UZ',
       linkTarget: '_blank',
       gdp: 1491,
@@ -1698,6 +1884,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.89
     },
     VU: {
+        method: 'POST',
       link: '/data/world/VU',
       linkTarget: '_blank',
       gdp: 3094,
@@ -1707,6 +1894,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.33
     },
     VE: {
+        method: 'POST',
       link: '/data/world/VE',
       linkTarget: '_blank',
       gdp: 6684,
@@ -1716,6 +1904,7 @@ var svgMapDataGPD = {
       changeAdjusted: -15.3
     },
     VN: {
+        method: 'POST',
       link: '/data/world/VN',
       linkTarget: '_blank',
       gdp: 2354,
@@ -1725,6 +1914,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.78
     },
     YE: {
+        method: 'POST',
       link: '/data/world/YE',
       linkTarget: '_blank',
       gdp: 551,
@@ -1734,6 +1924,7 @@ var svgMapDataGPD = {
       changeAdjusted: -16.17
     },
     ZM: {
+        method: 'POST',
       link: '/data/world/ZM',
       linkTarget: '_blank',
       gdp: 1480,
@@ -1743,6 +1934,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.95
     },
     ZW: {
+        method: 'POST',
       link: '/data/world/ZW',
       linkTarget: '_blank',
       gdp: 1176,

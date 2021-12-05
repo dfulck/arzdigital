@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="TagInput">برچسب مورد نطر را انتخاب نمایید </label>
-                                <select class="form-control" name="tag" id="TagInput">
+                                <select class="js-example-basic-single" multiple name="tag">
                                     @foreach($tags as $tag)
                                     <option value="{{$tag->id}}">{{$tag->title}}</option>
                                     @endforeach

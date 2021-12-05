@@ -22,7 +22,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">هدر مطلب</label>
+                                <label for="exampleFormControlInput1">عنوان مطلب</label>
                                 <input value="{{$content->header}}" type="text" name="header"
                                        class="form-control text-left"
                                        id="exampleFormControlInput1" placeholder="header text" dir="ltr">
@@ -34,14 +34,14 @@
                                         <textarea name="body" id="editor-demo1">{!! $content->body !!}</textarea>
                                     </div>
                                 </div>
-                            </div>
+                            </div>/storage/app/+
                             <div class="form-group">
                                 <img width="100%" height="400px" src="{{url('/storage/app/'.$content->image)}}" alt="image not found">
                                 <label for="exampleFormControlFile1">تصویر مطلب</label>
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-success" value="edit">
+                                <input type="submit" class="btn btn-success" value="ویرایش">
                             </div>
                         </form>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -98,6 +99,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
+        $tag->posts()->detach(Post::all());
         $tag->delete();
         session()->flash('error', "با موفقیت حذف شد");
         return redirect()->back();

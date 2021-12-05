@@ -1,0 +1,554 @@
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .logo-header {
+        width: 40% !important;
+    }
+
+    .header-main-detail {
+        width: 100% !important;
+    }
+
+    .article-archive-main {
+        height: 350px !important;
+    }
+
+    .footer-category-left {
+        width: 100% !important;
+    }
+
+    .single-page-main-container {
+        width: 95%;
+    }
+
+ }
+
+/* // /Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .map-info {
+        display: none;
+    }
+
+    .commercial-services {
+        display: none;
+    }
+
+    .header-main-detail {
+        width: 100% !important;
+    }
+
+    .logo-header {
+        width: 30% !important;
+    }
+
+    .single-page-item {
+        width: 100% !important;
+        background-color: transparent;
+    }
+
+    .single-articles-item-image {
+        display: none;
+    }
+
+    .single-articles-item-text {
+        width: 100%;
+    }
+
+    .single-articles-item-body {
+        overflow: hidden;
+        margin-bottom: 1rem;
+        }
+
+    .articales-single-page-container {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .articales-single-page-body {
+        width: 100%;
+    }
+
+    .articales-single-page-sidebar {
+        display: flex;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .articales-single-page-category {
+        width: 48%;
+        display: inline-block;
+    }
+
+    .articales-single-page-tag {
+        width: 50%;
+        display: inline-block;
+    }
+
+
+ }
+
+/* // Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+    .navbar-header {
+        display: none;
+    }
+
+    .left-icons {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .navbar-header {
+        display: block;
+    }
+
+    section.header-top {
+        width: 100%;
+        /* position: relative; */
+        z-index: 2;
+        direction: rtl;
+        padding: 0 1rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-header {
+        width: 50%;
+    }
+
+    .logo-header img {
+        width: 100%;
+    }
+
+    nav.navbar.navbar-header {
+        display: none;
+    }
+
+    .header-main {
+        position: absolute;
+        /* bottom: 0; */
+        top: 209px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+        height: 400px;
+        padding-bottom: 1rem;
+    }
+
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+
+    .header-main-detail {
+        width: 75%;
+        height: 79%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .header-main-left {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding-right: 0;
+        padding-bottom: 0;
+        z-index: 1;
+    }
+
+    .header-main-left-title {
+        display: flex;
+        text-align: center;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .introducing-services {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .introducing-services-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .introducing-services-left {
+        width: 95%;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 auto;
+    }
+
+    .introducing-services-left-top-title h1 {
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    .introducing-services-left-top {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .last-news-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .last-news-item {
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 2rem;
+    }
+
+    .last-news-section {
+        padding: 20px 0;
+    }
+
+    .last-news-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .last-news-item:nth-of-type(3) {
+        display: none;
+    }
+
+    .last-news-gallery {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .last-news-gallery-info {
+        height: 100%;
+        width: 100%;
+    }
+
+    .last-news-gallery-image {
+        width: 100%;
+        display: none;
+    }
+
+    .article-section {
+        padding-top: 10px;
+    }
+
+    .article-archive-container {
+        flex-direction: column;
+    }
+
+    .article-archive {
+        width: 100%;
+        height: 100%;
+    }
+
+    .article-archive-container {
+        height: fit-content;
+    }
+
+    .article-archive-main {
+        height: 250px;
+    }
+
+    .educational-archive {
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .educational-archive-main {
+        height: fit-content;
+        padding: 20px;
+    }
+
+    .investment {
+        width: 95%;
+    }
+
+    .article-container {
+        width: 95%;
+    }
+
+    .investment-item {
+        width: 100%;
+        display: block;
+    }
+
+    .info-city {
+      margin: 2rem 0;
+    }
+
+    .info-city-container {
+        width: 95%;
+    }
+    section#footer-top-index {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding: 70px 0 0 0;
+    }
+
+    .info-city-image {
+        width: 95%;
+        display: block;
+        clear: both;
+        position: absolute;
+        right: 0;
+        top: -100px;
+        height: 250px;
+        left: 0;
+        margin: auto;
+        background-size: cover;
+        background-repeat: no-repeat !important;
+    }
+
+    .info-city-container {
+        position: relative;
+        width: 100%;
+        min-height: 400px;
+        float: right;
+        width: 100%;
+    }
+
+    .info-city-text {
+        width: 100%;
+        float: right;
+        bottom: 0;
+        padding: 180px 10px 0 10px;
+    }
+
+    .footer-category {
+        width: 100%;
+        display: block !important;
+    }
+
+    .footer-category-right {
+        width: 100%;
+        display: block;
+        clear: both;
+    }
+
+    .footer-category-left {
+        width: 50%;
+        display: block;
+        clear: both;
+        margin: 10px auto;
+    }
+
+    .footer-category-item {
+        width: 100%;
+        height: 100%;
+        display: block;
+        clear: both;
+    }
+
+    ul.footer-category-items {
+        display: block !important;
+        text-align: center;
+    }
+
+    .educational-archive-main {
+        display: block;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        height: 100% !important;
+        padding: 0 0;
+        background: rgb(233 228 228 / 74%);
+        border-radius: 40px;
+    }
+
+    .educational-archive-main a {
+        border-radius: 40px;
+        font-size: 14px;
+    }
+
+    .last-news-item {
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+    ul.mobile-menu-list {
+        position: relative;
+        height: 100vh;
+        z-index: 999999999999999999999999999999999999999;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu.show-mobile-menu {
+        position: fixed;
+        height: 100%;
+        z-index: 9999;
+        right: 0;
+        top: 0;
+
+    }
+
+    .introducing-services-left-main {
+        height: 150px;
+    }
+
+    .introducing-services-right {
+        height: 150px;
+     }
+
+    .last-news-gallery-main {
+        height: fit-content;
+    }
+
+    .last-news-gallery-info {
+        height: 70%;
+    }
+
+    .last-news-gallery {
+        height: fit-content;
+    }
+
+    ul.footer-category-items {
+        /* display: block !important; */
+        text-align: center;
+        display: flex !important;
+        align-items: flex-start;
+    }
+
+    .footer-category-item {
+        display: inline-block;
+        width: 49%;
+    }
+
+
+    .single-page-item {
+        width: 48%;
+    }
+
+
+
+
+
+
+    .container {
+        padding: 1rem;
+    }
+
+    input#dollar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .coin-title.col-lg-3.col-md-4.col-3.d-flex.h-100 {
+        width: 25%;
+    }
+
+    .row.rounded.mbm-top-panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col-lg-4.mbm-wrapper-block-info {
+        width: 100%;
+    }
+
+    .col-lg-4.mbm-wrapper-block {
+        width: 100%;
+    }
+
+    .row {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .data-container.col-12.col-sm-6.col-md-6.col-lg-4.form-group {
+        width: 100%;
+        /* text-align: center; */
+    }
+
+
+
+    select#hashrateUnit {
+        width: 25%;
+    }
+
+
+    .input-group {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .logo-header {
+        width: 20%;
+    }
+
+    .header-main {
+        width: 95%;
+    }
+
+    .introducing-services {
+        width: 95%;
+    }
+
+    .last-news-container {
+        width: 95%;
+    }
+
+    .commercial-services-container, .map-info-container {
+        width: 95%;
+        height: 80%;
+        display: flex;
+    }
+
+    .article-container {
+        width: 95%;
+    }
+
+    .investment {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .info-city-container {
+        width: 95%;
+    }
+
+    .footer-container {
+        width: 95%;
+    }
+ }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1400px) {  }

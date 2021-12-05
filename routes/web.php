@@ -28,6 +28,10 @@ use App\Http\Middleware\WriterMiddleware;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\NewsemailController;
+use App\Http\Controllers\ClientController\ClientControoller;
+use App\Http\Controllers\MinerController;
+use App\Http\Controllers\BarcodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,25 +44,104 @@ use App\Http\Controllers\LinkController;
 |
 */
 
+Route::get('/test', function () {
+    return view('Panel.Link.test');
+});
+//////////////////////////////////////////home
+//Search book
+Route::post('/', [ClientControoller::class, 'serachgavanin'])->name('serachgavanin');
+//End book
+//Artical
+Route::get('/Artical/All', [ClientControoller::class, 'ArticalAll'])->name('ArticalAll');
+//End Artical
+//Tag Artical
+Route::get('/Tag/Artical/{tag}', [ClientControoller::class, 'TagArtical'])->name('show.tags');
+//End Artical
+//News All
+Route::get('/news/All', [ClientControoller::class, 'NewsAll'])->name('NewsAll');
+//End All
+//Show Leaders
+Route::get('/show/leaders/{leader}', [ClientControoller::class, 'ShowLeader'])->name('show.leaders');
+//End Leaders
+//artical singel
+Route::get('/artical/singel/{content}', [ClientControoller::class, 'ShowArtical'])->name('show.artical');
+//End singel
+//show Post
+Route::get('/post/show/{post}', [ClientControoller::class, 'ShowPost'])->name('show.posts');
+//End Post
+//calector
+Route::get('/calector/price', [ClientControoller::class, 'calector'])->name('calector');
+//End Calector
+//Video Gallery
+Route::get('/video/gallery', [ClientControoller::class, 'VideoAll'])->name('VideoAll');
+//End Gallery
+//singel Video
+Route::get('/video/singel/{videocat}', [ClientControoller::class, 'SingelVideo'])->name('show.video');
+//End video
+//world data
+Route::get('/data/world/{code}', [ClientControoller::class, 'world'])->name('world.data');
+//End world
+//Data
+Route::get('/data/etehadie/home', [ClientControoller::class, 'etehadie'])->name('data.etehadie');
+Route::get('/data/paygahetelaresani/home', [ClientControoller::class, 'paygahetelaresani'])->name('data.paygahetelaresani');
+Route::get('/data/otaghayebazargani/home', [ClientControoller::class, 'otaghayebazargani'])->name('data.otaghayebazargani');
+Route::get('/data/bazarhayemontakhab/home', [ClientControoller::class, 'bazarhayemontakhab'])->name('data.bazarhayemontakhab');
+//End Data
+//data site
+Route::get('/amarsaderat/home',[ClientControoller::class,'amarsaderat'])->name('amarsaderat');
+Route::get('/esto/home',[ClientControoller::class,'esto'])->name('esto');
+Route::get('/forms/home',[ClientControoller::class,'forms'])->name('forms');
+Route::get('/listketabha/home',[ClientControoller::class,'listketabha'])->name('listketabha');
+//End data site
+
+//Search in home
+Route::post('/search/home',[ClientControoller::class, 'Search'])->name('search.Home');
+//End search
+//Forgot password
+Route::get('/Forgot/password',[ClientControoller::class,'show'])->name('forgot');
+Route::post('/Forgot/password',[ClientControoller::class,'forgot'])->name('forgot.password');
+//End Forgot Password
+
+
+
+
+
+
+
+///////////////////////////////////////home
+
+
+///////////////////////////////////////panel Admin
 Route::get('/', [HomeController::class, 'index'])->name('home');
 //user login
 Route::get('/users/create?id=', [UserController::class, 'create'])->name('users.register');
 Route::resource('users', UserController::class);
-Route::get('/users',[UserController::class,'index'])->name('login');
+Route::get('/users', [UserController::class, 'index'])->name('login');
 Route::post('/Users/login', [UserController::class, 'login'])->name('users.login');
 Route::post('/Users/logout', [UserController::class, 'logout'])->name('users.logout');
-
-Route::middleware('auth')->group(function (){
+//news Email
+Route::post('/newsemail', [NewsemailController::class, 'store'])->name('newsemail');
+//End Email
+Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [UserController::class, 'show'])->name('users.dashboard');
     //Admin
     Route::middleware(AdminMiddleware::class)->group(function () {
+
+        //Miner
+        Route::resource('miners', MinerController::class);
+        //End miner
+        //barcode
+        Route::resource('barcodes', BarcodeController::class);
+        //End Barcode
         //link instagram ,...
-        Route::resource('links',LinkController::class);
+        Route::get('/links/list', [LinkController::class, 'index'])->name('links.index');
+        Route::patch('/links/update', [LinkController::class, 'update'])->name('links.update');
         //End link
         //Start Useremails
         Route::resource('massages', MassageController::class);
 //End Useremails
         //Question Answer
+        Route::post('/question/posts/{post}',[QuestionController::class,'store'])->name('question.store');
         Route::resource('questions', QuestionController::class);
 //End Question Answer
         //user login
@@ -86,7 +169,7 @@ Route::middleware('auth')->group(function (){
         //gavanin
         Route::get('/Books/Gavanin_1399', [HomeController::class, 'data'])->name('gaaninbooks');
         Route::post('/Books/search', [HomeController::class, 'search'])->name('search.gavanin');
-        Route::post('/Books/search/{search}', [HomeController::class, 'searchdata'])->name('search.datagavanin');
+//        Route::post('/Books/search/{search}', [HomeController::class, 'searchdata'])->name('search.datagavanin');
         Route::resource('amarsaderat', AmarsaderatController::class);
 //End Gavanin
         //Start Jason
@@ -99,7 +182,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/data/world/', [HomeController::class, 'Erth'])->name('Erth.data');
         Route::get('/kala/khadamat/', [HomeController::class, 'kala'])->name('kala.khadamat');
         Route::post('/data/kala/khadamat/', [HomeController::class, 'khadamat'])->name('data.khadamat');
-        Route::get('/data/world/{code}', [HomeController::class, 'world'])->name('world.data');
+//        Route::get('/data/world/{code}', [HomeController::class, 'world'])->name('world.data');
 //End Data
         //Price Callector
         Route::get('/price/callector', [HomeController::class, 'PriceCallector'])->name('price.callector');
@@ -112,11 +195,18 @@ Route::middleware('auth')->group(function (){
 //End guest
 //Writer
     Route::middleware(WriterMiddleware::class)->group(function () {
+        //Miner
+        Route::resource('miners', MinerController::class);
+        //End miner
+        //barcode
+        Route::resource('barcodes', BarcodeController::class);
+        //End Barcode
         //ciry
-        Route::resource('cities',CityController::class);
+        Route::get('/danestaniha', [CityController::class, 'index'])->name('cities.index');
+        Route::patch('/danestaniha/update', [CityController::class, 'update'])->name('cities.update');
         //Endcity
         //Form
-        Route::resource('forms',FormController::class);
+        Route::resource('forms', FormController::class);
 //End Form
         // Video
         Route::resource('videocats.videos', VideoController::class);
@@ -124,10 +214,10 @@ Route::middleware('auth')->group(function (){
 // Videocat
         Route::resource('videocats', VideocatController::class);
 //End Videocat
-//Footer
-        Route::get('/footer/manager',[FooterController::class,'create'])->name('footers.manager');
-        Route::patch('/footer/update1',[FooterController::class,'edit'])->name('footers.store1');
-        Route::patch('/footer/update2',[FooterController::class,'update'])->name('footers.store2');
+        //Footer
+        Route::get('/footers/manager', [FooterController::class, 'create'])->name('footers.manager');
+        Route::patch('/footer/update1', [FooterController::class, 'edit'])->name('footers.store1');
+        Route::patch('/footer/update2', [FooterController::class, 'update'])->name('footers.store2');
 //End Footer
 // Tags
         Route::resource('tags', TagController::class);
@@ -144,7 +234,8 @@ Route::middleware('auth')->group(function (){
 //        Route::get('/subcategories/{subcategory}/post', [PostController::class, 'create'])->name('subcategories.post.create');
 //        Route::post('/subcategories/{subcategory}/store', [PostController::class, 'store'])->name('posts.subcategory');
 //        Route::get('/subcategories/{subcategory}/list/post', [PostController::class, 'index'])->name('Posts.index');
-          Route::resource('posts', PostController::class);
+        Route::resource('posts', PostController::class);
+        Route::delete('/delete/{id}',[PostController::class,'delete'])->name('delete');
 //End Post
         //Etsos
         Route::resource('etsos', EtsoController::class);

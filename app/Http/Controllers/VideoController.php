@@ -42,7 +42,6 @@ class VideoController extends Controller
     {
         $request->validate([
             'video'=>['required'],
-            'videocat_id'=>['required'],
             'title'=>['required'],
             'image'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
         ]);

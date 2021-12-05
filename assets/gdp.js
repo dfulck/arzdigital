@@ -1,30 +1,30 @@
 var svgMapDataGPD = {
   data: {
     gdp: {
-      name: 'GDP per capita',
-      format: '{0} USD',
+      name: 'تولید ناخالص داخلی سرانه',
+      format: '{0} دلار',
       thousandSeparator: ','
     },
     change: {
-      name: 'Change to year before',
+      name: 'تغییرات در سال پیش',
       format: '{0} %'
     },
     gdpAdjusted: {
-      name: 'Purchasing Power Parity',
-      format: '{0} USD',
+      name: 'برابری قدرت خرید',
+      format: '{0} دلار',
       thousandSeparator: ',',
       thresholdMax: 60000,
       thresholdMin: 1000
     },
     changeAdjusted: {
-      name: 'Change to year before',
+      name: 'تغییرات در سال پیش',
       format: '{0} %'
     }
   },
   applyData: 'gdpAdjusted',
   values: {
     AF: {
-      link: '/arzdigital/data/world/AF',
+      link: '/data/world/AF',
       linkTarget: '_blank',
       gdp: 587,
       change: 4.73,
@@ -33,7 +33,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.02
     },
     AL: {
-      link: '/arzdigital/data/world/AL',
+      link: '/data/world/AL',
       linkTarget: '_blank',
       gdp: 4583,
       change: 11.09,
@@ -42,7 +42,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.04
     },
     DZ: {
-      link: '/arzdigital/data/world/DZ',
+      link: '/data/world/DZ',
       linkTarget: '_blank',
       gdp: 4293,
       change: 10.01,
@@ -51,7 +51,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.33
     },
     AO: {
-      link: '/arzdigital/data/world/AO',
+      link: '/data/world/AO',
       linkTarget: '_blank',
       gdp: 4408,
       change: 26.49,
@@ -60,7 +60,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.56
     },
     AG: {
-      link: '/arzdigital/data/world/AG',
+      link: '/data/world/AG',
       linkTarget: '_blank',
       gdp: 16702,
       change: 3.26,
@@ -69,7 +69,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.15
     },
     AR: {
-      link: '/arzdigital/data/world/AR',
+      link: '/data/world/AR',
       linkTarget: '_blank',
       gdp: 14467,
       change: 13.83,
@@ -78,7 +78,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.77
     },
     AM: {
-      link: '/arzdigital/data/world/AM',
+      link: '/data/world/AM',
       linkTarget: '_blank',
       gdp: 3861,
       change: 9.22,
@@ -87,7 +87,7 @@ var svgMapDataGPD = {
       changeAdjusted: 7.33
     },
     AU: {
-      link: '/arzdigital/data/world/AU',
+      link: '/data/world/AU',
       linkTarget: '_blank',
       gdp: 55707,
       change: 7.39,
@@ -96,7 +96,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.97
     },
     AT: {
-      link: '/arzdigital/data/world/AT',
+      link: '/data/world/AT',
       linkTarget: '_blank',
       gdp: 47290,
       change: 5.72,
@@ -105,7 +105,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.66
     },
     AZ: {
-      link: '/arzdigital/data/world/AZ',
+      link: '/data/world/AZ',
       linkTarget: '_blank',
       gdp: 4141,
       change: 6.29,
@@ -114,7 +114,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.91
     },
     BS: {
-      link: '/arzdigital/data/world/BS',
+      link: '/data/world/BS',
       linkTarget: '_blank',
       gdp: 31255,
       change: 2.21,
@@ -123,7 +123,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.31
     },
     BH: {
-      link: '/arzdigital/data/world/BH',
+      link: '/data/world/BH',
       linkTarget: '_blank',
       gdp: 24029,
       change: 6.32,
@@ -132,7 +132,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.02
     },
     BD: {
-      link: '/arzdigital/data/world/BD',
+      link: '/data/world/BD',
       linkTarget: '_blank',
       gdp: 1602,
       change: 9.79,
@@ -141,7 +141,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.1
     },
     BB: {
-      link: '/arzdigital/data/world/BB',
+      link: '/data/world/BB',
       linkTarget: '_blank',
       gdp: 17859,
       change: 7.83,
@@ -150,7 +150,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.64
     },
     BY: {
-      link: '/arzdigital/data/world/BY',
+      link: '/data/world/BY',
       linkTarget: '_blank',
       gdp: 5760,
       change: 14.69,
@@ -159,7 +159,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.52
     },
     BE: {
-      link: '/arzdigital/data/world/BE',
+      link: '/data/world/BE',
       linkTarget: '_blank',
       gdp: 43582,
       change: 5.3,
@@ -168,7 +168,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.13
     },
     BZ: {
-      link: '/arzdigital/data/world/BZ',
+      link: '/data/world/BZ',
       linkTarget: '_blank',
       gdp: 4806,
       change: -0.64,
@@ -177,7 +177,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.35
     },
     BJ: {
-      link: '/arzdigital/data/world/BJ',
+      link: '/data/world/BJ',
       linkTarget: '_blank',
       gdp: 830,
       change: 4.92,
@@ -186,7 +186,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.46
     },
     BT: {
-      link: '/arzdigital/data/world/BT',
+      link: '/data/world/BT',
       linkTarget: '_blank',
       gdp: 2903,
       change: 8.01,
@@ -195,7 +195,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.82
     },
     BO: {
-      link: '/arzdigital/data/world/BO',
+      link: '/data/world/BO',
       linkTarget: '_blank',
       gdp: 3353,
       change: 7.3,
@@ -204,7 +204,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.73
     },
     BA: {
-      link: '/arzdigital/data/world/BA',
+      link: '/data/world/BA',
       linkTarget: '_blank',
       gdp: 5149,
       change: 7.04,
@@ -213,7 +213,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.6
     },
     BW: {
-      link: '/arzdigital/data/world/BW',
+      link: '/data/world/BW',
       linkTarget: '_blank',
       gdp: 7877,
       change: 8.34,
@@ -222,7 +222,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.38
     },
     BR: {
-      link: '/arzdigital/data/world/BR',
+      link: '/data/world/BR',
       linkTarget: '_blank',
       gdp: 9895,
       change: 13.74,
@@ -231,7 +231,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.23
     },
     BN: {
-      link: '/arzdigital/data/world/BN',
+      link: '/data/world/BN',
       linkTarget: '_blank',
       gdp: 29712,
       change: 10.31,
@@ -240,7 +240,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.7
     },
     BG: {
-      link: '/arzdigital/data/world/BG',
+      link: '/data/world/BG',
       linkTarget: '_blank',
       gdp: 8064,
       change: 7.58,
@@ -249,7 +249,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.23
     },
     BF: {
-      link: '/arzdigital/data/world/BF',
+      link: '/data/world/BF',
       linkTarget: '_blank',
       gdp: 664,
       change: 8.11,
@@ -258,7 +258,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.55
     },
     BI: {
-      link: '/arzdigital/data/world/BI',
+      link: '/data/world/BI',
       linkTarget: '_blank',
       gdp: 312,
       change: 4.85,
@@ -267,7 +267,7 @@ var svgMapDataGPD = {
       changeAdjusted: -5.2
     },
     KH: {
-      link: '/arzdigital/data/world/KH',
+      link: '/data/world/KH',
       linkTarget: '_blank',
       gdp: 1389,
       change: 8.76,
@@ -276,7 +276,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.46
     },
     CM: {
-      link: '/arzdigital/data/world/CM',
+      link: '/data/world/CM',
       linkTarget: '_blank',
       gdp: 1401,
       change: 2.94,
@@ -285,7 +285,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.62
     },
     CA: {
-      link:'/arzdigital/data/world/CA',
+      link:'/data/world/CA',
       linkTarget: '_blank',
       gdp: 45077,
       change: 6.27,
@@ -294,7 +294,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.1
     },
     XK: {
-      link: '/arzdigital/data/world/XK',
+      link: '/data/world/XK',
       linkTarget: '_blank',
       gdp: 3880,
       change: 6.23,
@@ -303,7 +303,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.14
     },
     CV: {
-      link: '/arzdigital/data/world/CV',
+      link: '/data/world/CV',
       linkTarget: '_blank',
       gdp: 3237,
       change: 4.91,
@@ -312,7 +312,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.69
     },
     CF: {
-      link: '/arzdigital/data/world/CF',
+      link: '/data/world/CF',
       linkTarget: '_blank',
       gdp: 387,
       change: 7.65,
@@ -321,7 +321,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.45
     },
     TD: {
-      link: '/arzdigital/data/world/TD',
+      link: '/data/world/TD',
       linkTarget: '_blank',
       gdp: 810,
       change: -0.71,
@@ -330,7 +330,7 @@ var svgMapDataGPD = {
       changeAdjusted: -6.15
     },
     CL: {
-      link: '/arzdigital/data/world/CL',
+      link: '/data/world/CL',
       linkTarget: '_blank',
       gdp: 15070,
       change: 9.66,
@@ -339,7 +339,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.69
     },
     CN: {
-      link: '/arzdigital/data/world/CN',
+      link: '/data/world/CN',
       linkTarget: '_blank',
       gdp: 8643,
       change: 6.5,
@@ -348,7 +348,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.47
     },
     CO: {
-      link: '/arzdigital/data/world/CO',
+      link: '/data/world/CO',
       linkTarget: '_blank',
       gdp: 6273,
       change: 9.21,
@@ -357,7 +357,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.96
     },
     KM: {
-      link: '/arzdigital/data/world/KM',
+      link: '/data/world/KM',
       linkTarget: '_blank',
       gdp: 788,
       change: 3.09,
@@ -366,7 +366,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.25
     },
     CG: {
-      link: '/arzdigital/data/world/CG',
+      link: '/data/world/CG',
       linkTarget: '_blank',
       gdp: 1958,
       change: 6.66,
@@ -375,7 +375,7 @@ var svgMapDataGPD = {
       changeAdjusted: -7.2
     },
     CR: {
-      link: '/arzdigital/data/world/CR',
+      link: '/data/world/CR',
       linkTarget: '_blank',
       gdp: 11685,
       change: -0.77,
@@ -384,7 +384,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.24
     },
     HR: {
-      link: '/arzdigital/data/world/HR',
+      link: '/data/world/HR',
       linkTarget: '_blank',
       gdp: 13138,
       change: 6.7,
@@ -393,7 +393,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.15
     },
     CY: {
-      link: '/arzdigital/data/world/CY',
+      link: '/data/world/CY',
       linkTarget: '_blank',
       gdp: 24976,
       change: 5.65,
@@ -402,7 +402,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.95
     },
     CZ: {
-      link: '/arzdigital/data/world/CZ',
+      link: '/data/world/CZ',
       linkTarget: '_blank',
       gdp: 20152,
       change: 8.9,
@@ -411,7 +411,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.23
     },
     CD: {
-      link: '/arzdigital/data/world/CD',
+      link: '/data/world/CD',
       linkTarget: '_blank',
       gdp: 478,
       change: 2.32,
@@ -420,7 +420,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.2
     },
     DK: {
-      link: '/arzdigital/data/world/DK',
+      link: '/data/world/DK',
       linkTarget: '_blank',
       gdp: 56444,
       change: 4.97,
@@ -429,7 +429,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.49
     },
     DJ: {
-      link: '/arzdigital/data/world/DJ',
+      link: '/data/world/DJ',
       linkTarget: '_blank',
       gdp: 1989,
       change: 4.52,
@@ -438,7 +438,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.19
     },
     DM: {
-      link: '/arzdigital/data/world/DM',
+      link: '/data/world/DM',
       linkTarget: '_blank',
       gdp: 7921,
       change: -3.63,
@@ -447,7 +447,7 @@ var svgMapDataGPD = {
       changeAdjusted: -4.69
     },
     DO: {
-      link: '/arzdigital/data/world/DO',
+      link: '/data/world/DO',
       linkTarget: '_blank',
       gdp: 7375,
       change: 3.67,
@@ -456,7 +456,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.5
     },
     EC: {
-      link: '/arzdigital/data/world/EC',
+      link: '/data/world/EC',
       linkTarget: '_blank',
       gdp: 6098,
       change: 2.21,
@@ -465,7 +465,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.29
     },
     EG: {
-      link: '/arzdigital/data/world/EG',
+      link: '/data/world/EG',
       linkTarget: '_blank',
       gdp: 2501,
       change: -32.17,
@@ -474,7 +474,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.36
     },
     SV: {
-      link: '/arzdigital/data/world/SV',
+      link: '/data/world/SV',
       linkTarget: '_blank',
       gdp: 4400,
       change: 4.06,
@@ -483,7 +483,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.88
     },
     GQ: {
-      link: '/arzdigital/data/world/GQ',
+      link: '/data/world/GQ',
       linkTarget: '_blank',
       gdp: 12727,
       change: 2.65,
@@ -492,7 +492,7 @@ var svgMapDataGPD = {
       changeAdjusted: -7.97
     },
     ER: {
-      link: '/arzdigital/data/world/ER',
+      link: '/data/world/ER',
       linkTarget: '_blank',
       gdp: 980,
       change: 13.88,
@@ -501,7 +501,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.73
     },
     EE: {
-      link: '/arzdigital/data/world/EE',
+      link: '/data/world/EE',
       linkTarget: '_blank',
       gdp: 19840,
       change: 11.47,
@@ -510,7 +510,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.08
     },
     ET: {
-      link: '/arzdigital/data/world/ET',
+      link: '/data/world/ET',
       linkTarget: '_blank',
       gdp: 873,
       change: 8.82,
@@ -519,7 +519,7 @@ var svgMapDataGPD = {
       changeAdjusted: 8.43
     },
     FM: {
-      link: '/arzdigital/data/world/FM',
+      link: '/data/world/FM',
       linkTarget: '_blank',
       gdp: 3200,
       change: 1.45,
@@ -528,7 +528,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     FJ: {
-      link: '/arzdigital/data/world/FJ',
+      link: '/data/world/FJ',
       linkTarget: '_blank',
       gdp: 5740,
       change: 7.44,
@@ -537,7 +537,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.08
     },
     FI: {
-      link: '/arzdigital/data/world/FI',
+      link: '/data/world/FI',
       linkTarget: '_blank',
       gdp: 46017,
       change: 5.75,
@@ -546,7 +546,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.63
     },
     FR: {
-      link: '/arzdigital/data/world/FR',
+      link: '/data/world/FR',
       linkTarget: '_blank',
       gdp: 39869,
       change: 4.35,
@@ -555,7 +555,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.46
     },
     GA: {
-      link: '/arzdigital/data/world/GA',
+      link: '/data/world/GA',
       linkTarget: '_blank',
       gdp: 7972,
       change: 6.96,
@@ -564,7 +564,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.33
     },
     GM: {
-      link: '/arzdigital/data/world/GM',
+      link: '/data/world/GM',
       linkTarget: '_blank',
       gdp: 480,
       change: 1.45,
@@ -573,7 +573,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.56
     },
     GE: {
-      link: '/arzdigital/data/world/GE',
+      link: '/data/world/GE',
       linkTarget: '_blank',
       gdp: 4099,
       change: 5.86,
@@ -582,7 +582,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.07
     },
     DE: {
-      link: '/arzdigital/data/world/DE',
+      link: '/data/world/DE',
       linkTarget: '_blank',
       gdp: 44550,
       change: 5.44,
@@ -591,7 +591,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.07
     },
     GH: {
-      link: '/arzdigital/data/world/GH',
+      link: '/data/world/GH',
       linkTarget: '_blank',
       gdp: 1663,
       change: 7.18,
@@ -600,7 +600,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.28
     },
     GR: {
-      link: '/arzdigital/data/world/GR',
+      link: '/data/world/GR',
       linkTarget: '_blank',
       gdp: 18637,
       change: 4.26,
@@ -609,7 +609,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.56
     },
     GD: {
-      link: '/arzdigital/data/world/GD',
+      link: '/data/world/GD',
       linkTarget: '_blank',
       gdp: 10360,
       change: 5.1,
@@ -618,7 +618,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.04
     },
     GT: {
-      link: '/arzdigital/data/world/GT',
+      link: '/data/world/GT',
       linkTarget: '_blank',
       gdp: 4472,
       change: 7.84,
@@ -627,7 +627,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.81
     },
     GN: {
-      link: '/arzdigital/data/world/GN',
+      link: '/data/world/GN',
       linkTarget: '_blank',
       gdp: 749,
       change: 11.88,
@@ -636,7 +636,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.09
     },
     GW: {
-      link: '/arzdigital/data/world/GW',
+      link: '/data/world/GW',
       linkTarget: '_blank',
       gdp: 794,
       change: 13.43,
@@ -645,7 +645,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.57
     },
     GY: {
-      link: '/arzdigital/data/world/GY',
+      link: '/data/world/GY',
       linkTarget: '_blank',
       gdp: 4710,
       change: 3.24,
@@ -654,7 +654,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.55
     },
     HT: {
-      link: '/arzdigital/data/world/HT',
+      link: '/data/world/HT',
       linkTarget: '_blank',
       gdp: 784,
       change: 3.96,
@@ -663,7 +663,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.03
     },
     HN: {
-      link: '/arzdigital/data/world/HN',
+      link: '/data/world/HN',
       linkTarget: '_blank',
       gdp: 2766,
       change: 4.66,
@@ -672,7 +672,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.17
     },
     HK: {
-      link: '/arzdigital/data/world/HK',
+      link: '/data/world/HK',
       linkTarget: '_blank',
       gdp: 46109,
       change: 6.01,
@@ -681,7 +681,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.9
     },
     HU: {
-      link: '/arzdigital/data/world/HU',
+      link: '/data/world/HU',
       linkTarget: '_blank',
       gdp: 15531,
       change: 3.16,
@@ -690,7 +690,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.32
     },
     IS: {
-      link: '/arzdigital/data/world/IS',
+      link: '/data/world/IS',
       linkTarget: '_blank',
       gdp: 70332,
       change: 16.46,
@@ -699,7 +699,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.87
     },
     IN: {
-      link: '/arzdigital/data/world/IN',
+      link: '/data/world/IN',
       linkTarget: '_blank',
       gdp: 1983,
       change: 13.35,
@@ -708,7 +708,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.43
     },
     ID: {
-      link: '/arzdigital/data/world/ID',
+      link: '/data/world/ID',
       linkTarget: '_blank',
       gdp: 3876,
       change: 7.53,
@@ -717,7 +717,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.33
     },
     IR: {
-      link: '/arzdigital/data/world/IR',
+      link: '/data/world/IR',
       linkTarget: '_blank',
       gdp: 5305,
       change: 5.53,
@@ -726,7 +726,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.24
     },
     IQ: {
-      link: '/arzdigital/data/world/IQ',
+      link: '/data/world/IQ',
       linkTarget: '_blank',
       gdp: 5088,
       change: 12.24,
@@ -735,7 +735,7 @@ var svgMapDataGPD = {
       changeAdjusted: -3.79
     },
     IE: {
-      link: '/arzdigital/data/world/IE',
+      link: '/data/world/IE',
       linkTarget: '_blank',
       gdp: 70638,
       change: 9.02,
@@ -744,7 +744,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.92
     },
     IL: {
-      link: '/arzdigital/data/world/IL',
+      link: '/data/world/IL',
       linkTarget: '_blank',
       gdp: 40258,
       change: 8.24,
@@ -753,7 +753,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.77
     },
     IT: {
-      link: '/arzdigital/data/world/IT',
+      link: '/data/world/IT',
       linkTarget: '_blank',
       gdp: 31984,
       change: 4.31,
@@ -762,7 +762,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.59
     },
     CI: {
-      link: '/arzdigital/data/world/CI',
+      link: '/data/world/CI',
       linkTarget: '_blank',
       gdp: 1617,
       change: 8.14,
@@ -771,7 +771,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.28
     },
     JM: {
-      link: '/arzdigital/data/world/JM',
+      link: '/data/world/JM',
       linkTarget: '_blank',
       gdp: 5048,
       change: 2.0,
@@ -780,7 +780,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.67
     },
     JP: {
-      link: '/arzdigital/data/world/JP',
+      link: '/data/world/JP',
       linkTarget: '_blank',
       gdp: 38440,
       change: -1.4,
@@ -789,7 +789,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.94
     },
     JO: {
-      link: '/arzdigital/data/world/JO',
+      link: '/data/world/JO',
       linkTarget: '_blank',
       gdp: 5678,
       change: 2.31,
@@ -798,7 +798,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.13
     },
     KZ: {
-      link: '/arzdigital/data/world/KZ',
+      link: '/data/world/KZ',
       linkTarget: '_blank',
       gdp: 8841,
       change: 18.57,
@@ -807,7 +807,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.87
     },
     KE: {
-      link: '/arzdigital/data/world/KE',
+      link: '/data/world/KE',
       linkTarget: '_blank',
       gdp: 1702,
       change: 9.66,
@@ -816,7 +816,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.29
     },
     KI: {
-      link: '/arzdigital/data/world/KI',
+      link: '/data/world/KI',
       linkTarget: '_blank',
       gdp: 1721,
       change: 6.42,
@@ -825,7 +825,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.43
     },
     KW: {
-      link: '/arzdigital/data/world/KW',
+      link: '/data/world/KW',
       linkTarget: '_blank',
       gdp: 26005,
       change: 5.6,
@@ -834,7 +834,7 @@ var svgMapDataGPD = {
       changeAdjusted: -4.31
     },
     KG: {
-      link: '/arzdigital/data/world/KG',
+      link: '/data/world/KG',
       linkTarget: '_blank',
       gdp: 1144,
       change: 7.19,
@@ -843,7 +843,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.05
     },
     LA: {
-      link: '/arzdigital/data/world/LA',
+      link: '/data/world/LA',
       linkTarget: '_blank',
       gdp: 2543,
       change: 5.2,
@@ -852,7 +852,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.38
     },
     LV: {
-      link: '/arzdigital/data/world/LV',
+      link: '/data/world/LV',
       linkTarget: '_blank',
       gdp: 15547,
       change: 10.98,
@@ -861,7 +861,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.58
     },
     LB: {
-      link: '/arzdigital/data/world/LB',
+      link: '/data/world/LB',
       linkTarget: '_blank',
       gdp: 11408,
       change: 2.73,
@@ -870,7 +870,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.63
     },
     LS: {
-      link: '/arzdigital/data/world/LS',
+      link: '/data/world/LS',
       linkTarget: '_blank',
       gdp: 1425,
       change: 12.94,
@@ -879,7 +879,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.78
     },
     LR: {
-      link: '/arzdigital/data/world/LR',
+      link: '/data/world/LR',
       linkTarget: '_blank',
       gdp: 729,
       change: -2.12,
@@ -888,7 +888,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.05
     },
     LY: {
-      link: '/arzdigital/data/world/LY',
+      link: '/data/world/LY',
       linkTarget: '_blank',
       gdp: 4859,
       change: 67.32,
@@ -897,7 +897,7 @@ var svgMapDataGPD = {
       changeAdjusted: 69.48
     },
     LT: {
-      link: '/arzdigital/data/world/LT',
+      link: '/data/world/LT',
       linkTarget: '_blank',
       gdp: 16730,
       change: 12.14,
@@ -906,7 +906,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.38
     },
     LU: {
-      link: '/arzdigital/data/world/LU',
+      link: '/data/world/LU',
       linkTarget: '_blank',
       gdp: 105803,
       change: 3.94,
@@ -915,7 +915,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.27
     },
     MO: {
-      link: '/arzdigital/data/world/MO',
+      link: '/data/world/MO',
       linkTarget: '_blank',
       gdp: 77451,
       change: 10.1,
@@ -924,7 +924,7 @@ var svgMapDataGPD = {
       changeAdjusted: 9.42
     },
     MK: {
-      link: '/arzdigital/data/world/MK',
+      link: '/data/world/MK',
       linkTarget: '_blank',
       gdp: 5474,
       change: 5.51,
@@ -933,7 +933,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.06
     },
     MG: {
-      link: '/arzdigital/data/world/MG',
+      link: '/data/world/MG',
       linkTarget: '_blank',
       gdp: 448,
       change: 11.5,
@@ -942,7 +942,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     MW: {
-      link: '/arzdigital/data/world/MW',
+      link: '/data/world/MW',
       linkTarget: '_blank',
       gdp: 324,
       change: 10.17,
@@ -951,7 +951,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.13
     },
     MY: {
-      link: '/arzdigital/data/world/MY',
+      link: '/data/world/MY',
       linkTarget: '_blank',
       gdp: 9813,
       change: 4.68,
@@ -960,7 +960,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.55
     },
     MV: {
-      link: '/arzdigital/data/world/MV',
+      link: '/data/world/MV',
       linkTarget: '_blank',
       gdp: 12527,
       change: 5.17,
@@ -969,7 +969,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.98
     },
     ML: {
-      link: '/arzdigital/data/world/ML',
+      link: '/data/world/ML',
       linkTarget: '_blank',
       gdp: 811,
       change: 5.62,
@@ -978,7 +978,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.31
     },
     MT: {
-      link: '/arzdigital/data/world/MT',
+      link: '/data/world/MT',
       linkTarget: '_blank',
       gdp: 27250,
       change: 8.83,
@@ -987,7 +987,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.26
     },
     MH: {
-      link: '/arzdigital/data/world/MH',
+      link: '/data/world/MH',
       linkTarget: '_blank',
       gdp: 3625,
       change: 8.21,
@@ -996,7 +996,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.83
     },
     MR: {
-      link: '/arzdigital/data/world/MR',
+      link: '/data/world/MR',
       linkTarget: '_blank',
       gdp: 1318,
       change: 5.15,
@@ -1005,7 +1005,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.52
     },
     MU: {
-      link: '/arzdigital/data/world/MU',
+      link: '/data/world/MU',
       linkTarget: '_blank',
       gdp: 9794,
       change: 1.88,
@@ -1014,7 +1014,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.67
     },
     MX: {
-      link: '/arzdigital/data/world/MX',
+      link: '/data/world/MX',
       linkTarget: '_blank',
       gdp: 9304,
       change: 5.64,
@@ -1023,7 +1023,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.91
     },
     MD: {
-      link: '/arzdigital/data/world/MD',
+      link: '/data/world/MD',
       linkTarget: '_blank',
       gdp: 2280,
       change: 19.51,
@@ -1032,7 +1032,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.24
     },
     MN: {
-      link: '/arzdigital/data/world/MN',
+      link: '/data/world/MN',
       linkTarget: '_blank',
       gdp: 3640,
       change: -0.75,
@@ -1041,7 +1041,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.65
     },
     ME: {
-      link: '/arzdigital/data/world/ME',
+      link: '/data/world/ME',
       linkTarget: '_blank',
       gdp: 7647,
       change: 8.8,
@@ -1050,7 +1050,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.16
     },
     MA: {
-      link: '/arzdigital/data/world/MA',
+      link: '/data/world/MA',
       linkTarget: '_blank',
       gdp: 3151,
       change: 4.89,
@@ -1059,7 +1059,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.96
     },
     MZ: {
-      link: '/arzdigital/data/world/MZ',
+      link: '/data/world/MZ',
       linkTarget: '_blank',
       gdp: 429,
       change: 9.5,
@@ -1068,7 +1068,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.09
     },
     MM: {
-      link: '/arzdigital/data/world/MM',
+      link: '/data/world/MM',
       linkTarget: '_blank',
       gdp: 1264,
       change: 4.41,
@@ -1077,7 +1077,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.82
     },
     NA: {
-      link: '/arzdigital/data/world/NA',
+      link: '/data/world/NA',
       linkTarget: '_blank',
       gdp: 5413,
       change: 14.96,
@@ -1086,7 +1086,7 @@ var svgMapDataGPD = {
       changeAdjusted: -3.12
     },
     NR: {
-      link: '/arzdigital/data/world/NR',
+      link: '/data/world/NR',
       linkTarget: '_blank',
       gdp: 8575,
       change: 9.6,
@@ -1095,7 +1095,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.22
     },
     NP: {
-      link: '/arzdigital/data/world/NP',
+      link: '/data/world/NP',
       linkTarget: '_blank',
       gdp: 834,
       change: 14.45,
@@ -1104,7 +1104,7 @@ var svgMapDataGPD = {
       changeAdjusted: 6.41
     },
     NL: {
-      link: '/arzdigital/data/world/NL',
+      link: '/data/world/NL',
       linkTarget: '_blank',
       gdp: 48346,
       change: 5.89,
@@ -1113,7 +1113,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.83
     },
     NZ: {
-      link: '/arzdigital/data/world/NZ',
+      link: '/data/world/NZ',
       linkTarget: '_blank',
       gdp: 41593,
       change: 6.51,
@@ -1122,7 +1122,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.03
     },
     NI: {
-      link: '/arzdigital/data/world/NI',
+      link: '/data/world/NI',
       linkTarget: '_blank',
       gdp: 2207,
       change: 2.57,
@@ -1131,7 +1131,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.82
     },
     NE: {
-      link: '/arzdigital/data/world/NE',
+      link: '/data/world/NE',
       linkTarget: '_blank',
       gdp: 440,
       change: 6.29,
@@ -1140,7 +1140,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.37
     },
     NG: {
-      link: '/arzdigital/data/world/NG',
+      link: '/data/world/NG',
       linkTarget: '_blank',
       gdp: 1994,
       change: -9.68,
@@ -1149,7 +1149,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.76
     },
     NO: {
-      link: '/arzdigital/data/world/NO',
+      link: '/data/world/NO',
       linkTarget: '_blank',
       gdp: 74941,
       change: 6.07,
@@ -1158,7 +1158,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.87
     },
     OM: {
-      link: '/arzdigital/data/world/OM',
+      link: '/data/world/OM',
       linkTarget: '_blank',
       gdp: 17973,
       change: 0.64,
@@ -1167,7 +1167,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.23
     },
     PK: {
-      link: '/arzdigital/data/world/PK',
+      link: '/data/world/PK',
       linkTarget: '_blank',
       gdp: 1541,
       change: 6.95,
@@ -1176,7 +1176,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.58
     },
     PW: {
-      link: '/arzdigital/data/world/PW',
+      link: '/data/world/PW',
       linkTarget: '_blank',
       gdp: 17096,
       change: 0.27,
@@ -1185,7 +1185,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.06
     },
     PA: {
-      link: '/arzdigital/data/world/PA',
+      link: '/data/world/PA',
       linkTarget: '_blank',
       gdp: 15089,
       change: 5.35,
@@ -1194,7 +1194,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.82
     },
     PG: {
-      link: '/arzdigital/data/world/PG',
+      link: '/data/world/PG',
       linkTarget: '_blank',
       gdp: 2861,
       change: 2.51,
@@ -1203,7 +1203,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.46
     },
     PY: {
-      link: '/arzdigital/data/world/PY',
+      link: '/data/world/PY',
       linkTarget: '_blank',
       gdp: 4260,
       change: 6.47,
@@ -1212,7 +1212,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.06
     },
     PE: {
-      link: '/arzdigital/data/world/PE',
+      link: '/data/world/PE',
       linkTarget: '_blank',
       gdp: 6199,
       change: 8.93,
@@ -1221,7 +1221,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.31
     },
     PH: {
-      link: '/arzdigital/data/world/PH',
+      link: '/data/world/PH',
       linkTarget: '_blank',
       gdp: 2976,
       change: 0.78,
@@ -1230,7 +1230,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.15
     },
     PL: {
-      link: '/arzdigital/data/world/PL',
+      link: '/data/world/PL',
       linkTarget: '_blank',
       gdp: 13822,
       change: 11.37,
@@ -1239,7 +1239,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.73
     },
     PT: {
-      link: '/arzdigital/data/world/PT',
+      link: '/data/world/PT',
       linkTarget: '_blank',
       gdp: 21161,
       change: 3.68,
@@ -1248,7 +1248,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.08
     },
     PR: {
-      link: '/arzdigital/data/world/PR',
+      link: '/data/world/PR',
       linkTarget: '_blank',
       gdp: 30488,
       change: -0.98,
@@ -1257,7 +1257,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.35
     },
     QA: {
-      link: '/arzdigital/data/world/QA',
+      link: '/data/world/QA',
       linkTarget: '_blank',
       gdp: 60804,
       change: 4.39,
@@ -1266,7 +1266,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.31
     },
     RO: {
-      link: '/arzdigital/data/world/RO',
+      link: '/data/world/RO',
       linkTarget: '_blank',
       gdp: 10757,
       change: 13.18,
@@ -1275,7 +1275,7 @@ var svgMapDataGPD = {
       changeAdjusted: 7.49
     },
     RU: {
-      link: '/arzdigital/data/world/RU',
+      link: '/data/world/RU',
       linkTarget: '_blank',
       gdp: 10608,
       change: 19.19,
@@ -1284,7 +1284,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.5
     },
     RW: {
-      link: '/arzdigital/data/world/RW',
+      link: '/data/world/RW',
       linkTarget: '_blank',
       gdp: 772,
       change: 5.2,
@@ -1293,7 +1293,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.7
     },
     KN: {
-      link: '/arzdigital/data/world/KN',
+      link: '/data/world/KN',
       linkTarget: '_blank',
       gdp: 16296,
       change: 1.9,
@@ -1302,7 +1302,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.71
     },
     LC: {
-      link: '/arzdigital/data/world/LC',
+      link: '/data/world/LC',
       linkTarget: '_blank',
       gdp: 9607,
       change: 1.99,
@@ -1311,7 +1311,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.51
     },
     VC: {
-      link: '/arzdigital/data/world/VC',
+      link: '/data/world/VC',
       linkTarget: '_blank',
       gdp: 7270,
       change: 3.99,
@@ -1320,7 +1320,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.7
     },
     WS: {
-      link: '/arzdigital/data/world/WS',
+      link: '/data/world/WS',
       linkTarget: '_blank',
       gdp: 4253,
       change: 5.93,
@@ -1329,7 +1329,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.8
     },
     SM: {
-      link: '/arzdigital/data/world/SM',
+      link: '/data/world/SM',
       linkTarget: '_blank',
       gdp: 47406,
       change: 3.8,
@@ -1338,7 +1338,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.65
     },
     ST: {
-      link: '/arzdigital/data/world/ST',
+      link: '/data/world/ST',
       linkTarget: '_blank',
       gdp: 1785,
       change: 5.7,
@@ -1347,7 +1347,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.58
     },
     SA: {
-      link: '/arzdigital/data/world/SA',
+      link: '/data/world/SA',
       linkTarget: '_blank',
       gdp: 21120,
       change: 3.95,
@@ -1356,7 +1356,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.63
     },
     SN: {
-      link: '/arzdigital/data/world/SN',
+      link: '/data/world/SN',
       linkTarget: '_blank',
       gdp: 1038,
       change: 8.73,
@@ -1365,7 +1365,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.39
     },
     RS: {
-      link: '/arzdigital/data/world/RS',
+      link: '/data/world/RS',
       linkTarget: '_blank',
       gdp: 5899,
       change: 8.71,
@@ -1374,7 +1374,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.83
     },
     SC: {
-      link: '/arzdigital/data/world/SC',
+      link: '/data/world/SC',
       linkTarget: '_blank',
       gdp: 15686,
       change: 2.97,
@@ -1383,7 +1383,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.75
     },
     SL: {
-      link: '/arzdigital/data/world/SL',
+      link: '/data/world/SL',
       linkTarget: '_blank',
       gdp: 492,
       change: -5.88,
@@ -1392,7 +1392,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.35
     },
     SG: {
-      link: '/arzdigital/data/world/SG',
+      link: '/data/world/SG',
       linkTarget: '_blank',
       gdp: 57713,
       change: 4.48,
@@ -1401,7 +1401,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.22
     },
     SK: {
-      link: '/arzdigital/data/world/SK',
+      link: '/data/world/SK',
       linkTarget: '_blank',
       gdp: 17664,
       change: 6.73,
@@ -1410,7 +1410,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.61
     },
     SI: {
-      link: '/arzdigital/data/world/SI',
+      link: '/data/world/SI',
       linkTarget: '_blank',
       gdp: 23654,
       change: 9.17,
@@ -1419,7 +1419,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.93
     },
     SB: {
-      link: '/arzdigital/data/world/SB',
+      link: '/data/world/SB',
       linkTarget: '_blank',
       gdp: 2081,
       change: 1.18,
@@ -1428,7 +1428,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.29
     },
     SO: {
-      link: '/arzdigital/data/world/SO',
+      link: '/data/world/SO',
       linkTarget: '_blank',
       gdp: 486,
       change: 6.38,
@@ -1437,7 +1437,7 @@ var svgMapDataGPD = {
       changeAdjusted: -1.82
     },
     ZA: {
-      link: '/arzdigital/data/world/ZA',
+      link: '/data/world/ZA',
       linkTarget: '_blank',
       gdp: 6180,
       change: 16.25,
@@ -1446,7 +1446,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.07
     },
     KR: {
-      link: '/arzdigital/data/world/KR',
+      link: '/data/world/KR',
       linkTarget: '_blank',
       gdp: 29891,
       change: 8.56,
@@ -1455,7 +1455,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.72
     },
     SS: {
-      link: '/arzdigital/data/world/SS',
+      link: '/data/world/SS',
       linkTarget: '_blank',
       gdp: 228,
       change: -18.73,
@@ -1464,7 +1464,7 @@ var svgMapDataGPD = {
       changeAdjusted: -12.82
     },
     ES: {
-      link: '/arzdigital/data/world/ES',
+      link: '/data/world/ES',
       linkTarget: '_blank',
       gdp: 28359,
       change: 6.31,
@@ -1473,7 +1473,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.01
     },
     LK: {
-      link: '/arzdigital/data/world/LK',
+      link: '/data/world/LK',
       linkTarget: '_blank',
       gdp: 4085,
       change: 6.95,
@@ -1482,7 +1482,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.46
     },
     SD: {
-      link: '/arzdigital/data/world/SD',
+      link: '/data/world/SD',
       linkTarget: '_blank',
       gdp: 1428,
       change: -1.91,
@@ -1491,7 +1491,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.82
     },
     SR: {
-      link: '/arzdigital/data/world/SR',
+      link: '/data/world/SR',
       linkTarget: '_blank',
       gdp: 5746,
       change: 0.76,
@@ -1500,7 +1500,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.87
     },
     SZ: {
-      link: '/arzdigital/data/world/SZ',
+      link: '/data/world/SZ',
       linkTarget: '_blank',
       gdp: 3915,
       change: 15.19,
@@ -1509,7 +1509,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.67
     },
     SE: {
-      link: '/arzdigital/data/world/SE',
+      link: '/data/world/SE',
       linkTarget: '_blank',
       gdp: 53218,
       change: 3.39,
@@ -1518,7 +1518,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.68
     },
     CH: {
-      link: '/arzdigital/data/world/CH',
+      link: '/data/world/CH',
       linkTarget: '_blank',
       gdp: 80591,
       change: 0.35,
@@ -1527,7 +1527,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.24
     },
     TW: {
-      link: '/arzdigital/data/world/TW',
+      link: '/data/world/TW',
       linkTarget: '_blank',
       gdp: 24577,
       change: 9.03,
@@ -1536,7 +1536,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.51
     },
     TJ: {
-      link: '/arzdigital/data/world/TJ',
+      link: '/data/world/TJ',
       linkTarget: '_blank',
       gdp: 824,
       change: 2.54,
@@ -1545,7 +1545,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.06
     },
     TZ: {
-      link: '/arzdigital/data/world/TZ',
+      link: '/data/world/TZ',
       linkTarget: '_blank',
       gdp: 1034,
       change: 5.58,
@@ -1554,7 +1554,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.96
     },
     TH: {
-      link: '/arzdigital/data/world/TH',
+      link: '/data/world/TH',
       linkTarget: '_blank',
       gdp: 6591,
       change: 10.39,
@@ -1563,7 +1563,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.68
     },
     TL: {
-      link: '/arzdigital/data/world/TL',
+      link: '/data/world/TL',
       linkTarget: '_blank',
       gdp: 2104,
       change: 1.19,
@@ -1572,7 +1572,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.67
     },
     TG: {
-      link: '/arzdigital/data/world/TG',
+      link: '/data/world/TG',
       linkTarget: '_blank',
       gdp: 611,
       change: 4.24,
@@ -1581,7 +1581,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.95
     },
     TO: {
-      link: '/arzdigital/data/world/TO',
+      link: '/data/world/TO',
       linkTarget: '_blank',
       gdp: 4177,
       change: 5.56,
@@ -1590,7 +1590,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.26
     },
     TT: {
-      link: '/arzdigital/data/world/TT',
+      link: '/data/world/TT',
       linkTarget: '_blank',
       gdp: 15769,
       change: -3.46,
@@ -1599,7 +1599,7 @@ var svgMapDataGPD = {
       changeAdjusted: -2.58
     },
     TN: {
-      link: '/arzdigital/data/world/TN',
+      link: '/data/world/TN',
       linkTarget: '_blank',
       gdp: 3496,
       change: -5.24,
@@ -1608,7 +1608,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.85
     },
     TR: {
-      link: '/arzdigital/data/world/TR',
+      link: '/data/world/TR',
       linkTarget: '_blank',
       gdp: 10512,
       change: -2.82,
@@ -1617,7 +1617,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.68
     },
     TM: {
-      link: '/arzdigital/data/world/TM',
+      link: '/data/world/TM',
       linkTarget: '_blank',
       gdp: 6643,
       change: 3.59,
@@ -1626,7 +1626,7 @@ var svgMapDataGPD = {
       changeAdjusted: 4.86
     },
     TV: {
-      link: '/arzdigital/data/world/TV',
+      link: '/data/world/TV',
       linkTarget: '_blank',
       gdp: 3638,
       change: 2.24,
@@ -1635,7 +1635,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.34
     },
     UG: {
-      link: '/arzdigital/data/world/UG',
+      link: '/data/world/UG',
       linkTarget: '_blank',
       gdp: 699,
       change: 1.04,
@@ -1644,7 +1644,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.86
     },
     UA: {
-      link: '/arzdigital/data/world/UA',
+      link: '/data/world/UA',
       linkTarget: '_blank',
       gdp: 2583,
       change: 17.46,
@@ -1653,7 +1653,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.02
     },
     AE: {
-      link: '/arzdigital/data/world/AE',
+      link: '/data/world/AE',
       linkTarget: '_blank',
       gdp: 37226,
       change: 5.21,
@@ -1662,7 +1662,7 @@ var svgMapDataGPD = {
       changeAdjusted: -0.86
     },
     GB: {
-      link: '/arzdigital/data/world/GB',
+      link: '/data/world/GB',
       linkTarget: '_blank',
       gdp: 39735,
       change: -1.96,
@@ -1671,7 +1671,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.21
     },
     US: {
-      link: '/arzdigital/data/world/US',
+      link: '/data/world/US',
       linkTarget: '_blank',
       gdp: 59501,
       change: 3.37,
@@ -1680,7 +1680,7 @@ var svgMapDataGPD = {
       changeAdjusted: 1.48
     },
     UY: {
-      link: '/arzdigital/data/world/UY',
+      link: '/data/world/UY',
       linkTarget: '_blank',
       gdp: 16722,
       change: 11.02,
@@ -1689,7 +1689,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.74
     },
     UZ: {
-      link: '/arzdigital/data/world/UZ',
+      link: '/data/world/UZ',
       linkTarget: '_blank',
       gdp: 1491,
       change: -28.81,
@@ -1698,7 +1698,7 @@ var svgMapDataGPD = {
       changeAdjusted: 3.89
     },
     VU: {
-      link: '/arzdigital/data/world/VU',
+      link: '/data/world/VU',
       linkTarget: '_blank',
       gdp: 3094,
       change: 6.51,
@@ -1707,7 +1707,7 @@ var svgMapDataGPD = {
       changeAdjusted: 2.33
     },
     VE: {
-      link: '/arzdigital/data/world/VE',
+      link: '/data/world/VE',
       linkTarget: '_blank',
       gdp: 6684,
       change: -12.16,
@@ -1716,7 +1716,7 @@ var svgMapDataGPD = {
       changeAdjusted: -15.3
     },
     VN: {
-      link: '/arzdigital/data/world/VN',
+      link: '/data/world/VN',
       linkTarget: '_blank',
       gdp: 2354,
       change: 8.37,
@@ -1725,7 +1725,7 @@ var svgMapDataGPD = {
       changeAdjusted: 5.78
     },
     YE: {
-      link: '/arzdigital/data/world/YE',
+      link: '/data/world/YE',
       linkTarget: '_blank',
       gdp: 551,
       change: -23.23,
@@ -1734,7 +1734,7 @@ var svgMapDataGPD = {
       changeAdjusted: -16.17
     },
     ZM: {
-      link: '/arzdigital/data/world/ZM',
+      link: '/data/world/ZM',
       linkTarget: '_blank',
       gdp: 1480,
       change: 18.11,
@@ -1743,7 +1743,7 @@ var svgMapDataGPD = {
       changeAdjusted: 0.95
     },
     ZW: {
-      link: '/arzdigital/data/world/ZW',
+      link: '/data/world/ZW',
       linkTarget: '_blank',
       gdp: 1176,
       change: 5.78,

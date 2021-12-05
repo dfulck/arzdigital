@@ -453,67 +453,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mbm-wrapper-cell-info">
-                        <div class="row">
-                            <div class=" col-lg-7 col-md-6 col-sm-6 col-12 ">
-                                <label class="mbm-label">&nbsp;پاداش
-                                    هر بلاک:</label>
-                            </div>
-                            <div class=" col-lg-5 col-md-6 col-sm-6 col-12 ">
-                                <label class="mbm-wrapper-cell-info-coin" data-response="block-reward">---</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mbm-wrapper-cell-info">
-                        <div class="row">
-                            <div class=" col-lg-6 col-md-5 col-sm-6 col-12 ">
-                                <label class="mbm-label" data-response="coinPerTomanName">&nbsp;هر
-                                    واحد کوین به
-                                    تومان: </label>
-                            </div>
-                            <div class=" col-lg-6 col-md-7 col-sm-6 col-12 ">
-                                <label class="mbm-wrapper-cell-info-coin" data-response="coinPerTomanPrice">---</label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 mbm-wrapper-block-info">
                     <div class="mbm-wrapper-cell-info">
                         <div class="row">
                             <div class=" col-lg-4 col-md-6 col-sm-6 col-12 ">
-                                <label class="mbm-label">&nbsp;سختی
-                                    شبکه:</label>
+                                <label class="mbm-label">&nbsp;    واحد کوین به
+                                    تومان: </label>
                             </div>
                             <div class=" col-lg-8 col-md-6 col-sm-6 col-12 ">
                                 <label class="mbm-wrapper-cell-info-coin" data-response="net-difficulty">---</label>
                             </div>
                         </div>
                     </div>
-                    <div class="mbm-wrapper-cell-info">
-                        <div class="row">
-                            <div class=" col-lg-8 col-md-7 col-sm-6 col-12 ">
-                                <label class="mbm-label">زمان
-                                    حدودی استخراج هر
-                                    بلاک:</label>
-                            </div>
-                            <div class=" col-lg-4 col-md-5 col-sm-6 col-12 ">
-                                <label class="mbm-wrapper-cell-info-coin" data-response="block-time">---</label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 mbm-wrapper-block">
-                    <div class="mbm-wrapper-cell-info">
-                        <div class="row">
-                            <div class=" col-lg-5 col-md-7 col-sm-6 col-12 ">
-                                <label class="mbm-label">نرخ
-                                    هش شبکه:</label>
-                            </div>
-                            <div class=" col-lg-7 col-md-5 col-sm-6 col-12 ">
-                                <label class="mbm-wrapper-cell-info-coin" data-response="net-hash">---</label>
-                            </div>
-                        </div>
-                    </div>
                     <div class="mbm-wrapper-cell-info">
                         <div class="row">
                             <div class="col-lg-7 col-md-6 col-sm-6 col-12 ">

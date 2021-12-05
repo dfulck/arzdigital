@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
-use App\Models\Leader;
+use App\Models\leader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,7 +26,7 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Leader $leader)
+    public function create(leader $leader)
     {
         return view('Panel.Content.create',[
             'leader'=>$leader,
@@ -40,13 +40,12 @@ class ContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Leader $leader,Request $request)
+    public function store(leader $leader,Request $request)
     {
         $request->validate([
             'header'=>['required'],
             'body'=>['required'],
             'image'=>['required','image','mimes:jpg,png,jpeg,gif,svg','max:2048'],
-            'leader_id'=>['required'],
         ]);
         Content::query()->create([
             'header'=>$request->get('header'),

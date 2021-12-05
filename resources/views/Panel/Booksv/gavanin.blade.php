@@ -20,14 +20,6 @@
             </div>
         </div>
         @if($response)
-        <div class="body">
-            <h1>
-                اخرین قوانین و مقررات مربوط به
-                <form action="{{route('search.datagavanin',$search)}}" method="post">
-                    @csrf
-                    <input type="submit" value="{{$search}}" class="btn btn-danger">
-                </form></h1>
-        </div>
         <div class="card">
             <div class="card-body">
                 {!! $response !!}

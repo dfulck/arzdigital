@@ -27,13 +27,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($posts as $post)
+                @foreach($posts as $p)
                     <tr>
-                        <td>{{$post->header}}</td>
-                        <td>{{$post->creator}}</td>
-                        <td>{{$post->TimeRead}}</td>
-                        <td>{{$post->created_at}}</td>
-                        <td><a href="{{route('posts.edit',$post)}}" class="btn btn-success">ویرایش</a></td>
+                        <td>{{$p->header}}</td>
+                        <td>{{$p->creator}}</td>
+                        <td>{{$p->TimeRead}}</td>
+                        <td>{{$p->created_at}}</td>
+                        <td><a href="{{route('posts.edit',$p)}}" class="btn btn-success">ویرایش</a></td>
                         <td>
                             <div class="text-center">
                                 <button type="button" class="btn btn-danger" data-toggle="modal"
@@ -62,7 +62,7 @@
                                                 <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">یرگشت
                                                 </button>
-                                                <form action="{{route('posts.destroy',$post)}}" method="post">
+                                                <form action="{{route('posts.delete',$p->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-primary">بله حذف کن بره
